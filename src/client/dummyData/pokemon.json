@@ -1,0 +1,18 @@
+{
+	"pokemon":[
+		{
+			"Id": 1,
+			"PokemonId": 16
+		},
+		{
+
+			"Id": 2,
+			"PokemonId": 16
+		},
+		{
+
+			"Id": 3,
+			"PokemonId": 16
+		}
+	]
+}
