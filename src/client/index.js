@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import makeStore from './store';
 
 import App from './components/App';
-import Login from './components/Login';
+import Login from './containers/Login';
 import Recommendation from './containers/Recommendation';
 
 // create store
@@ -54,3 +54,8 @@ store.dispatch(load(data));
 setTimeout(() => {
 	store.dispatch(evaluate(store.getState()));
 },2000);
+
+//import pokeAPI from 'pokemon-go-node-api';
+
+
+

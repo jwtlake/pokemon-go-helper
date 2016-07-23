@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "webpack": "webpack",
-    "webpack:watch": "webpack -w"
+    "webpack:watch": "webpack -w",
+    "webpack:dev": "webpack-dev-server --no-info --host 192.168.0.106"
   },
   "author": "Jonathan Lake",
   "license": "ISC",
@@ -33,6 +34,7 @@
     "babel-preset-react": "^6.11.1",
     "mocha": "^2.5.3",
     "nodemon": "^1.9.2",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   }
 }

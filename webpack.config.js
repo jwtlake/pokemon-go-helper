@@ -6,6 +6,12 @@ module.exports = {
     path: './src/client/public', 
     filename: 'bundle.js' 
   },
+  devServer: {
+    contentBase: "./src/client/public",
+    historyApiFallback: {
+      index: 'index.html'
+    }
+  },
   resolve: {
     extensions: ['', '.js', '.jsx','.json']
   },
