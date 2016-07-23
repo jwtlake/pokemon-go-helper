@@ -2,8 +2,7 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { connect } from 'react-redux';
 
-import RecommendationSummary from '../components/RecommendationSummary';
-import RecommendationDetail  from '../components/RecommendationDetail';
+import Recommendation from '../components/Recommendation';
 
 const mapStateToProps = (state) => {
 	return {
@@ -20,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
 	};
 };
 
-class Recommendation extends React.Component {
+class RecommendationContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -32,38 +31,17 @@ class Recommendation extends React.Component {
 		} = this;
 		
 		return(
-			<div>
-				<div className="summary">
-					<RecommendationSummary
-						useLuckyEgg={summary.useLuckyEgg}
-						totalTime={summary.totalTime}
-						totalExp={summary.totalExp}
-						levelsGained={summary.levelsGained}
-					/>
-				</div>
-				<div className="recommendation">	
-					{detail.map(group => {
-						return(
-							<RecommendationDetail
-								key={group.pokemon.PokemonId}
-								pokemon={group.pokemon}
-								inventory={group.inventory}
-								outcome={group.outcome}	
-							/>
-						);			
-					})}
-				</div>
-			</div>	
+			<Recommendation summary={summary} detail={detail} />
 		);	
 	}
 };
 
-Recommendation.propTypes = {
+RecommendationContainer.propTypes = {
 	summary: React.PropTypes.object.isRequired,	
 	detail: React.PropTypes.array.isRequired	
 };
 
-Recommendation.defaultProps = {
+RecommendationContainer.defaultProps = {
 	summary: { useLuckyEgg: false, totalTime:0, totalExp:0, levelsGained:0 },
 	detail: []
 };
@@ -71,4 +49,5 @@ Recommendation.defaultProps = {
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(Recommendation);
+)(RecommendationContainer);
+

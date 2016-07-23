@@ -5,14 +5,44 @@
 			"PokemonId": 16
 		},
 		{
-
 			"Id": 2,
 			"PokemonId": 16
 		},
 		{
-
 			"Id": 3,
 			"PokemonId": 16
+		},
+		{
+			"Id": 4,
+			"PokemonId": 13
+		},
+		{
+			"Id": 5,
+			"PokemonId": 13
+		},
+		{
+			"Id": 6,
+			"PokemonId": 13
+		},
+		{
+			"Id": 7,
+			"PokemonId": 13
+		},
+		{
+			"Id": 8,
+			"PokemonId": 19
+		},
+		{
+			"Id": 9,
+			"PokemonId": 19
+		},
+		{
+			"Id": 10,
+			"PokemonId": 19
+		},
+		{
+			"Id": 11,
+			"PokemonId": 19
 		}
 	]
 }
