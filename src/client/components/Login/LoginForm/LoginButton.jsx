@@ -4,6 +4,8 @@ class LoginButton extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { hover: false }
+
+		//binds	
 		this.handleClick = this.handleClick.bind(this);
 	}
 
@@ -13,13 +15,15 @@ class LoginButton extends React.Component {
 
 	render() {
 		const {
-			props: { } 
+			props: { type } 
 		} = this;
 
 		const isHover = this.state.hover;
+		const text = (type === 'google') ? 'GOOGLE' : 'POKÉMON TRAINER CLUB';
+		const style = (type === 'google') ? 'login-form-body-button-google' : 'login-form-body-button-ptc'; 	
 		return(
-			<div className="login-button" onClick={this.handleClick}>
-				Login	
+			<div className={style} onClick={this.handleClick}>
+				{text}	
 			</div>	
 		);			
 	}

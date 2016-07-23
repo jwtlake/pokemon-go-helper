@@ -2,14 +2,16 @@ import React from 'react';
 
 
 import Logo from './Logo.jsx';
-import LoginButton from './LoginButton.jsx';
+import LoginForm from './LoginForm';
+import Legal from './Legal';
 
 export default class Login extends React.Component {
 	render() {
 		return(
 			<div className="login">
-				<Logo />	
-				<LoginButton />
+				<Logo />
+				<LoginForm />
+				<Legal />	
 			</div>
 		);
 	}

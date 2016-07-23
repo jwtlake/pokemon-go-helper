@@ -54,8 +54,3 @@ store.dispatch(load(data));
 setTimeout(() => {
 	store.dispatch(evaluate(store.getState()));
 },2000);
-
-//import pokeAPI from 'pokemon-go-node-api';
-
-
-
