@@ -1,6 +1,26 @@
 'use strict';
 
-const routes = [
+var Joi = require('joi');
+var controllers = require('./controllers');
+
+var routes = [
+	{
+		method: 'POST',
+		path: '/api/login',
+		handler: controllers.login,
+		config: {
+			validate: {
+				payload: {
+					user: Joi.string().alphanum().min(1).required(),
+					pass: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).min(1).required(),
+					type: Joi.any().valid('google','ptc').required(),	
+					lat: Joi.number().required(),
+					lnd: Joi.number().required(),
+					alt: Joi.number().required()
+				}	
+			}	
+		}
+	},
 	{
 		method: 'GET',
 		path: '/bundle.js',
