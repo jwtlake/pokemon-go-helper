@@ -17,7 +17,7 @@ class Outcome extends React.Component {
 			transfer: true,
 			evolutions: true,
 			exp: true,
-			catch: true	
+			catch: false	
 		};
 
 		return(
