@@ -18,14 +18,12 @@ class Recommendation extends React.Component {
 		return(
 			<div className="recommendation">
 			
-				<div className="recommendation-summary">
-					<RecommendationSummary
-						useLuckyEgg={summary.useLuckyEgg}
-						totalTime={summary.totalTime}
-						totalExp={summary.totalExp}
-						levelsGained={summary.levelsGained}
-					/>
-				</div>
+				<RecommendationSummary
+					useLuckyEgg={summary.useLuckyEgg}
+					totalTime={summary.totalTime}
+					totalExp={summary.totalExp}
+					levelsGained={summary.levelsGained}
+				/>
 			
 				<hr className="recommendation-hr"/>	
 				

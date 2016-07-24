@@ -110,7 +110,41 @@
 }
 
 .recommendation-summary {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
 
+	font-family: 'Lato', sans-serif;
+}
+
+.recommendation-summary-egg {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.recommendation-summary-report {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.recommendation-summary-report-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.recommendation-summary-report-section-hr {
+	background-color: #dedede;
+	width: 206px; /* figure out how to avoid hardcoding */
+	height: 1px;
+	border: none;
+}
+
+.recommendation-summary-report-text-red {
+	color: #fd5e87;
 }
 
 .recommendation-detail {

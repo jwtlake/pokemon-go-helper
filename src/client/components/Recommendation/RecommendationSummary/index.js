@@ -1,5 +1,8 @@
 import React from 'react';
 
+import LuckyEggSection from './LuckyEggSection';
+import ReportSection from './ReportSection';
+
 class RecommendationSummary extends React.Component {
 	constructor(props) {
 		super(props);
@@ -14,11 +17,9 @@ class RecommendationSummary extends React.Component {
 		const evolutionTimeInMin = (totalTime / 60);
 		
 		return(
-			<div>
-				<span> You should {(useLuckyEgg) ? 'use a lucky egg' : 'not use a lucky egg.' } </span>
-				<span> EXP Gain: {totalExp} </span>
-				<span> Time Evolving: {evolutionTimeInMin} Min. </span>
-				<span> Level Gain: {levelsGained} </span>
+			<div className="recommendation-summary">
+				<LuckyEggSection useLuckyEgg={useLuckyEgg} totalTime={totalTime} />
+				<ReportSection totalTime={totalTime} totalExp={totalExp} levelsGained={levelsGained} />
 			</div>	
 		);			
 	}
