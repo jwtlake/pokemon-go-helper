@@ -2,6 +2,17 @@
 
 var PokemonGO = require('pokemon-go-node-api');
 
+//dummy data
+const player = require('./dummyData/player.json');
+const pokedex = require('./dummyData/pokedex.json');
+const pokemon = require('./dummyData/pokemon.json');
+
+const data = {
+	player: player,
+	pokedex: pokedex.pokemon,
+	pokemon: pokemon.pokemon
+};
+
 module.exports = {
 
 	login: function(request, reply) {
@@ -19,6 +30,10 @@ module.exports = {
 			}	
 		}
 
+		reply(data);
+
+		return;
+		
 		// create new instance
 		var pokemonGoInstance = new PokemonGO.Pokeio();
 
