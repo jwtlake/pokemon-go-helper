@@ -43,7 +43,7 @@ class Outcome extends React.Component {
 
 				{(expK !== 0 || override.exp === true) ? 
 					<span className="outcome-group">	
-						<span className="outcome-group-text">{expK}K</span>
+						<span className="outcome-group-text">{expK}{(expK !== 0) ? 'K' : ''}</span>
 						<span className="outcome-group-label">EXP</span>
 					</span>	
 					:
