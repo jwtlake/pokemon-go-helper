@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "webpack": "webpack",
-    "webpack:watch": "webpack -w",
-    "webpack:dev": "webpack-dev-server --no-info --host localhost"
+    "webpack": "cp ./src/client/index.css ./src/client/public/index.css && webpack",
+    "webpack:watch": "cp ./src/client/index.css ./src/client/public/index.css && webpack -w",
+    "webpack:dev": "cp ./src/client/index.css ./src/client/public/index.css && webpack-dev-server --no-info --host localhost"
   },
   "repository": {
     "type": "git",

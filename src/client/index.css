@@ -1,0 +1,235 @@
+/** TODO refactor into componnent folders? **/
+
+/** App Background **/
+.app {
+	background: rgba(183,239,158,1);
+	background: -moz-linear-gradient(-45deg, rgba(183,239,158,1) 0%, rgba(67,185,187,1) 100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(183,239,158,1)), color-stop(100%, rgba(67,185,187,1)));
+	background: -webkit-linear-gradient(-45deg, rgba(183,239,158,1) 0%, rgba(67,185,187,1) 100%);
+	background: -o-linear-gradient(-45deg, rgba(183,239,158,1) 0%, rgba(67,185,187,1) 100%);
+	background: -ms-linear-gradient(-45deg, rgba(183,239,158,1) 0%, rgba(67,185,187,1) 100%);
+	background: linear-gradient(135deg, rgba(183,239,158,1) 0%, rgba(67,185,187,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7ef9e', endColorstr='#43b9bb', GradientType=1 );
+}
+
+
+/** Recommendation **/
+.login {
+	background: #fafafa;
+	margin-left: 10%;
+	margin-right: 10%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-logo {
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+	font-size: 200%;
+	text-align: center;
+	padding-bottom: 20px;
+	padding-top: 20%;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-form-header {
+	font-family: 'Lato', sans-serif;
+	padding-bottom: 10px;
+	font-size: 120%;
+	font-weight: bold;
+	color: #597988;
+}
+
+.login-form-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-form-body-input {
+	width: 200px;
+	border: 1px solid #f3e7e7;
+    border-radius: 1px;
+    margin: 2px;
+    padding: 5px 1px 5px 1px;
+
+}
+
+.login-form-body-button-google {
+	text-align: center;
+	width: 200px;
+	background: white;
+	padding: 10px;
+	border: 1px solid #f3e7e7;
+    border-radius: 5px;
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+	color: #597988;
+	margin: 5px;
+	cursor:pointer;
+}
+
+.login-form-body-button-ptc {
+	width: 200px;
+	text-align: center;
+	background: #fdb360;
+	padding: 10px;
+	border: 1px solid #f3e7e7;
+    border-radius: 5px;
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+	color: white;
+	margin: 5px;
+	cursor:pointer;
+}
+
+.login-legal {
+	padding-top: 40px;
+	text-align: center;
+}
+
+.login-legal-text {
+	font-family: 'Lato', sans-serif;
+}
+
+
+/** Recommendation **/
+.recommendation {
+	background: #fafafa;
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 100vh;
+}
+
+.recommendation-summary {
+
+}
+
+.recommendation-detail {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.recommendation-detail-group {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+@media (max-width: 400px) {
+	.recommendation-detail-group {
+		padding-top: 15px;
+	}
+}
+
+/** Dividers **/
+.recommendation-hr {
+	background-color: #436a69;
+	width: 85%;
+	height: 2px;
+	border: none;
+  }
+
+.divider {
+	border-left:1px solid #dedede;
+	height:50px;
+	flex: 0 0 0px;
+}
+
+
+/** Avatar **/
+.avatar {
+	display: flex;	
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 80px;
+}
+
+.avatar-text {
+	margin-top: -6px;	
+	font-family: 'Lato', sans-serif;
+	font-size: small;
+}
+
+.avatar-image {
+	width: 50px;
+	height: 50px;
+}
+
+
+/** Inventory **/
+.inventory {
+	flex: 1;
+	display: flex;	
+	flex-direction: row;
+	justify-content: space-around;
+}
+@media (max-width: 400px) {
+	.inventory {
+		flex-direction: column;
+	}
+}
+
+.inventory-group {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+@media (max-width: 400px) {
+	.inventory-group {
+		align-items: center;
+	}
+}
+
+.inventory-group-label {
+	font-family: 'Lato', sans-serif;
+	color:#6a6a6a;
+	font-size: 70%;
+}
+
+.inventory-group-text {
+	font-family: 'Lato', sans-serif;
+	color:#466a6d;
+}
+
+
+/** Outcome **/
+.outcome {
+	flex: 2;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding: 0px 2px 0px 2px;
+}
+
+.outcome-group {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.outcome-group-label {
+	font-family: 'Lato', sans-serif;
+	color:#6a6a6a;
+	font-size: 70%;
+}
+
+.outcome-group-text {
+	font-family: 'Lato', sans-serif;
+	color:#466a6d;
+}
+
+.outcome-group-text-catch {
+	font-family: 'Lato', sans-serif;
+	color:red;
+}
