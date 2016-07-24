@@ -3,7 +3,7 @@
 ## TODO
 Every!! Nothing works yet.
 
-## Interned Features
+## Features
 Lucky Egg Helper: Evaluate player's pokemon and candies to see if they should use a lucky egg. 
 Pokemon Stat Checker: Evaluate player's pokemon to help identify strong pokemon.
 
