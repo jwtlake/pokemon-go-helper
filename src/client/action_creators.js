@@ -7,6 +7,7 @@ export const EVALUATE = 'EVALUATE';
 // login
 export function login(user,pass,type,lat,lnd,alt) {
 	return function(dispatch) {
+
 		// create payload		
 		const payload = {
 			user:user,
@@ -16,12 +17,10 @@ export function login(user,pass,type,lat,lnd,alt) {
 			lnd:lnd,
 			alt:alt	
 		}
-		var data = new FormData();
-		data.append( "json", JSON.stringify( payload ) );
 
 		// make request
 		return fetch('/api/login',
-			{ method:'POST', body:data }
+			{ method: 'POST', body: JSON.stringify(payload) }
 		)
 		.then((response) => { return response.json(); })
 		.then((data) => { return dispatch(load(data)); })	
