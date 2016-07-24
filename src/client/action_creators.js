@@ -4,21 +4,27 @@ export const LOAD = 'LOAD';
 export const EVALUATE = 'EVALUATE'; 
 
 // action creators
-
-
 // login
-import fetch from 'isomorphic-fetch'; //require('es6-promise').polyfill();
-
-export function login(user,password,type) {
+export function login(user,pass,type,lat,lnd,alt) {
 	return function(dispatch) {
-	
-		const apiCall = '/api/login';
-		return fetch(apiCall).then(
-			response => response.json(),
-			error => console.log('error' + error)
-		).then(
-			json => dispatch(load(json))	
-		);
+		// create payload		
+		const payload = {
+			user:user,
+			pass:pass,
+			type:type,
+			lat,lat,
+			lnd:lnd,
+			alt:alt	
+		}
+		var data = new FormData();
+		data.append( "json", JSON.stringify( payload ) );
+
+		// make request
+		return fetch('/api/login',
+			{ method:'POST', body:data }
+		)
+		.then((response) => { return response.json(); })
+		.then((data) => { return dispatch(load(data)); })	
 	}
 }
 

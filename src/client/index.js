@@ -29,17 +29,7 @@ ReactDOM.render(
 );
 
 //temp till i figure out where to put this
-import { load, evaluate } from './action_creators';
-
-import player from './dummyData/player.json';
-import pokedex from './dummyData/pokedex.json';
-import pokemon from './dummyData/pokemon.json';
-
-const data = {
-	player: player,
-	pokedex: pokedex.pokemon,
-	pokemon: pokemon.pokemon
-};
+import { login, load, evaluate } from './action_creators';
 
 let unsub = store.subscribe(() => {
 	console.log('State change..');	
@@ -48,7 +38,14 @@ let unsub = store.subscribe(() => {
 unsub(); //turn off
 
 // dispatch
-store.dispatch(load(data));
+//user,pass,type,lat,lnd,alt)
+const user =  'username';
+const pass = 'password';
+const type = 'ptc';
+const lat = 0;
+const lnd = 0;
+const alt = 0;
+store.dispatch(login(user,pass,type,lat,lnd,alt));
 
 // evaluate
 setTimeout(() => {
