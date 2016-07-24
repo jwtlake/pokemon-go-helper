@@ -1,5 +1,5 @@
 {
-  "name": "pokemon-go-power-level-helper",
+  "name": "pokemon-go-helper",
   "version": "1.0.0",
   "description": "Tool to help players know when to power level with lucky eggs",
   "main": "index.js",
@@ -8,10 +8,17 @@
     "start": "node index.js",
     "webpack": "webpack",
     "webpack:watch": "webpack -w",
-    "webpack:dev": "webpack-dev-server --no-info --host 192.168.0.106"
+    "webpack:dev": "webpack-dev-server --no-info --host localhost"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwtlake/pokemon-go-helper.git"
   },
   "author": "Jonathan Lake",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jwtlake/pokemon-go-helper/issues"
+  },
   "dependencies": {
     "hapi": "^13.5.0",
     "inert": "^4.0.1",
