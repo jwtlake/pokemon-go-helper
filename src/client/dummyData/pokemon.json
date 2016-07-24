@@ -43,6 +43,34 @@
 		{
 			"Id": 11,
 			"PokemonId": 19
+		},
+		{
+			"Id": 12,
+			"PokemonId": 4
+		},
+		{
+			"Id": 13,
+			"PokemonId": 4
+		},
+		{
+			"Id": 14,
+			"PokemonId": 4
+		},
+		{
+			"Id": 15,
+			"PokemonId": 4
+		},
+		{
+			"Id": 16,
+			"PokemonId": 4
+		},
+		{
+			"Id": 17,
+			"PokemonId": 4
+		},
+		{
+			"Id": 18,
+			"PokemonId": 4
 		}
 	]
 }

@@ -45,7 +45,7 @@
          "height": "0.61 m",
          "weight": "8.5 kg",
          "EvolutionStones": 25,
-         "EvolutionStonePieces": 0,
+         "EvolutionStonePieces": 20,
          "egg": "2 km"
       },
       {
@@ -189,7 +189,7 @@
          "height": "0.30 m",
          "weight": "1.8 kg",
          "EvolutionStones": 12,
-         "EvolutionStonePieces": 20,
+         "EvolutionStonePieces": 200,
          "egg": "2 km"
       },
       {

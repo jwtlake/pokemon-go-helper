@@ -18,14 +18,14 @@ class RecommendationDetail extends React.Component {
 
 		return(
 			<div className="recommendation-detail-group">
-				<Avatar 
+				<Avatar
 					name={pokemon.name} 
 					imageURL={pokemon.imageURL}
 				/>
 			
 				<div className="divider" />
 				
-				<Inventory 
+				<Inventory
 					numberOfPokemon={inventory.numberOfPokemon} 
 					numberOfCandies={inventory.numberOfCandies} 
 				/> 

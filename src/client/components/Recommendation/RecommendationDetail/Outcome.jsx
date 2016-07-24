@@ -11,29 +11,53 @@ class Outcome extends React.Component {
 		const {
 			props: { numberOfEvolutions, numberOfTransfers, experienceGained, timeEvolving, candieLeft, pokemonLeft, toCatch } 
 		} = this;
+		
+		const expK = (experienceGained / 1000)	
+		const override = {
+			transfer: true,
+			evolutions: true,
+			exp: true,
+			catch: true	
+		};
+
 		return(
 			<div className="outcome">
-				<span className="outcome-group">	
-					<span className="outcome-text">{numberOfTransfers}</span>
-					<span className="outcome-label">Transfer</span>
-				</span>		
-
-				<span className="outcome-group">	
-					<span className="outcome-text">{numberOfEvolutions}</span>
-					<span className="outcome-label">Evolve</span>
-				</span>		
-						
-				<span className="outcome-group">	
-					<span className="outcome-text">{experienceGained}</span>
-					<span className="outcome-label">EXP</span>
-				</span>	
 				
-				<span className="outcome-group">
-					<span className="outcome-text-catch">{toCatch}</span>
-					<span className="outcome-label">Catch</span>
-				</span>	
+				{(numberOfTransfers !== 0 || override.transfer === true) ?	
+					<span className="outcome-group">	
+						<span className="outcome-group-text">{numberOfTransfers}</span>
+						<span className="outcome-group-label">Transfer</span>
+					</span>
+					:
+					<span/>	
+				}
 
+				{(numberOfEvolutions !== 0 || override.evolutions === true) ? 
+					<span className="outcome-group">	
+						<span className="outcome-group-text">{numberOfEvolutions}</span>
+						<span className="outcome-group-label">Evolve</span>
+					</span>
+					:
+					<span/> 	
+				}	
 
+				{(expK !== 0 || override.exp === true) ? 
+					<span className="outcome-group">	
+						<span className="outcome-group-text">{expK}K</span>
+						<span className="outcome-group-label">EXP</span>
+					</span>	
+					:
+					<span/>
+				}
+
+				{(toCatch !== 0 || override.catch === true) ? 
+					<span className="outcome-group">
+						<span className="outcome-group-text-catch">{toCatch}</span>
+						<span className="outcome-group-label">Catch</span>
+					</span>
+					:	
+					<span/>	
+				}	
 			</div>	
 		);			
 	}

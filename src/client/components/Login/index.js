@@ -1,11 +1,10 @@
 import React from 'react';
 
-
 import Logo from './Logo.jsx';
 import LoginForm from './LoginForm';
 import Legal from './Legal';
 
-export default class Login extends React.Component {
+class Login extends React.Component {
 	render() {
 		return(
 			<div className="login">
@@ -15,4 +14,6 @@ export default class Login extends React.Component {
 			</div>
 		);
 	}
-};
+}
+
+export default Login;

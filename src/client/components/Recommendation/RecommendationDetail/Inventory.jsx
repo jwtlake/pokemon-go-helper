@@ -15,14 +15,14 @@ class Inventory extends React.Component {
 		return(
 			<div className="inventory">
 				
-				<div className="inventory-pokemon">
-					<span className="inventory-pokemon-text">{numberOfPokemon}</span>
-					<span className="inventory-label">Pokemon</span>	
+				<div className="inventory-group">
+					<span className="inventory-group-text">{numberOfPokemon}</span>
+					<span className="inventory-group-label">Pokemon</span>	
 				</div>	
 				
-				<div className="inventory-candy">
-					<span className="inventory-candy-text">{numberOfCandies}</span>
-					<span className="inventory-label">Candy</span>	
+				<div className="inventory-group">
+					<span className="inventory-group-text">{numberOfCandies}</span>
+					<span className="inventory-group-label">Candy</span>	
 				</div>	
 				
 			</div>	
