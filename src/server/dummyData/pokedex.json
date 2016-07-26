@@ -1,7 +1,8 @@
 {  
+  "thanks": "https://github.com/Biuni/PokemonGOPokedex",
   "pokemon":[
       {
-         "PokedexEntryNumber":"1",
+         "id":"1",
          "num":"001",
          "name":"Bulbasaur",
          "img":"http://www.serebii.net/pokemongo/pokemon/001.png",
@@ -13,7 +14,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"2",
+         "id":"2",
          "num":"002",
          "name":"Ivysaur",
          "img":"http://www.serebii.net/pokemongo/pokemon/002.png",
@@ -25,7 +26,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"3",
+         "id":"3",
          "num":"003",
          "name":"Venusaur",
          "img":"http://www.serebii.net/pokemongo/pokemon/003.png",
@@ -37,7 +38,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"4",
+         "id":"4",
          "num":"004",
          "name":"Charmander",
          "img":"http://www.serebii.net/pokemongo/pokemon/004.png",
@@ -49,7 +50,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"5",
+         "id":"5",
          "num":"005",
          "name":"Charmeleon",
          "img":"http://www.serebii.net/pokemongo/pokemon/005.png",
@@ -61,7 +62,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"6",
+         "id":"6",
          "num":"006",
          "name":"Charizard",
          "img":"http://www.serebii.net/pokemongo/pokemon/006.png",
@@ -73,7 +74,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"7",
+         "id":"7",
          "num":"007",
          "name":"Squirtle",
          "img":"http://www.serebii.net/pokemongo/pokemon/007.png",
@@ -85,7 +86,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"8",
+         "id":"8",
          "num":"008",
          "name":"Wartortle",
          "img":"http://www.serebii.net/pokemongo/pokemon/008.png",
@@ -97,7 +98,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"9",
+         "id":"9",
          "num":"009",
          "name":"Blastoise",
          "img":"http://www.serebii.net/pokemongo/pokemon/009.png",
@@ -109,7 +110,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"10",
+         "id":"10",
          "num":"010",
          "name":"Caterpie",
          "img":"http://www.serebii.net/pokemongo/pokemon/010.png",
@@ -121,7 +122,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"11",
+         "id":"11",
          "num":"011",
          "name":"Metapod",
          "img":"http://www.serebii.net/pokemongo/pokemon/011.png",
@@ -133,7 +134,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"12",
+         "id":"12",
          "num":"012",
          "name":"Butterfree",
          "img":"http://www.serebii.net/pokemongo/pokemon/012.png",
@@ -145,7 +146,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"13",
+         "id":"13",
          "num":"013",
          "name":"Weedle",
          "img":"http://www.serebii.net/pokemongo/pokemon/013.png",
@@ -157,7 +158,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"14",
+         "id":"14",
          "num":"014",
          "name":"Kakuna",
          "img":"http://www.serebii.net/pokemongo/pokemon/014.png",
@@ -169,7 +170,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"15",
+         "id":"15",
          "num":"015",
          "name":"Beedrill",
          "img":"http://www.serebii.net/pokemongo/pokemon/015.png",
@@ -181,7 +182,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"16",
+         "id":"16",
          "num":"016",
          "name":"Pidgey",
          "img":"http://www.serebii.net/pokemongo/pokemon/016.png",
@@ -193,7 +194,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"17",
+         "id":"17",
          "num":"017",
          "name":"Pidgeotto",
          "img":"http://www.serebii.net/pokemongo/pokemon/017.png",
@@ -205,7 +206,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"18",
+         "id":"18",
          "num":"018",
          "name":"Pidgeot",
          "img":"http://www.serebii.net/pokemongo/pokemon/018.png",
@@ -217,7 +218,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"19",
+         "id":"19",
          "num":"019",
          "name":"Rattata",
          "img":"http://www.serebii.net/pokemongo/pokemon/019.png",
@@ -229,7 +230,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"20",
+         "id":"20",
          "num":"020",
          "name":"Raticate",
          "img":"http://www.serebii.net/pokemongo/pokemon/020.png",
@@ -241,7 +242,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"21",
+         "id":"21",
          "num":"021",
          "name":"Spearow",
          "img":"http://www.serebii.net/pokemongo/pokemon/021.png",
@@ -253,7 +254,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"22",
+         "id":"22",
          "num":"022",
          "name":"Fearow",
          "img":"http://www.serebii.net/pokemongo/pokemon/022.png",
@@ -265,7 +266,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"23",
+         "id":"23",
          "num":"023",
          "name":"Ekans",
          "img":"http://www.serebii.net/pokemongo/pokemon/023.png",
@@ -277,7 +278,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"24",
+         "id":"24",
          "num":"024",
          "name":"Arbok",
          "img":"http://www.serebii.net/pokemongo/pokemon/024.png",
@@ -289,7 +290,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"25",
+         "id":"25",
          "num":"025",
          "name":"Pikachu",
          "img":"http://www.serebii.net/pokemongo/pokemon/025.png",
@@ -301,7 +302,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"26",
+         "id":"26",
          "num":"026",
          "name":"Raichu",
          "img":"http://www.serebii.net/pokemongo/pokemon/026.png",
@@ -313,7 +314,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"27",
+         "id":"27",
          "num":"027",
          "name":"Sandshrew",
          "img":"http://www.serebii.net/pokemongo/pokemon/027.png",
@@ -325,7 +326,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"28",
+         "id":"28",
          "num":"028",
          "name":"Sandslash",
          "img":"http://www.serebii.net/pokemongo/pokemon/028.png",
@@ -337,7 +338,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"29",
+         "id":"29",
          "num":"029",
          "name":"Nidoran ♀",
          "img":"http://www.serebii.net/pokemongo/pokemon/029.png",
@@ -349,7 +350,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"30",
+         "id":"30",
          "num":"030",
          "name":"Nidorina",
          "img":"http://www.serebii.net/pokemongo/pokemon/030.png",
@@ -361,7 +362,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"31",
+         "id":"31",
          "num":"031",
          "name":"Nidoqueen",
          "img":"http://www.serebii.net/pokemongo/pokemon/031.png",
@@ -373,7 +374,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"32",
+         "id":"32",
          "num":"032",
          "name":"Nidoran ♂",
          "img":"http://www.serebii.net/pokemongo/pokemon/032.png",
@@ -385,7 +386,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"33",
+         "id":"33",
          "num":"033",
          "name":"Nidorino",
          "img":"http://www.serebii.net/pokemongo/pokemon/033.png",
@@ -397,7 +398,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"34",
+         "id":"34",
          "num":"034",
          "name":"Nidoking",
          "img":"http://www.serebii.net/pokemongo/pokemon/034.png",
@@ -409,7 +410,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"35",
+         "id":"35",
          "num":"035",
          "name":"Clefairy",
          "img":"http://www.serebii.net/pokemongo/pokemon/035.png",
@@ -421,7 +422,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"36",
+         "id":"36",
          "num":"036",
          "name":"Clefable",
          "img":"http://www.serebii.net/pokemongo/pokemon/036.png",
@@ -433,7 +434,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"37",
+         "id":"37",
          "num":"037",
          "name":"Vulpix",
          "img":"http://www.serebii.net/pokemongo/pokemon/037.png",
@@ -445,7 +446,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"38",
+         "id":"38",
          "num":"038",
          "name":"Ninetales",
          "img":"http://www.serebii.net/pokemongo/pokemon/038.png",
@@ -457,7 +458,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"39",
+         "id":"39",
          "num":"039",
          "name":"Jigglypuff",
          "img":"http://www.serebii.net/pokemongo/pokemon/039.png",
@@ -469,7 +470,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"40",
+         "id":"40",
          "num":"040",
          "name":"Wigglytuff",
          "img":"http://www.serebii.net/pokemongo/pokemon/040.png",
@@ -481,7 +482,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"41",
+         "id":"41",
          "num":"041",
          "name":"Zubat",
          "img":"http://www.serebii.net/pokemongo/pokemon/041.png",
@@ -493,7 +494,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"42",
+         "id":"42",
          "num":"042",
          "name":"Golbat",
          "img":"http://www.serebii.net/pokemongo/pokemon/042.png",
@@ -505,7 +506,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"43",
+         "id":"43",
          "num":"043",
          "name":"Oddish",
          "img":"http://www.serebii.net/pokemongo/pokemon/043.png",
@@ -517,7 +518,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"44",
+         "id":"44",
          "num":"044",
          "name":"Gloom",
          "img":"http://www.serebii.net/pokemongo/pokemon/044.png",
@@ -529,7 +530,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"45",
+         "id":"45",
          "num":"045",
          "name":"Vileplume",
          "img":"http://www.serebii.net/pokemongo/pokemon/045.png",
@@ -541,7 +542,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"46",
+         "id":"46",
          "num":"046",
          "name":"Paras",
          "img":"http://www.serebii.net/pokemongo/pokemon/046.png",
@@ -553,7 +554,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"47",
+         "id":"47",
          "num":"047",
          "name":"Parasect",
          "img":"http://www.serebii.net/pokemongo/pokemon/047.png",
@@ -565,7 +566,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"48",
+         "id":"48",
          "num":"048",
          "name":"Venonat",
          "img":"http://www.serebii.net/pokemongo/pokemon/048.png",
@@ -577,7 +578,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"49",
+         "id":"49",
          "num":"049",
          "name":"Venomoth",
          "img":"http://www.serebii.net/pokemongo/pokemon/049.png",
@@ -589,7 +590,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"50",
+         "id":"50",
          "num":"050",
          "name":"Diglett",
          "img":"http://www.serebii.net/pokemongo/pokemon/050.png",
@@ -601,7 +602,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"51",
+         "id":"51",
          "num":"051",
          "name":"Dugtrio",
          "img":"http://www.serebii.net/pokemongo/pokemon/051.png",
@@ -613,7 +614,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"52",
+         "id":"52",
          "num":"052",
          "name":"Meowth",
          "img":"http://www.serebii.net/pokemongo/pokemon/052.png",
@@ -625,7 +626,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"53",
+         "id":"53",
          "num":"053",
          "name":"Persian",
          "img":"http://www.serebii.net/pokemongo/pokemon/053.png",
@@ -637,7 +638,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"54",
+         "id":"54",
          "num":"054",
          "name":"Psyduck",
          "img":"http://www.serebii.net/pokemongo/pokemon/054.png",
@@ -649,7 +650,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"55",
+         "id":"55",
          "num":"055",
          "name":"Golduck",
          "img":"http://www.serebii.net/pokemongo/pokemon/055.png",
@@ -661,7 +662,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"56",
+         "id":"56",
          "num":"056",
          "name":"Mankey",
          "img":"http://www.serebii.net/pokemongo/pokemon/056.png",
@@ -673,7 +674,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"57",
+         "id":"57",
          "num":"057",
          "name":"Primeape",
          "img":"http://www.serebii.net/pokemongo/pokemon/057.png",
@@ -685,7 +686,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"58",
+         "id":"58",
          "num":"058",
          "name":"Growlithe",
          "img":"http://www.serebii.net/pokemongo/pokemon/058.png",
@@ -697,7 +698,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"59",
+         "id":"59",
          "num":"059",
          "name":"Arcanine",
          "img":"http://www.serebii.net/pokemongo/pokemon/059.png",
@@ -709,7 +710,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"60",
+         "id":"60",
          "num":"060",
          "name":"Poliwag",
          "img":"http://www.serebii.net/pokemongo/pokemon/060.png",
@@ -721,7 +722,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"61",
+         "id":"61",
          "num":"061",
          "name":"Poliwhirl",
          "img":"http://www.serebii.net/pokemongo/pokemon/061.png",
@@ -733,7 +734,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"62",
+         "id":"62",
          "num":"062",
          "name":"Poliwrath",
          "img":"http://www.serebii.net/pokemongo/pokemon/062.png",
@@ -745,7 +746,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"63",
+         "id":"63",
          "num":"063",
          "name":"Abra",
          "img":"http://www.serebii.net/pokemongo/pokemon/063.png",
@@ -757,7 +758,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"64",
+         "id":"64",
          "num":"064",
          "name":"Kadabra",
          "img":"http://www.serebii.net/pokemongo/pokemon/064.png",
@@ -769,7 +770,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"65",
+         "id":"65",
          "num":"065",
          "name":"Alakazam",
          "img":"http://www.serebii.net/pokemongo/pokemon/065.png",
@@ -781,7 +782,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"66",
+         "id":"66",
          "num":"066",
          "name":"Machop",
          "img":"http://www.serebii.net/pokemongo/pokemon/066.png",
@@ -793,7 +794,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"67",
+         "id":"67",
          "num":"067",
          "name":"Machoke",
          "img":"http://www.serebii.net/pokemongo/pokemon/067.png",
@@ -805,7 +806,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"68",
+         "id":"68",
          "num":"068",
          "name":"Machamp",
          "img":"http://www.serebii.net/pokemongo/pokemon/068.png",
@@ -817,7 +818,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"69",
+         "id":"69",
          "num":"069",
          "name":"Bellsprout",
          "img":"http://www.serebii.net/pokemongo/pokemon/069.png",
@@ -829,7 +830,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"70",
+         "id":"70",
          "num":"070",
          "name":"Weepinbell",
          "img":"http://www.serebii.net/pokemongo/pokemon/070.png",
@@ -841,7 +842,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"71",
+         "id":"71",
          "num":"071",
          "name":"Victreebel",
          "img":"http://www.serebii.net/pokemongo/pokemon/071.png",
@@ -853,7 +854,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"72",
+         "id":"72",
          "num":"072",
          "name":"Tentacool",
          "img":"http://www.serebii.net/pokemongo/pokemon/072.png",
@@ -865,7 +866,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"73",
+         "id":"73",
          "num":"073",
          "name":"Tentacruel",
          "img":"http://www.serebii.net/pokemongo/pokemon/073.png",
@@ -877,7 +878,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"74",
+         "id":"74",
          "num":"074",
          "name":"Geodude",
          "img":"http://www.serebii.net/pokemongo/pokemon/074.png",
@@ -889,7 +890,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"75",
+         "id":"75",
          "num":"075",
          "name":"Graveler",
          "img":"http://www.serebii.net/pokemongo/pokemon/075.png",
@@ -901,7 +902,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"76",
+         "id":"76",
          "num":"076",
          "name":"Golem",
          "img":"http://www.serebii.net/pokemongo/pokemon/076.png",
@@ -913,7 +914,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"77",
+         "id":"77",
          "num":"077",
          "name":"Ponyta",
          "img":"http://www.serebii.net/pokemongo/pokemon/077.png",
@@ -925,7 +926,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"78",
+         "id":"78",
          "num":"078",
          "name":"Rapidash",
          "img":"http://www.serebii.net/pokemongo/pokemon/078.png",
@@ -937,7 +938,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"79",
+         "id":"79",
          "num":"079",
          "name":"Slowpoke",
          "img":"http://www.serebii.net/pokemongo/pokemon/079.png",
@@ -949,7 +950,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"80",
+         "id":"80",
          "num":"080",
          "name":"Slowbro",
          "img":"http://www.serebii.net/pokemongo/pokemon/080.png",
@@ -961,7 +962,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"81",
+         "id":"81",
          "num":"081",
          "name":"Magnemite",
          "img":"http://www.serebii.net/pokemongo/pokemon/081.png",
@@ -973,7 +974,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"82",
+         "id":"82",
          "num":"082",
          "name":"Magneton",
          "img":"http://www.serebii.net/pokemongo/pokemon/082.png",
@@ -985,7 +986,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"83",
+         "id":"83",
          "num":"083",
          "name":"Farfetch'd",
          "img":"http://www.serebii.net/pokemongo/pokemon/083.png",
@@ -997,7 +998,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"84",
+         "id":"84",
          "num":"084",
          "name":"Doduo",
          "img":"http://www.serebii.net/pokemongo/pokemon/084.png",
@@ -1009,7 +1010,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"85",
+         "id":"85",
          "num":"085",
          "name":"Dodrio",
          "img":"http://www.serebii.net/pokemongo/pokemon/085.png",
@@ -1021,7 +1022,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"86",
+         "id":"86",
          "num":"086",
          "name":"Seel",
          "img":"http://www.serebii.net/pokemongo/pokemon/086.png",
@@ -1033,7 +1034,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"87",
+         "id":"87",
          "num":"087",
          "name":"Dewgong",
          "img":"http://www.serebii.net/pokemongo/pokemon/087.png",
@@ -1045,7 +1046,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"88",
+         "id":"88",
          "num":"088",
          "name":"Grimer",
          "img":"http://www.serebii.net/pokemongo/pokemon/088.png",
@@ -1057,7 +1058,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"89",
+         "id":"89",
          "num":"089",
          "name":"Muk",
          "img":"http://www.serebii.net/pokemongo/pokemon/089.png",
@@ -1069,7 +1070,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"90",
+         "id":"90",
          "num":"090",
          "name":"Shellder",
          "img":"http://www.serebii.net/pokemongo/pokemon/090.png",
@@ -1081,7 +1082,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"91",
+         "id":"91",
          "num":"091",
          "name":"Cloyster",
          "img":"http://www.serebii.net/pokemongo/pokemon/091.png",
@@ -1093,7 +1094,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"92",
+         "id":"92",
          "num":"092",
          "name":"Gastly",
          "img":"http://www.serebii.net/pokemongo/pokemon/092.png",
@@ -1105,7 +1106,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"93",
+         "id":"93",
          "num":"093",
          "name":"Haunter",
          "img":"http://www.serebii.net/pokemongo/pokemon/093.png",
@@ -1117,7 +1118,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"94",
+         "id":"94",
          "num":"094",
          "name":"Gengar",
          "img":"http://www.serebii.net/pokemongo/pokemon/094.png",
@@ -1129,7 +1130,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"95",
+         "id":"95",
          "num":"095",
          "name":"Onix",
          "img":"http://www.serebii.net/pokemongo/pokemon/095.png",
@@ -1141,7 +1142,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"96",
+         "id":"96",
          "num":"096",
          "name":"Drowzee",
          "img":"http://www.serebii.net/pokemongo/pokemon/096.png",
@@ -1153,7 +1154,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"97",
+         "id":"97",
          "num":"097",
          "name":"Hypno",
          "img":"http://www.serebii.net/pokemongo/pokemon/097.png",
@@ -1165,7 +1166,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"98",
+         "id":"98",
          "num":"098",
          "name":"Krabby",
          "img":"http://www.serebii.net/pokemongo/pokemon/098.png",
@@ -1177,7 +1178,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"99",
+         "id":"99",
          "num":"099",
          "name":"Kingler",
          "img":"http://www.serebii.net/pokemongo/pokemon/099.png",
@@ -1189,7 +1190,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"100",
+         "id":"100",
          "num":"100",
          "name":"Voltorb",
          "img":"http://www.serebii.net/pokemongo/pokemon/100.png",
@@ -1201,7 +1202,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"101",
+         "id":"101",
          "num":"101",
          "name":"Electrode",
          "img":"http://www.serebii.net/pokemongo/pokemon/101.png",
@@ -1213,7 +1214,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"102",
+         "id":"102",
          "num":"102",
          "name":"Exeggcute",
          "img":"http://www.serebii.net/pokemongo/pokemon/102.png",
@@ -1225,7 +1226,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"103",
+         "id":"103",
          "num":"103",
          "name":"Exeggutor",
          "img":"http://www.serebii.net/pokemongo/pokemon/103.png",
@@ -1237,7 +1238,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"104",
+         "id":"104",
          "num":"104",
          "name":"Cubone",
          "img":"http://www.serebii.net/pokemongo/pokemon/104.png",
@@ -1249,7 +1250,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"105",
+         "id":"105",
          "num":"105",
          "name":"Marowak",
          "img":"http://www.serebii.net/pokemongo/pokemon/105.png",
@@ -1261,7 +1262,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"106",
+         "id":"106",
          "num":"106",
          "name":"Hitmonlee",
          "img":"http://www.serebii.net/pokemongo/pokemon/106.png",
@@ -1273,7 +1274,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"107",
+         "id":"107",
          "num":"107",
          "name":"Hitmonchan",
          "img":"http://www.serebii.net/pokemongo/pokemon/107.png",
@@ -1285,7 +1286,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"108",
+         "id":"108",
          "num":"108",
          "name":"Lickitung",
          "img":"http://www.serebii.net/pokemongo/pokemon/108.png",
@@ -1297,7 +1298,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"109",
+         "id":"109",
          "num":"109",
          "name":"Koffing",
          "img":"http://www.serebii.net/pokemongo/pokemon/109.png",
@@ -1309,7 +1310,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"110",
+         "id":"110",
          "num":"110",
          "name":"Weezing",
          "img":"http://www.serebii.net/pokemongo/pokemon/110.png",
@@ -1321,7 +1322,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"111",
+         "id":"111",
          "num":"111",
          "name":"Rhyhorn",
          "img":"http://www.serebii.net/pokemongo/pokemon/111.png",
@@ -1333,7 +1334,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"112",
+         "id":"112",
          "num":"112",
          "name":"Rhydon",
          "img":"http://www.serebii.net/pokemongo/pokemon/112.png",
@@ -1345,7 +1346,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"113",
+         "id":"113",
          "num":"113",
          "name":"Chansey",
          "img":"http://www.serebii.net/pokemongo/pokemon/113.png",
@@ -1357,7 +1358,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"114",
+         "id":"114",
          "num":"114",
          "name":"Tangela",
          "img":"http://www.serebii.net/pokemongo/pokemon/114.png",
@@ -1369,7 +1370,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"115",
+         "id":"115",
          "num":"115",
          "name":"Kangaskhan",
          "img":"http://www.serebii.net/pokemongo/pokemon/115.png",
@@ -1381,7 +1382,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"116",
+         "id":"116",
          "num":"116",
          "name":"Horsea",
          "img":"http://www.serebii.net/pokemongo/pokemon/116.png",
@@ -1393,7 +1394,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"117",
+         "id":"117",
          "num":"117",
          "name":"Seadra",
          "img":"http://www.serebii.net/pokemongo/pokemon/117.png",
@@ -1405,7 +1406,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"118",
+         "id":"118",
          "num":"118",
          "name":"Goldeen",
          "img":"http://www.serebii.net/pokemongo/pokemon/118.png",
@@ -1417,7 +1418,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"119",
+         "id":"119",
          "num":"119",
          "name":"Seaking",
          "img":"http://www.serebii.net/pokemongo/pokemon/119.png",
@@ -1429,7 +1430,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"120",
+         "id":"120",
          "num":"120",
          "name":"Staryu",
          "img":"http://www.serebii.net/pokemongo/pokemon/120.png",
@@ -1441,7 +1442,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"121",
+         "id":"121",
          "num":"121",
          "name":"Starmie",
          "img":"http://www.serebii.net/pokemongo/pokemon/121.png",
@@ -1453,7 +1454,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"122",
+         "id":"122",
          "num":"122",
          "name":"Mr. Mime",
          "img":"http://www.serebii.net/pokemongo/pokemon/122.png",
@@ -1465,7 +1466,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"123",
+         "id":"123",
          "num":"123",
          "name":"Scyther",
          "img":"http://www.serebii.net/pokemongo/pokemon/123.png",
@@ -1477,7 +1478,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"124",
+         "id":"124",
          "num":"124",
          "name":"Jynx",
          "img":"http://www.serebii.net/pokemongo/pokemon/124.png",
@@ -1489,7 +1490,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"125",
+         "id":"125",
          "num":"125",
          "name":"Electabuzz",
          "img":"http://www.serebii.net/pokemongo/pokemon/125.png",
@@ -1501,7 +1502,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"126",
+         "id":"126",
          "num":"126",
          "name":"Magmar",
          "img":"http://www.serebii.net/pokemongo/pokemon/126.png",
@@ -1513,7 +1514,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"127",
+         "id":"127",
          "num":"127",
          "name":"Pinsir",
          "img":"http://www.serebii.net/pokemongo/pokemon/127.png",
@@ -1525,7 +1526,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"128",
+         "id":"128",
          "num":"128",
          "name":"Tauros",
          "img":"http://www.serebii.net/pokemongo/pokemon/128.png",
@@ -1537,7 +1538,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"129",
+         "id":"129",
          "num":"129",
          "name":"Magikarp",
          "img":"http://www.serebii.net/pokemongo/pokemon/129.png",
@@ -1549,7 +1550,7 @@
          "egg": "2 km"
       },
       {
-         "PokedexEntryNumber":"130",
+         "id":"130",
          "num":"130",
          "name":"Gyarados",
          "img":"http://www.serebii.net/pokemongo/pokemon/130.png",
@@ -1561,7 +1562,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"131",
+         "id":"131",
          "num":"131",
          "name":"Lapras",
          "img":"http://www.serebii.net/pokemongo/pokemon/131.png",
@@ -1573,7 +1574,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"132",
+         "id":"132",
          "num":"132",
          "name":"Ditto",
          "img":"http://www.serebii.net/pokemongo/pokemon/132.png",
@@ -1585,7 +1586,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"133",
+         "id":"133",
          "num":"133",
          "name":"Eevee",
          "img":"http://www.serebii.net/pokemongo/pokemon/133.png",
@@ -1597,7 +1598,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"134",
+         "id":"134",
          "num":"134",
          "name":"Vaporeon",
          "img":"http://www.serebii.net/pokemongo/pokemon/134.png",
@@ -1609,7 +1610,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"135",
+         "id":"135",
          "num":"135",
          "name":"Jolteon",
          "img":"http://www.serebii.net/pokemongo/pokemon/135.png",
@@ -1621,7 +1622,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"136",
+         "id":"136",
          "num":"136",
          "name":"Flareon",
          "img":"http://www.serebii.net/pokemongo/pokemon/136.png",
@@ -1633,7 +1634,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"137",
+         "id":"137",
          "num":"137",
          "name":"Porygon",
          "img":"http://www.serebii.net/pokemongo/pokemon/137.png",
@@ -1645,7 +1646,7 @@
          "egg": "5 km"
       },
       {
-         "PokedexEntryNumber":"138",
+         "id":"138",
          "num":"138",
          "name":"Omanyte",
          "img":"http://www.serebii.net/pokemongo/pokemon/138.png",
@@ -1657,7 +1658,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"139",
+         "id":"139",
          "num":"139",
          "name":"Omastar",
          "img":"http://www.serebii.net/pokemongo/pokemon/139.png",
@@ -1669,7 +1670,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"140",
+         "id":"140",
          "num":"140",
          "name":"Kabuto",
          "img":"http://www.serebii.net/pokemongo/pokemon/140.png",
@@ -1681,7 +1682,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"141",
+         "id":"141",
          "num":"141",
          "name":"Kabutops",
          "img":"http://www.serebii.net/pokemongo/pokemon/141.png",
@@ -1693,7 +1694,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"142",
+         "id":"142",
          "num":"142",
          "name":"Aerodactyl",
          "img":"http://www.serebii.net/pokemongo/pokemon/142.png",
@@ -1705,7 +1706,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"143",
+         "id":"143",
          "num":"143",
          "name":"Snorlax",
          "img":"http://www.serebii.net/pokemongo/pokemon/143.png",
@@ -1717,7 +1718,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"144",
+         "id":"144",
          "num":"144",
          "name":"Articuno",
          "img":"http://www.serebii.net/pokemongo/pokemon/144.png",
@@ -1729,7 +1730,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"145",
+         "id":"145",
          "num":"145",
          "name":"Zapdos",
          "img":"http://www.serebii.net/pokemongo/pokemon/145.png",
@@ -1741,7 +1742,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"146",
+         "id":"146",
          "num":"146",
          "name":"Moltres",
          "img":"http://www.serebii.net/pokemongo/pokemon/146.png",
@@ -1753,7 +1754,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"147",
+         "id":"147",
          "num":"147",
          "name":"Dratini",
          "img":"http://www.serebii.net/pokemongo/pokemon/147.png",
@@ -1765,7 +1766,7 @@
          "egg": "10 km"
       },
       {
-         "PokedexEntryNumber":"148",
+         "id":"148",
          "num":"148",
          "name":"Dragonair",
          "img":"http://www.serebii.net/pokemongo/pokemon/148.png",
@@ -1777,7 +1778,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"149",
+         "id":"149",
          "num":"149",
          "name":"Dragonite",
          "img":"http://www.serebii.net/pokemongo/pokemon/149.png",
@@ -1789,7 +1790,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"150",
+         "id":"150",
          "num":"150",
          "name":"Mewtwo",
          "img":"http://www.serebii.net/pokemongo/pokemon/150.png",
@@ -1801,7 +1802,7 @@
          "egg": "Not in Eggs"
       },
       {
-         "PokedexEntryNumber":"151",
+         "id":"151",
          "num":"151",
          "name":"Mew",
          "img":"http://www.serebii.net/pokemongo/pokemon/151.png",
