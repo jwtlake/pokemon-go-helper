@@ -62,7 +62,8 @@ function normalize(response) {
 	const rawInvArray = response.inventory_delta.inventory_items.map(inv => inv.inventory_item_data);
 
 	// get required sections
-	const pokemon = getInvData(rawInvArray,'pokemon_data'); 
+	const pokemon = getInvData(rawInvArray,'pokemon_data').filter(obj => !obj.is_egg || obj.pokemon_id !== 0);
+        const eggs = getInvData(rawInvArray,'pokemon_data').filter(obj => obj.is_egg);	
 	const pokedex = getInvData(rawInvArray,'pokedex_entry'); 
 	//const items = getInvData(rawInvArray,'item'); 
 	//const playerStats = getInvData(rawInvArray,'player_stats'); 
@@ -77,7 +78,8 @@ function normalize(response) {
 		player: { name: "dummy", level: 10, exp: 10000 }, //TODO figure out how best to handle this 	
 		pokemon: pokemon,
 		pokedex: polyFill(pokedex), // havn't figured out how to get all the required data yet 
-		family: family	
+		family: family,
+		eggs: eggs
 	};
 	return data;
 	

@@ -28,26 +28,9 @@ ReactDOM.render(
 	document.getElementById('app')
 );
 
-//temp till i figure out where to put this
-import { login, load, evaluate } from './action_creators';
-
+// debugging
 let unsub = store.subscribe(() => {
 	console.log('State change..');	
 	console.dir(store.getState());
 });
 unsub(); //turn off
-
-// dispatch
-//user,pass,type,lat,lnd,alt)
-const user =  'username';
-const pass = 'password';
-const type = 'ptc';
-const lat = 0;
-const lnd = 0;
-const alt = 0;
-//store.dispatch(login(user,pass,type,lat,lnd,alt));
-
-// evaluate
-setTimeout(() => {
-	//store.dispatch(evaluate(store.getState()));
-},2000);
