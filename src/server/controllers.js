@@ -1,17 +1,6 @@
 'use strict';
 
-var PokemonGO = require('pokemon-go-node-api');
-
-//dummy data
-const player = require('./dummyData/player.json');
-const pokedex = require('./dummyData/pokedex.json');
-const pokemon = require('./dummyData/pokemon.json');
-
-const data = {
-	player: player,
-	pokedex: pokedex.pokemon,
-	pokemon: pokemon.pokemon
-};
+var pogobuf = require('pogobuf');
 
 module.exports = {
 
@@ -21,36 +10,77 @@ module.exports = {
 		var username = request.payload.user;
 		var password = request.payload.pass;
 		var type = request.payload.type; // google || ptc
-		var location = {
-			type:'coords',
-			coords: {
-				latitude: request.payload.lat,
-				longitude: request.payload.lnd,
-				altitude: request.payload.alt		
-			}	
-		}
-
-		reply(data);
-
-		return;
+		var latitude = request.payload.lat;
+		var longitude = request.payload.lnd;
+		var altitude = request.payload.alt;		
 		
-		// create new instance
-		var pokemonGoInstance = new PokemonGO.Pokeio();
+		//log connection attempt for debugging
+		console.log(`login attempt -- user: ${username} pass: $$$$ type: ${type} lat: ${latitude} lnd: ${longitude} alt: ${altitude}`);	
 
-		// login
-		pokemonGoInstance.init(username, password, location, type, (err) => {
-			if (err) { reply(err).code(500); console.log(err); };
-			
-			// get info 
-			pokemonGoInstance.GetProfile((err, profile) => {	
-				if (err) { reply(err).code(500); console.log(err); };
-				
-				console.log('1[i] Username: ' + profile.username);
-				console.log('1[i] Poke Storage: ' + profile.poke_storage);
-				console.log('1[i] Item Storage: ' + profile.item_storage);
+		// create instance	
+		var login;
+		var provider;
+		if(type === 'google'){
+			login = new pogobuf.GoogleLogin();
+			provider = 'google';
+		} else {
+			login = new pogbuf.PTCLogin();
+			provider = 'ptc';	
+		}	
+    		var client = new pogobuf.Client();
 
-				that.reply('hey').code(200);
-			});
+		// login and return inventory 
+		login.login(username,password)
+		.then(token => {
+			client.setAuthInfo(provider, token);
+    			client.setPosition(latitude, longitude);
+    			return client.init();
+		}).then(() => {
+			return client.getInventory(0);
+		}).then(inventory => {
+			// format inventory response
+			const response = normalize(inventory); 	
+			// check for errors	
+			if(response) {
+				reply(response).code(200);	
+			} else {
+				reply().code(401);	
+			}
+
 		});		
+	}
+}
+
+function normalize(response) {
+	// fail out	
+	if(response.success !== true) {
+		return false;
+	}
+	
+	// get inventory array	
+	const rawInvArray = response.inventory_delta.inventory_items.map(inv => inv.inventory_item_data);
+
+	// get required sections
+	const pokemon = getInvData(rawInvArray,'pokemon_data'); 
+	const pokedex = getInvData(rawInvArray,'pokedex_entry'); 
+	//const items = getInvData(rawInvArray,'item'); 
+	//const playerStats = getInvData(rawInvArray,'player_stats'); 
+	const family = getInvData(rawInvArray,'pokemon_family'); 
+	// const player_currency = getInvData(rawInvArray,'player_currency');  
+	// const player_camera = getInvData(rawInvArray,'player_camera'); 
+	// const inventory_upgrades = getInvData(rawInvArray,'inventory_upgrades'); 
+	// const applied_items = getInvData(rawInvArray,'applied_items'); 
+	
+	// return	
+	const data = {
+		pokemon: pokemon,
+		pokedex: pokedex,
+		family: family	
+	};
+	return data;
+	
+	// helper function
+	function getInvData(rawInvArray, key) {
+		return rawInvArray.filter(rawInv => rawInv[key]).map(rawInv => rawInv[key]);
 	}
 };

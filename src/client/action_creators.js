@@ -5,6 +5,7 @@ export const EVALUATE = 'EVALUATE';
 
 // action creators
 // login
+import { browserHistory } from 'react-router'
 export function login(user,pass,type,lat,lnd,alt) {
 	return function(dispatch) {
 
@@ -22,8 +23,17 @@ export function login(user,pass,type,lat,lnd,alt) {
 		return fetch('/api/login',
 			{ method: 'POST', body: JSON.stringify(payload) }
 		)
-		.then((response) => { return response.json(); })
-		.then((data) => { return dispatch(load(data)); })	
+		.then((response) => { 
+			if(response.ok) { return response.json(); } //TODO handle this better  
+			else { return null; } 
+		})
+		.then((data) => { 	
+			if(data){
+				browserHistory.push('/recommendation');	
+				return dispatch(load(data)); 
+			}//TODO handle this better	
+			else { return null; }	
+		})
 	}
 }
 

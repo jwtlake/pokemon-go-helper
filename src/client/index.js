@@ -45,9 +45,9 @@ const type = 'ptc';
 const lat = 0;
 const lnd = 0;
 const alt = 0;
-store.dispatch(login(user,pass,type,lat,lnd,alt));
+//store.dispatch(login(user,pass,type,lat,lnd,alt));
 
 // evaluate
 setTimeout(() => {
-	store.dispatch(evaluate(store.getState()));
+	//store.dispatch(evaluate(store.getState()));
 },2000);
