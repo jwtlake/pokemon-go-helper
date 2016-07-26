@@ -1,6 +1,7 @@
 'use strict';
 
 var pogobuf = require('pogobuf');
+var pokedexPolyFill = require('./dummyData/pokedex.json'); //thanks https://github.com/Biuni/PokemonGOPokedex
 
 module.exports = {
 
@@ -73,8 +74,9 @@ function normalize(response) {
 	
 	// return	
 	const data = {
+		player: { name: "dummy", level: 10, exp: 10000 }, //TODO figure out how best to handle this 	
 		pokemon: pokemon,
-		pokedex: pokedex,
+		pokedex: polyFill(pokedex), // havn't figured out how to get all the required data yet 
 		family: family	
 	};
 	return data;
@@ -84,3 +86,22 @@ function normalize(response) {
 		return rawInvArray.filter(rawInv => rawInv[key]).map(rawInv => rawInv[key]);
 	}
 };
+
+function polyFill(pokedex) {
+	// create keyed pokedex from supplementary data
+	const pokedexLookup = pokedexPolyFill.pokemon.reduce((map,item) => {
+	         map[item.id.toString()] = item;
+		 return map;
+	},{});	 
+
+	// add missing data to pokedex
+	return pokedex.map(entry => {
+		const pokemonId = entry.pokemon_id;
+		
+		entry.name = pokedexLookup[pokemonId].name; 
+		entry.EvolutionStones = pokedexLookup[pokemonId].EvolutionStones; //number of candies required for evolution. //TODO not sure if this is right..
+		entry.img = pokedexLookup[pokemonId].img;
+		
+		return entry;
+	});
+}
