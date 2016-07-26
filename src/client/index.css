@@ -12,6 +12,13 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7ef9e', endColorstr='#43b9bb', GradientType=1 );
 }
 
+.app-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
 
 /** Recommendation **/
 .login {

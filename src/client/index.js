@@ -8,6 +8,7 @@ import makeStore from './store';
 import App from './components/App';
 import Login from './containers/Login';
 import Recommendation from './containers/Recommendation';
+import Pokemon from './containers/Pokemon';
 
 // create store
 const store = makeStore();
@@ -16,6 +17,7 @@ const store = makeStore();
 const routes = <Route path="/" component={App}>
 	<Route path="/login" component={Login} />
 	<Route path="/recommendation" component={Recommendation} />
+	<Route path="/pokemon" component={Pokemon} />
 </Route>
 
 // render
@@ -33,4 +35,4 @@ let unsub = store.subscribe(() => {
 	console.log('State change..');	
 	console.dir(store.getState());
 });
-unsub(); //turn off
+//unsub(); //turn off
