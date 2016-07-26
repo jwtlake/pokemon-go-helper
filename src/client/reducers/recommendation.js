@@ -16,7 +16,7 @@ function recommendation(state = initialState, action) {
 
 			// group by pokemon
 			const pokemonGroups = pokemon.reduce((map,aPokemon) => {
-				const PokemonId = aPokemon.PokemonId.toString();
+				const PokemonId = aPokemon.pokemon_id.toString();
 				
 				if(!map.hasOwnProperty(PokemonId)) { 
 					map[PokemonId] = []; 
@@ -38,7 +38,7 @@ function recommendation(state = initialState, action) {
 			
 			// calculate detail	
 			const detail = pokemonGroupsFiltered.map((group) => {
-				const PokemonId = group[0].PokemonId;	
+				const PokemonId = group[0].pokemon_id;	
 				
 				// data points
 				const numberOfPokemon = group.length;
@@ -71,7 +71,7 @@ function recommendation(state = initialState, action) {
 					numberToCatch = Math.floor(candiesLeft / candiesToEvolve); // could also account for extra candie from catching...	
 				}
 				
-				// create report	
+				// create report for the pokemon group	
 				return {
 					pokemon: {
 						PokemonId: PokemonId,
