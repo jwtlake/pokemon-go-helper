@@ -37,7 +37,7 @@ function recommendation(state = initialState, action) {
 			// remove pokemon without evolutions
 			const pokemonGroupsFiltered = pokemonGroupsFlat.filter(group => {
 				const PokemonId = group[0].pokemon_id;
-				if(!pokedex[PokemonId] || !pokedex[PokemonId].evolution_stones !== null) { return true; }
+				if(pokedex[PokemonId] && pokedex[PokemonId].evolution_stones !== null) { return true; }
 				else { return false; }
 			});
 			
@@ -98,6 +98,8 @@ function recommendation(state = initialState, action) {
 						toCatch: numberToCatch
 					}
 				};
+			}).sort((a,b) => {
+				return b.outcome.numberOfEvolutions - a.outcome.numberOfEvolutions;
 			});
 
 			// calculate summary
