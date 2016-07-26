@@ -13,11 +13,39 @@
 }
 
 .app-header {
+	background: #fafafa;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
 }
+
+.app-header-link {
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+	font-size: 150%;
+	color: #bdc4c0;
+	text-decoration: none;
+}
+app-header-link:visited {color: #bdc4c0;} /*Yuck gota be a better way*/
+app-header-link:hover {color: #bdc4c0;} 
+app-header-link:active {color :#bdc4c0;}
+
+
+
+.app-header-link-current {
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+	font-size: 150%;
+	color: #466a6d;
+}
+app-header-link-current:visited {color: #466a6d;}  /*Yuck gota be a better way*/
+app-header-link-current:hover {color: #466a6d;} 
+app-header-link-current:active {color: #466a6d;} 
 
 
 /** Login **/

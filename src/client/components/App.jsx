@@ -8,20 +8,27 @@ export default class App extends React.Component {
 		} = this;
 		
 		const isLoggedIn = app.loggedIn;
-
+		const currentPath = this.props.location.pathname;
+		
+		//show pokemon and recommendation links if logged in	
 		return(
 			<div className="app">
-				<div className="app-header">
-					{(isLoggedIn) ?
-					       	<div>	
-						<Link to={'/pokemon'}>Pokemon</Link>
-						<Link to={'/recommendation'}>Recommendation</Link>
-						</div>
-						:
-						<Link to={'/login'}>Login</Link>
-					}	
-					
-				</div>	
+				{(isLoggedIn) ?
+					<div className="app-header">
+						{(currentPath === '/pokemon') ? 
+							<Link to={'/pokemon'} className="app-header-link-current">POKÉMON</Link>
+							:	
+							<Link to={'/pokemon'} className="app-header-link">POKÉMON</Link>
+						}
+						{(currentPath === '/recommendation') ? 
+							<Link to={'/recommendation'} className="app-header-link-current">LUCKYEGG</Link>
+							:	
+							<Link to={'/recommendation'} className="app-header-link">LUCKYEGG</Link>
+						}
+					</div>
+					: 
+					''
+				}	
 				{this.props.children}
 			</div>
 		);
