@@ -46,13 +46,3 @@ export function load(data) {
 		pokemon: data.pokemon	
 	};
 }
-
-// make recommendation
-export function evaluate(state) {
-	return {
-		type: EVALUATE,
-		player: state.player,
-		pokedex: state.pokedex,
-		pokemon: state.pokemon
-	};
-}

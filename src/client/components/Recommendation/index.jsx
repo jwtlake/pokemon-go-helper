@@ -9,7 +9,6 @@ class Recommendation extends React.Component {
 		super(props);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 
-		this.props.evaluate();	
 		// binds
 	}
 

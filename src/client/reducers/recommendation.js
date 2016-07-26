@@ -9,10 +9,16 @@ const initialState = {};
 
 function recommendation(state = initialState, action) {
 	switch (action.type) {
-		case types.EVALUATE:
+		case types.LOAD:
 			const player = action.player;
-			const pokedex = action.pokedex;
 			const pokemon = action.pokemon;
+
+			// prep pokedex with keys
+			const pokedex = action.pokedex.reduce((map, pokemon) => {
+				map[pokemon.pokemon_id.toString()] = pokemon;
+				return map;	
+			},{});
+
 
 			// group by pokemon
 			const pokemonGroups = pokemon.reduce((map,aPokemon) => {
@@ -30,20 +36,19 @@ function recommendation(state = initialState, action) {
 
 			// remove pokemon without evolutions
 			const pokemonGroupsFiltered = pokemonGroupsFlat.filter(group => {
-				const PokemonId = group[0].PokemonId;
-				
-				if(pokedex[PokemonId].EvolutionStones !== null) { return true; }
+				const PokemonId = group[0].pokemon_id;
+				if(!pokedex[PokemonId] || !pokedex[PokemonId].evolution_stones !== null) { return true; }
 				else { return false; }
 			});
 			
 			// calculate detail	
 			const detail = pokemonGroupsFiltered.map((group) => {
 				const PokemonId = group[0].pokemon_id;	
-				
+					
 				// data points
 				const numberOfPokemon = group.length;
-				const numberOfCandies = pokedex[PokemonId].EvolutionStonePieces;
-				const candiesToEvolve = pokedex[PokemonId].EvolutionStones;
+				const numberOfCandies = pokedex[PokemonId].evolution_stone_pieces;
+				const candiesToEvolve = pokedex[PokemonId].evolution_stones;
 					
 				// calc points
 				let pokemonLeft = numberOfPokemon;
@@ -77,7 +82,7 @@ function recommendation(state = initialState, action) {
 						PokemonId: PokemonId,
 						name: pokedex[PokemonId].name,
 						imageURL: pokedex[PokemonId].img,
-						candiesToEvolve: pokedex[PokemonId].EvolutionStones,	
+						candiesToEvolve: pokedex[PokemonId].evolution_stones,	
 					},
 					inventory: {
 						numberOfCandies: numberOfCandies,
