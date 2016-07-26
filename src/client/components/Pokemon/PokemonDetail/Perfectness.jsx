@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Summary extends React.Component {
+class Perfectness extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -16,21 +16,21 @@ class Summary extends React.Component {
 		const perfectLevel = (((individual_attack + individual_defense + individual_stamina) / maxPower) * 100).toFixed(0); 
 
 		return(
-			<div className="pokemon-detail-group-summary">
+			<div className="perfectness">
 				
-					<span className="outcome-group">	
-						<span className="outcome-group-text">{perfectLevel}%</span>
-						<span className="outcome-group-label">Perfect</span>
+					<span className="perfectness-group">	
+						<span className="perfectness-group-text">{perfectLevel}%</span>
+						<span className="perfectness-group-label">Perfect</span>
 					</span>
 			</div>	
 		);			
 	}
 }
 
-Summary.Proptypes = {
+Perfectness.Proptypes = {
 	individual_attack: React.PropTypes.number.isRequired,
 	individual_defense: React.PropTypes.number.isRequired,
 	individual_stamina: React.PropTypes.number.isRequired
 }
 
-export default Summary;
+export default Perfectness;

@@ -2,11 +2,16 @@
 
 var pogobuf = require('pogobuf');
 var pokedexPolyFill = require('./dummyData/pokedex.json'); //thanks https://github.com/Biuni/PokemonGOPokedex
+var dummyResponse = require('./dummyData/response.json'); 
 
 module.exports = {
 
 	login: function(request, reply) {
-
+		
+		//debug
+		//reply(dummyResponse);
+		//return;
+		
 		// get user info	
 		var username = request.payload.user;
 		var password = request.payload.pass;
@@ -62,7 +67,7 @@ function normalize(response) {
 	const rawInvArray = response.inventory_delta.inventory_items.map(inv => inv.inventory_item_data);
 
 	// get required sections
-	const pokemon = getInvData(rawInvArray,'pokemon_data').filter(obj => !obj.is_egg || obj.pokemon_id !== 0);
+	const pokemon = getInvData(rawInvArray,'pokemon_data').filter(obj => !obj.is_egg && obj.pokemon_id !== 0);
         const eggs = getInvData(rawInvArray,'pokemon_data').filter(obj => obj.is_egg);	
 	const pokedex = getInvData(rawInvArray,'pokedex_entry'); 
 	//const items = getInvData(rawInvArray,'item'); 

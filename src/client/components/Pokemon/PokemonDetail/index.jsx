@@ -2,7 +2,7 @@ import React from 'react';
 
 import Avatar from './Avatar';
 import Stats from './Stats';
-import Summary from './Summary';
+import Perfectness from './Perfectness';
 
 class PokemonDetail extends React.Component {
 	constructor(props) {
@@ -20,7 +20,8 @@ class PokemonDetail extends React.Component {
 			<div className="pokemon-detail-group">
 				<Avatar
 					name={pokemon.name} 
-					imageURL={pokemon.img}
+					img={pokemon.img}
+					cp={pokemon.cp}
 				/>
 			
 				<div className="divider" />
@@ -42,7 +43,7 @@ class PokemonDetail extends React.Component {
 			
 				<div className="divider" />
 				
-				<Summary
+				<Perfectness
 					individual_attack={pokemon.individual_attack}  
 					individual_defense={pokemon.individual_defense}  
 					individual_stamina={pokemon.individual_stamina}  

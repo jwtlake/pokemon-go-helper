@@ -28,7 +28,7 @@ export function login(user,pass,type,lat,lnd,alt) {
 		})
 		.then((data) => { 	
 			if(data){
-				browserHistory.push('/recommendation');	
+				browserHistory.push('/pokemon'); //TODO dont think this should be done here
 				return dispatch(load(data)); 
 			}//TODO handle this better	
 			else { return null; }	

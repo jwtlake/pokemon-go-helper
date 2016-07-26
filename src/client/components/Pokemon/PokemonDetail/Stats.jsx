@@ -14,23 +14,23 @@ class Summary extends React.Component {
 
 
 		return(
-			<div className="pokemon-detail-group-stats">
+			<div className="stats">
 				
-					<span className="outcome-group">	
-						<span className="outcome-group-text">{cp}</span>
-						<span className="outcome-group-label">CP</span>
+					<span className="stats-group">	
+						<span className="stats-group-text">{cp}</span>
+						<span className="stats-group-label">CP</span>
 					</span>
-					<span className="outcome-group">	
-						<span className="outcome-group-text">{individual_attack}</span>
-						<span className="outcome-group-label">Attack</span>
+					<span className="stats-group">	
+						<span className="stats-group-text">{individual_attack}</span>
+						<span className="stats-group-label">Attack</span>
 					</span>
-					<span className="outcome-group">	
-						<span className="outcome-group-text">{individual_defense}</span>
-						<span className="outcome-group-label">Defense</span>
+					<span className="stats-group">	
+						<span className="stats-group-text">{individual_defense}</span>
+						<span className="stats-group-label">Defense</span>
 					</span>
-					<span className="outcome-group">	
-						<span className="outcome-group-text">{individual_stamina}</span>
-						<span className="outcome-group-label">Stamina</span>
+					<span className="stats-group">	
+						<span className="stats-group-text">{individual_stamina}</span>
+						<span className="stats-group-label">Stamina</span>
 					</span>
 			</div>	
 		);			

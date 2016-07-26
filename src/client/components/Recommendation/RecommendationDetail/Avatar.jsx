@@ -15,7 +15,7 @@ class Avatar extends React.Component {
 		return(
 			<div className="avatar">
 				<img className="avatar-image" src={imageURL} />
-				<span className="avatar-text">{name}</span>	
+				<span className="avatar-text-name">{name}</span>	
 			</div>	
 		);			
 	}

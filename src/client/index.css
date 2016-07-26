@@ -20,7 +20,7 @@
 }
 
 
-/** Recommendation **/
+/** Login **/
 .login {
 	background: #fafafa;
 	margin-left: 10%;
@@ -196,7 +196,13 @@
 	flex: 0 0 80px;
 }
 
-.avatar-text {
+.avatar-text-name {
+	margin-top: -6px;	
+	font-family: 'Lato', sans-serif;
+	font-size: small;
+}
+
+.avatar-text-cp {
 	margin-top: -6px;	
 	font-family: 'Lato', sans-serif;
 	font-size: small;
@@ -274,4 +280,79 @@
 .outcome-group-text-catch {
 	font-family: 'Lato', sans-serif;
 	color:red;
+}
+
+
+
+
+/** Pokemon **/
+.pokemon {
+	background: #fafafa;
+	margin-left: 10px;
+	margin-right: 10px;
+	min-height: 100vh;
+}
+
+.pokemon-detail {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.pokemon-detail-group {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+
+
+/** Stats **/
+.stats {
+	flex: 1;
+	display: flex;	
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.stats-group {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.stats-group-label {
+	font-family: 'Lato', sans-serif;
+	color:#6a6a6a;
+	font-size: 70%;
+}
+
+.stats-group-text {
+	font-family: 'Lato', sans-serif;
+	color:#466a6d;
+}
+
+
+/** Perfectness **/
+.perfectness {
+	flex: 0 0 50px;
+}
+
+.perfectness-group {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.perfectness-group-label {
+	font-family: 'Lato', sans-serif;
+	color:#6a6a6a;
+	font-size: 70%;
+}
+
+.perfectness-group-text {
+	font-family: 'Lato', sans-serif;
+	color:#466a6d;
 }
