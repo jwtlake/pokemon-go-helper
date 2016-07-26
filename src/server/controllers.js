@@ -16,7 +16,7 @@ module.exports = {
 		var altitude = request.payload.alt;		
 		
 		//log connection attempt for debugging
-		console.log(`login attempt -- user: ${username} pass: **** type: ${type} lat: ${latitude} lnd: ${longitude} alt: ${altitude}`);	
+		console.log(`login attempt -- user:${username} pass:**** type:${type} lat:${latitude} lnd:${longitude} alt:${altitude}`);	
 
 		// create instance	
 		var login;
