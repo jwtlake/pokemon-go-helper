@@ -1,5 +1,4 @@
 import React from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { bindActionCreators } from 'redux'; 
 import { connect } from 'react-redux';
 import { login } from '../action_creators.js';
