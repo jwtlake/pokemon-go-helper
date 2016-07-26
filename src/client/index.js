@@ -36,4 +36,4 @@ let unsub = store.subscribe(() => {
 	console.log('State change..');	
 	console.dir(store.getState());
 });
-//unsub(); //turn off
+unsub(); //turn off
