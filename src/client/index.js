@@ -5,16 +5,17 @@ import { Provider } from 'react-redux';
 
 import makeStore from './store';
 
-import App from './components/App';
+import App from './containers/App';
 import Login from './containers/Login';
-import Recommendation from './containers/Recommendation';
 import Pokemon from './containers/Pokemon';
+import Recommendation from './containers/Recommendation';
 
 // create store
 const store = makeStore();
 
 // routes
 const routes = <Route path="/" component={App}>
+	<IndexRedirect to="/login" />
 	<Route path="/login" component={Login} />
 	<Route path="/recommendation" component={Recommendation} />
 	<Route path="/pokemon" component={Pokemon} />
