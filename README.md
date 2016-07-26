@@ -22,4 +22,4 @@ I don't want to build something that lets you cheat. So that means..
 
 ## Special Thanks
 API that makes this all possible -> https://github.com/cyraxx/pogobuf  
-Data used to polyfill pokedex data  -> https://github.com/Biuni/PokemonGOPokedex  
+Data used to polyfill pokedex data  -> https://github.com/Biuni/PokemonGOPokedex
