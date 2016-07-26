@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux'; 
 import { connect } from 'react-redux';
 
-import { evaluate } from '../action_creators.js';
+import { filter } from '../action_creators.js';
 import Recommendation from '../components/Recommendation';
 
 const mapStateToProps = (state) => {
@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return bindActionCreators({
-		evaluate: evaluate
+		filter: filter
 	}, dispatch);
 };
 

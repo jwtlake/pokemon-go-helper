@@ -1,9 +1,8 @@
 // action constants
 export const LOGIN = 'LOGIN';
 export const LOAD = 'LOAD';
-export const EVALUATE = 'EVALUATE'; 
+export const FILTER = 'FILTER '; 
 
-// action creators
 // login
 import { browserHistory } from 'react-router'
 export function login(user,pass,type,lat,lnd,alt) {
@@ -40,9 +39,17 @@ export function login(user,pass,type,lat,lnd,alt) {
 // load pokemon data
 export function load(data) {
 	return {
-		type:LOAD,
+		type: LOAD,
 		player: data.player,
 		pokedex: data.pokedex,
 		pokemon: data.pokemon	
+	};
+}
+
+// filter recommendations
+export function filter(by) {
+	return {
+		type: FILTER,
+		by: by	
 	};
 }
