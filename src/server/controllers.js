@@ -99,7 +99,7 @@ function polyFill(pokedex) {
 		const pokemonId = entry.pokemon_id;
 		
 		entry.name = pokedexLookup[pokemonId].name; 
-		entry.EvolutionStones = pokedexLookup[pokemonId].EvolutionStones; //number of candies required for evolution. //TODO not sure if this is right..
+		entry.evolution_stones = pokedexLookup[pokemonId].EvolutionStones; //number of candies required for evolution. //TODO not sure if this is right..
 		entry.img = pokedexLookup[pokemonId].img;
 		
 		return entry;
