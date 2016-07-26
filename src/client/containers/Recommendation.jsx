@@ -1,7 +1,8 @@
 import React from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
+import { bindActionCreators } from 'redux'; 
 import { connect } from 'react-redux';
 
+import { evaluate } from '../action_creators.js';
 import Recommendation from '../components/Recommendation';
 
 const mapStateToProps = (state) => {
@@ -12,42 +13,12 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-	return {
-		getDetails: (pokedexId) => {
-			console.log('getDetails: ' + pokedexId);	
-		}	
-	};
-};
-
-class RecommendationContainer extends React.Component {
-	constructor(props) {
-		super(props);
-		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
-	}
-
-	render() {
-		const { 
-			props: { summary, detail }
-		} = this;
-		
-		return(
-			<Recommendation summary={summary} detail={detail} />
-		);	
-	}
-};
-
-RecommendationContainer.propTypes = {
-	summary: React.PropTypes.object.isRequired,	
-	detail: React.PropTypes.array.isRequired	
-};
-
-RecommendationContainer.defaultProps = {
-	summary: { useLuckyEgg: false, totalTime:0, totalExp:0, levelsGained:0 },
-	detail: []
+	return bindActionCreators({
+		evaluate: evaluate
+	}, dispatch);
 };
 
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(RecommendationContainer);
-
+)(Recommendation);

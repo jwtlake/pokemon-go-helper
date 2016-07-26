@@ -1,4 +1,5 @@
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 import RecommendationSummary from './RecommendationSummary';
 import RecommendationDetail from './RecommendationDetail';
@@ -6,7 +7,9 @@ import RecommendationDetail from './RecommendationDetail';
 class Recommendation extends React.Component {
 	constructor(props) {
 		super(props);
+		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 
+		this.props.evaluate();	
 		// binds
 	}
 
@@ -43,6 +46,11 @@ class Recommendation extends React.Component {
 		);
 	}
 }
+
+Recommendation.defaultProps = {
+	summary: { useLuckyEgg: false, totalTime:0, totalExp:0, levelsGained:0 },
+	detail: []
+};
 
 Recommendation.Proptypes = {
 	summary: React.PropTypes.object.isRequired,
