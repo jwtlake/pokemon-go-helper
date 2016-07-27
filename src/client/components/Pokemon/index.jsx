@@ -13,7 +13,7 @@ class Pokemon extends React.Component {
 
 	render() {
 		const {
-			props: { pokemon, pokedex} 
+			props: { pokemon, pokedex, proto } 
 		} = this;
 		
 		// sum specs and sort by most powerful
@@ -29,7 +29,9 @@ class Pokemon extends React.Component {
 
 					// get missing pokemon details	
 					const PokemonId = aPokemon.pokemon_id.toString();
-					aPokemon.name = pokedex[PokemonId].name;
+					aPokemon.name = proto.PokemonId[PokemonId];
+					aPokemon.move_1_name = proto.PokemonMove[aPokemon.move_1.toString()];
+					aPokemon.move_2_name = proto.PokemonMove[aPokemon.move_2.toString()];
 					aPokemon.img = pokedex[PokemonId].img;
 
 					// return	
@@ -47,7 +49,8 @@ class Pokemon extends React.Component {
 
 Pokemon.Proptypes = {
 	pokedex: React.PropTypes.object.isRequired,
-	pokemon: React.PropTypes.array.isRequired
+	pokemon: React.PropTypes.array.isRequired,
+	proto: React.PropTypes.object.isRequired
 }
 
 export default Pokemon;

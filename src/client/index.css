@@ -14,14 +14,16 @@
 
 .app-header {
 	background: #fafafa;
-	padding-top: 15px;
-	padding-bottom: 10px;
-	margin-left: 10px;
-	margin-right: 10px;
+	padding-top: 25px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
+
+	position: fixed;
+	min-width: 90vw;
+	left: 10px;
+	right: 10px;
 }
 
 .app-header-link {
@@ -51,8 +53,8 @@ app-header-link-current:active {color: #466a6d;}
 /** Login **/
 .login {
 	background: #fafafa;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 10px;
+	margin-right: 10px;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -142,6 +144,7 @@ app-header-link-current:active {color: #466a6d;}
 	margin-left: 10px;
 	margin-right: 10px;
 	min-height: 100vh;
+	padding-top: 65px;
 }
 
 .recommendation-summary {
@@ -225,15 +228,15 @@ app-header-link-current:active {color: #466a6d;}
 }
 
 .avatar-text-name {
-	margin-top: -6px;	
+	margin-top: -3px;	
 	font-family: 'Lato', sans-serif;
-	font-size: small;
+	font-size: 70%;
 }
 
 .avatar-text-cp {
-	margin-top: -6px;	
+	margin-top: -3px;	
 	font-family: 'Lato', sans-serif;
-	font-size: small;
+	font-size: 70%;
 }
 
 .avatar-image {
@@ -319,6 +322,7 @@ app-header-link-current:active {color: #466a6d;}
 	margin-left: 10px;
 	margin-right: 10px;
 	min-height: 100vh;
+	padding-top: 65px;
 }
 
 .pokemon-detail {

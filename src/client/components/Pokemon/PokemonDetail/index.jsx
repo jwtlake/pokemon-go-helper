@@ -29,8 +29,8 @@ class PokemonDetail extends React.Component {
 				<Stats
 					cp={pokemon.cp}  
 					stamina_max={pokemon.stamina_max}  
-					move_1={pokemon.move_1}  
-					move_2={pokemon.move_2}  
+					move_1={pokemon.move_1_name}  
+					move_2={pokemon.move_2_name}  
 					height_m={pokemon.height_m}  
 					weight_kg={pokemon.weight_kg} 										 
 					individual_attack={pokemon.individual_attack}  

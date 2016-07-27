@@ -42,7 +42,9 @@ export function load(data) {
 		type: LOAD,
 		player: data.player,
 		pokedex: data.pokedex,
-		pokemon: data.pokemon	
+		pokemon: data.pokemon,
+		candy: data.candy,
+		proto: data.proto	
 	};
 }
 

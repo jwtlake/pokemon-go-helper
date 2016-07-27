@@ -4,15 +4,11 @@ var pogobuf = require('pogobuf');
 var POGOProtos = require('node-pogo-protos').Enums;
 
 var pokedexPolyFill = require('./dummyData/pokedex.json'); //thanks https://github.com/Biuni/PokemonGOPokedex
-var dummyResponse = require('./dummyData/response.json'); 
 
 module.exports = {
 
 	login: function(request, reply) {
-		
-		//debug
-		reply(dummyResponse);
-		
+
 		// get user info	
 		var username = request.payload.user;
 		var password = request.payload.pass;
@@ -20,9 +16,14 @@ module.exports = {
 		var latitude = request.payload.lat;
 		var longitude = request.payload.lnd;
 		var altitude = request.payload.alt;		
-		
-		//log connection attempt for debugging
-		console.log(`login attempt -- user:${username} pass:**** type:${type} lat:${latitude} lnd:${longitude} alt:${altitude}`);	
+
+		// debug response
+		if(username.toLowerCase() === 'test' && password.toLowerCase() === 'test') {
+			var dummyResponse = require('./dummyData/response.json'); 
+			console.log(`login attempt -- user:${username} pass:**** type:${type} lat:${latitude} lnd:${longitude} alt:${altitude}`);	
+			reply(dummyResponse);
+			return;
+		}
 
 		// create instance	
 		var login;

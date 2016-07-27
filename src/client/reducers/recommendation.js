@@ -12,14 +12,10 @@ function recommendation(state = initialState, action) {
 		case types.LOAD:
 			const player = action.player;
 			const pokemon = action.pokemon;
-
-			// prep pokedex with keys
-			const pokedex = action.pokedex.reduce((map, pokemon) => {
-				map[pokemon.pokemon_id.toString()] = pokemon;
-				return map;	
-			},{});
-
-
+			const pokedex = action.pokedex;	
+			const candy = action.candy;
+			const moves = action.proto.pokemonMove;
+				
 			// group by pokemon
 			const pokemonGroups = pokemon.reduce((map,aPokemon) => {
 				const PokemonId = aPokemon.pokemon_id.toString();
@@ -37,7 +33,7 @@ function recommendation(state = initialState, action) {
 			// remove pokemon without evolutions
 			const pokemonGroupsFiltered = pokemonGroupsFlat.filter(group => {
 				const PokemonId = group[0].pokemon_id;
-				if(pokedex[PokemonId] && pokedex[PokemonId].evolution_stones !== null) { return true; }
+				if(pokedex[PokemonId] && pokedex[PokemonId].candyToEvolve !== null) { return true; }
 				else { return false; }
 			});
 			
@@ -47,8 +43,8 @@ function recommendation(state = initialState, action) {
 					
 				// data points
 				const numberOfPokemon = group.length;
-				const numberOfCandies = pokedex[PokemonId].evolution_stone_pieces;
-				const candiesToEvolve = pokedex[PokemonId].evolution_stones;
+				const numberOfCandies = candy[pokedex[PokemonId].family_id].candy;
+				const candiesToEvolve = pokedex[PokemonId].candyToEvolve;
 					
 				// calc points
 				let pokemonLeft = numberOfPokemon;
@@ -81,8 +77,8 @@ function recommendation(state = initialState, action) {
 					pokemon: {
 						PokemonId: PokemonId,
 						name: pokedex[PokemonId].name,
-						imageURL: pokedex[PokemonId].img,
-						candiesToEvolve: pokedex[PokemonId].evolution_stones,	
+						img: pokedex[PokemonId].img,
+						candiesToEvolve: candiesToEvolve,	
 					},
 					inventory: {
 						numberOfCandies: numberOfCandies,
@@ -114,7 +110,7 @@ function recommendation(state = initialState, action) {
 				if(map.totalTime >= luckyEggDuration) { map.useLuckyEgg = true; } 
 				return map;
 
-			},{ useLuckyEgg:false, totalTime:0, totalExp:0, levelsGained:0});
+			},{ useLuckyEgg:false, totalTime:0, totalExp:0, levelsGained:0 });
 			
 			// return final report
 			return {

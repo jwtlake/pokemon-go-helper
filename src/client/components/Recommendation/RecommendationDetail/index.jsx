@@ -19,8 +19,8 @@ class RecommendationDetail extends React.Component {
 		return(
 			<div className="recommendation-detail-group">
 				<Avatar
-					name={pokemon.name} 
-					imageURL={pokemon.imageURL}
+					name={pokemon.name}
+					img={pokemon.img}
 				/>
 			
 				<div className="divider" />

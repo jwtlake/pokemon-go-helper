@@ -9,12 +9,12 @@ class Avatar extends React.Component {
 
 	render() {
 		const {
-			props: { name, imageURL }
+			props: { name, img }
 		} = this;
 
 		return(
 			<div className="avatar">
-				<img className="avatar-image" src={imageURL} />
+				<img className="avatar-image" src={img} />
 				<span className="avatar-text-name">{name}</span>	
 			</div>	
 		);			
@@ -23,7 +23,7 @@ class Avatar extends React.Component {
 
 Avatar.Proptypes = {
 	name: React.PropTypes.string.isRequired,
-	imageURL: React.PropTypes.string.isRequired
+	img: React.PropTypes.string.isRequired
 } 
 
 export default Avatar;  
