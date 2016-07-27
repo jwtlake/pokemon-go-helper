@@ -1,5 +1,5 @@
 # pokemon-go-helper
-It's starting to work!
+Nodejs webbased pokemon go helper aplication. Still a work in progress but things are starting to work! 
 
 ## TODO
 Geo cords at login (hardcoded atm)  
@@ -7,14 +7,17 @@ Fix Lucky Egg helper (need to tie in family obj to get candy count)
 Modularize css to component level  
 Add dev/prod env switch for sending dummyData vs actual login  
 Improve Login error handling  
-Clean up all the TODOs  
-Tests  
+Clean up all the TODOs in code base  
+Create Tests  
 UI improvements  
-Not sure if this is possible but idealy the pokemon go api should be entirely client side.  
+Not sure if this is possible but idealy the pokemon go api should be entirely client side. (pure javascript)  
 
 ## Features
-Lucky Egg Helper: Evaluate player's pokemon and candies to see if they should use a lucky egg.  
-Pokemon Stat Checker: Evaluate player's pokemon to help identify strong pokemon.
+#### Pokemon Stat Checker: Evaluate player's pokemon to help identify strong pokemon.  
+![alt tag](etc/pokemon.png)  
+
+#### Lucky Egg Helper: Evaluate player's pokemon and candies to see if they should use a lucky egg.  
+![alt tag](etc/luckyegg.png)  
 
 ## What this project isn't. 
 I don't want to build something that lets you cheat. So that means.. 
