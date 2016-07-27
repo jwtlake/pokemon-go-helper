@@ -2,13 +2,13 @@ import * as types from '../action_creators.js';
 
 const initialState = {};
 
-function player(state = initialState, action) {
+function proto(state = initialState, action) {
 	switch (action.type) {
 		case types.LOAD:
-			return action.player;
+			return action.proto;
         	default: // default return on unknown action type
 			return state;
 	}
 }
 
-export default player;
+export default proto;

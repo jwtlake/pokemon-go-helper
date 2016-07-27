@@ -84,7 +84,7 @@ function normalize(response) {
 		player: { name: "dummy", level: 10, exp: 10000 }, //TODO figure out how best to handle this 	
 		pokemon: pokemon,
 		pokedex: polyFill(pokedex), // havn't figured out how to get all the required data yet 
-		family: family,
+		candy: family.reduce((map,candy) => { map[candy.family_id.toString()] = candy; return map; },{}), //convert to map with family_id keys
 		proto: getProto()
 	};
 	return data;
@@ -96,22 +96,51 @@ function normalize(response) {
 };
 
 function polyFill(pokedex) {
+	
 	// create keyed pokedex from supplementary data
 	const pokedexLookup = pokedexPolyFill.pokemon.reduce((map,item) => {
 	         map[item.id.toString()] = item;
 		 return map;
-	},{});	 
+	},{});
+	
+	// create keyed proto lookup	
+	const protoLookup = getProto(); 
+		
 
-	// add missing data to pokedex
-	return pokedex.map(entry => {
-		const pokemonId = entry.pokemon_id;
+	// convert to map of keys and add missing data to pokedex
+	return pokedex.reduce((map,entry) => {
+		const pokemonId = entry.pokemon_id.toString();
+
+		//add missing info
+		entry.name = protoLookup.PokemonId[pokemonId]; 
+		entry.candyToEvolve = pokedexLookup[pokemonId].candy; // TODO can I get from somewhere else? 
+		entry.family_id = getFamilyId(pokemonId,protoLookup.PokemonFamilyId); 		
+		entry.img = pokedexLookup[pokemonId].img; //TODO can I get this from somewhere else?
 		
-		entry.name = pokedexLookup[pokemonId].name; 
-		entry.evolution_stones = pokedexLookup[pokemonId].EvolutionStones; //number of candies required for evolution. //TODO not sure if this is right..
-		entry.img = pokedexLookup[pokemonId].img;
-		
-		return entry;
-	});
+		//return as map/key value	
+		map[pokemonId] = entry; 
+		return map;
+	},{});
+
+	// helper function
+	function getFamilyId(pokemonId,familyLookup) {
+		var lookupNumber = parseInt(pokemonId);
+
+		// Pokemon family records are stored by the lowest form pokemons pokemon_id. 
+		// To find a pokemon's family this function checks for the pokemon_id in the family proto lookup, if there is no record (means its an evolved form) then subtract 1 and check the previous pokemon.
+		do {
+			const familyId = lookupNumber.toString()	
+			if(familyId in familyLookup) {
+				return lookupNumber;
+			} else {
+				lookupNumber--;	
+			}	
+
+		} while (lookupNumber >= 1 );
+
+		// fail out	
+		return 0;	
+	}
 }
 
 function getProto() {

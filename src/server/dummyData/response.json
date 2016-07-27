@@ -6342,977 +6342,1143 @@
             "from_fort": 0
         }
     ],
-    "pokedex": [
-        {
-            "pokemon_id": 147,
-            "times_encountered": 6,
-            "times_captured": 6,
-            "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Dratini",
-            "img": "http://www.serebii.net/pokemongo/pokemon/147.png"
-        },
-        {
-            "pokemon_id": 148,
-            "times_encountered": 1,
-            "times_captured": 1,
-            "evolution_stone_pieces": 0,
-            "evolution_stones": 100,
-            "name": "Dragonair",
-            "img": "http://www.serebii.net/pokemongo/pokemon/148.png"
-        },
-        {
-            "pokemon_id": 133,
-            "times_encountered": 67,
-            "times_captured": 60,
-            "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Eevee",
-            "img": "http://www.serebii.net/pokemongo/pokemon/133.png"
-        },
-        {
+    "pokedex": {
+        "1": {
             "pokemon_id": 1,
             "times_encountered": 12,
             "times_captured": 11,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Bulbasaur",
+            "evolution_stones": 0,
+            "name": "BULBASAUR",
+            "candyToEvolve": 25,
+            "family_id": 1,
             "img": "http://www.serebii.net/pokemongo/pokemon/001.png"
         },
-        {
+        "2": {
             "pokemon_id": 2,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 100,
-            "name": "Ivysaur",
+            "evolution_stones": 0,
+            "name": "IVYSAUR",
+            "candyToEvolve": 100,
+            "family_id": 1,
             "img": "http://www.serebii.net/pokemongo/pokemon/002.png"
         },
-        {
+        "4": {
             "pokemon_id": 4,
             "times_encountered": 29,
             "times_captured": 27,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Charmander",
+            "evolution_stones": 0,
+            "name": "CHARMANDER",
+            "candyToEvolve": 25,
+            "family_id": 4,
             "img": "http://www.serebii.net/pokemongo/pokemon/004.png"
         },
-        {
+        "5": {
             "pokemon_id": 5,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 100,
-            "name": "Charmeleon",
+            "evolution_stones": 0,
+            "name": "CHARMELEON",
+            "candyToEvolve": 100,
+            "family_id": 4,
             "img": "http://www.serebii.net/pokemongo/pokemon/005.png"
         },
-        {
-            "pokemon_id": 134,
-            "times_encountered": 3,
-            "times_captured": 3,
-            "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Vaporeon",
-            "img": "http://www.serebii.net/pokemongo/pokemon/134.png"
-        },
-        {
+        "7": {
             "pokemon_id": 7,
             "times_encountered": 4,
             "times_captured": 3,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Squirtle",
+            "evolution_stones": 0,
+            "name": "SQUIRTLE",
+            "candyToEvolve": 25,
+            "family_id": 7,
             "img": "http://www.serebii.net/pokemongo/pokemon/007.png"
         },
-        {
+        "10": {
             "pokemon_id": 10,
             "times_encountered": 28,
             "times_captured": 24,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 12,
-            "name": "Caterpie",
+            "evolution_stones": 0,
+            "name": "CATERPIE",
+            "candyToEvolve": 12,
+            "family_id": 10,
             "img": "http://www.serebii.net/pokemongo/pokemon/010.png"
         },
-        {
+        "11": {
             "pokemon_id": 11,
             "times_encountered": 7,
             "times_captured": 7,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Metapod",
+            "evolution_stones": 0,
+            "name": "METAPOD",
+            "candyToEvolve": 50,
+            "family_id": 10,
             "img": "http://www.serebii.net/pokemongo/pokemon/011.png"
         },
-        {
+        "12": {
             "pokemon_id": 12,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Butterfree",
+            "evolution_stones": 0,
+            "name": "BUTTERFREE",
+            "candyToEvolve": null,
+            "family_id": 10,
             "img": "http://www.serebii.net/pokemongo/pokemon/012.png"
         },
-        {
+        "13": {
             "pokemon_id": 13,
             "times_encountered": 66,
             "times_captured": 58,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 12,
-            "name": "Weedle",
+            "evolution_stones": 0,
+            "name": "WEEDLE",
+            "candyToEvolve": 12,
+            "family_id": 13,
             "img": "http://www.serebii.net/pokemongo/pokemon/013.png"
         },
-        {
+        "14": {
             "pokemon_id": 14,
             "times_encountered": 12,
             "times_captured": 12,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Kakuna",
+            "evolution_stones": 0,
+            "name": "KAKUNA",
+            "candyToEvolve": 50,
+            "family_id": 13,
             "img": "http://www.serebii.net/pokemongo/pokemon/014.png"
         },
-        {
+        "15": {
             "pokemon_id": 15,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Beedrill",
+            "evolution_stones": 0,
+            "name": "BEEDRILL",
+            "candyToEvolve": null,
+            "family_id": 13,
             "img": "http://www.serebii.net/pokemongo/pokemon/015.png"
         },
-        {
+        "16": {
             "pokemon_id": 16,
             "times_encountered": 223,
             "times_captured": 189,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 12,
-            "name": "Pidgey",
+            "evolution_stones": 0,
+            "name": "PIDGEY",
+            "candyToEvolve": 12,
+            "family_id": 16,
             "img": "http://www.serebii.net/pokemongo/pokemon/016.png"
         },
-        {
+        "17": {
             "pokemon_id": 17,
             "times_encountered": 51,
             "times_captured": 49,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Pidgeotto",
+            "evolution_stones": 0,
+            "name": "PIDGEOTTO",
+            "candyToEvolve": 50,
+            "family_id": 16,
             "img": "http://www.serebii.net/pokemongo/pokemon/017.png"
         },
-        {
+        "18": {
             "pokemon_id": 18,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Pidgeot",
+            "evolution_stones": 0,
+            "name": "PIDGEOT",
+            "candyToEvolve": null,
+            "family_id": 16,
             "img": "http://www.serebii.net/pokemongo/pokemon/018.png"
         },
-        {
+        "19": {
             "pokemon_id": 19,
             "times_encountered": 155,
             "times_captured": 121,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Rattata",
+            "evolution_stones": 0,
+            "name": "RATTATA",
+            "candyToEvolve": 25,
+            "family_id": 19,
             "img": "http://www.serebii.net/pokemongo/pokemon/019.png"
         },
-        {
+        "20": {
             "pokemon_id": 20,
             "times_encountered": 15,
             "times_captured": 15,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Raticate",
+            "evolution_stones": 0,
+            "name": "RATICATE",
+            "candyToEvolve": null,
+            "family_id": 19,
             "img": "http://www.serebii.net/pokemongo/pokemon/020.png"
         },
-        {
+        "21": {
             "pokemon_id": 21,
             "times_encountered": 69,
             "times_captured": 57,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Spearow",
+            "evolution_stones": 0,
+            "name": "SPEAROW",
+            "candyToEvolve": 50,
+            "family_id": 21,
             "img": "http://www.serebii.net/pokemongo/pokemon/021.png"
         },
-        {
+        "22": {
             "pokemon_id": 22,
             "times_encountered": 9,
             "times_captured": 9,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Fearow",
+            "evolution_stones": 0,
+            "name": "FEAROW",
+            "candyToEvolve": null,
+            "family_id": 21,
             "img": "http://www.serebii.net/pokemongo/pokemon/022.png"
         },
-        {
+        "23": {
             "pokemon_id": 23,
             "times_encountered": 8,
             "times_captured": 7,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Ekans",
+            "evolution_stones": 0,
+            "name": "EKANS",
+            "candyToEvolve": 50,
+            "family_id": 23,
             "img": "http://www.serebii.net/pokemongo/pokemon/023.png"
         },
-        {
+        "24": {
             "pokemon_id": 24,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Arbok",
+            "evolution_stones": 0,
+            "name": "ARBOK",
+            "candyToEvolve": null,
+            "family_id": 23,
             "img": "http://www.serebii.net/pokemongo/pokemon/024.png"
         },
-        {
+        "25": {
             "pokemon_id": 25,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Pikachu",
+            "evolution_stones": 0,
+            "name": "PIKACHU",
+            "candyToEvolve": 50,
+            "family_id": 25,
             "img": "http://www.serebii.net/pokemongo/pokemon/025.png"
         },
-        {
+        "27": {
             "pokemon_id": 27,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Sandshrew",
+            "evolution_stones": 0,
+            "name": "SANDSHREW",
+            "candyToEvolve": 50,
+            "family_id": 27,
             "img": "http://www.serebii.net/pokemongo/pokemon/027.png"
         },
-        {
+        "29": {
             "pokemon_id": 29,
             "times_encountered": 13,
             "times_captured": 12,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Nidoran ♀",
+            "evolution_stones": 0,
+            "name": "NIDORAN_FEMALE",
+            "candyToEvolve": 25,
+            "family_id": 29,
             "img": "http://www.serebii.net/pokemongo/pokemon/029.png"
         },
-        {
+        "30": {
             "pokemon_id": 30,
             "times_encountered": 4,
             "times_captured": 3,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 100,
-            "name": "Nidorina",
+            "evolution_stones": 0,
+            "name": "NIDORINA",
+            "candyToEvolve": 100,
+            "family_id": 29,
             "img": "http://www.serebii.net/pokemongo/pokemon/030.png"
         },
-        {
+        "32": {
             "pokemon_id": 32,
             "times_encountered": 15,
             "times_captured": 14,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Nidoran ♂",
+            "evolution_stones": 0,
+            "name": "NIDORAN_MALE",
+            "candyToEvolve": 25,
+            "family_id": 32,
             "img": "http://www.serebii.net/pokemongo/pokemon/032.png"
         },
-        {
+        "33": {
             "pokemon_id": 33,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 100,
-            "name": "Nidorino",
+            "evolution_stones": 0,
+            "name": "NIDORINO",
+            "candyToEvolve": 100,
+            "family_id": 32,
             "img": "http://www.serebii.net/pokemongo/pokemon/033.png"
         },
-        {
+        "35": {
             "pokemon_id": 35,
             "times_encountered": 4,
             "times_captured": 4,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Clefairy",
+            "evolution_stones": 0,
+            "name": "CLEFAIRY",
+            "candyToEvolve": 50,
+            "family_id": 35,
             "img": "http://www.serebii.net/pokemongo/pokemon/035.png"
         },
-        {
-            "pokemon_id": 135,
-            "times_encountered": 3,
-            "times_captured": 3,
-            "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Jolteon",
-            "img": "http://www.serebii.net/pokemongo/pokemon/135.png"
-        },
-        {
+        "37": {
             "pokemon_id": 37,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Vulpix",
+            "evolution_stones": 0,
+            "name": "VULPIX",
+            "candyToEvolve": 50,
+            "family_id": 37,
             "img": "http://www.serebii.net/pokemongo/pokemon/037.png"
         },
-        {
+        "39": {
             "pokemon_id": 39,
             "times_encountered": 4,
             "times_captured": 4,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Jigglypuff",
+            "evolution_stones": 0,
+            "name": "JIGGLYPUFF",
+            "candyToEvolve": 50,
+            "family_id": 39,
             "img": "http://www.serebii.net/pokemongo/pokemon/039.png"
         },
-        {
+        "41": {
             "pokemon_id": 41,
             "times_encountered": 43,
             "times_captured": 29,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Zubat",
+            "evolution_stones": 0,
+            "name": "ZUBAT",
+            "candyToEvolve": 50,
+            "family_id": 41,
             "img": "http://www.serebii.net/pokemongo/pokemon/041.png"
         },
-        {
+        "42": {
             "pokemon_id": 42,
             "times_encountered": 4,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Golbat",
+            "evolution_stones": 0,
+            "name": "GOLBAT",
+            "candyToEvolve": null,
+            "family_id": 41,
             "img": "http://www.serebii.net/pokemongo/pokemon/042.png"
         },
-        {
+        "43": {
             "pokemon_id": 43,
             "times_encountered": 20,
             "times_captured": 19,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Oddish",
+            "evolution_stones": 0,
+            "name": "ODDISH",
+            "candyToEvolve": 25,
+            "family_id": 43,
             "img": "http://www.serebii.net/pokemongo/pokemon/043.png"
         },
-        {
+        "44": {
             "pokemon_id": 44,
             "times_encountered": 2,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 100,
-            "name": "Gloom",
+            "evolution_stones": 0,
+            "name": "GLOOM",
+            "candyToEvolve": 100,
+            "family_id": 43,
             "img": "http://www.serebii.net/pokemongo/pokemon/044.png"
         },
-        {
+        "46": {
             "pokemon_id": 46,
             "times_encountered": 17,
             "times_captured": 16,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Paras",
+            "evolution_stones": 0,
+            "name": "PARAS",
+            "candyToEvolve": 50,
+            "family_id": 46,
             "img": "http://www.serebii.net/pokemongo/pokemon/046.png"
         },
-        {
+        "47": {
             "pokemon_id": 47,
             "times_encountered": 1,
             "times_captured": 0,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Parasect",
+            "evolution_stones": 0,
+            "name": "PARASECT",
+            "candyToEvolve": null,
+            "family_id": 46,
             "img": "http://www.serebii.net/pokemongo/pokemon/047.png"
         },
-        {
+        "48": {
             "pokemon_id": 48,
             "times_encountered": 32,
             "times_captured": 23,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Venonat",
+            "evolution_stones": 0,
+            "name": "VENONAT",
+            "candyToEvolve": 50,
+            "family_id": 48,
             "img": "http://www.serebii.net/pokemongo/pokemon/048.png"
         },
-        {
+        "49": {
             "pokemon_id": 49,
             "times_encountered": 3,
             "times_captured": 3,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Venomoth",
+            "evolution_stones": 0,
+            "name": "VENOMOTH",
+            "candyToEvolve": null,
+            "family_id": 48,
             "img": "http://www.serebii.net/pokemongo/pokemon/049.png"
         },
-        {
+        "50": {
             "pokemon_id": 50,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Diglett",
+            "evolution_stones": 0,
+            "name": "DIGLETT",
+            "candyToEvolve": 50,
+            "family_id": 50,
             "img": "http://www.serebii.net/pokemongo/pokemon/050.png"
         },
-        {
+        "52": {
             "pokemon_id": 52,
             "times_encountered": 9,
             "times_captured": 9,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Meowth",
+            "evolution_stones": 0,
+            "name": "MEOWTH",
+            "candyToEvolve": 50,
+            "family_id": 52,
             "img": "http://www.serebii.net/pokemongo/pokemon/052.png"
         },
-        {
+        "54": {
             "pokemon_id": 54,
             "times_encountered": 45,
             "times_captured": 40,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Psyduck",
+            "evolution_stones": 0,
+            "name": "PSYDUCK",
+            "candyToEvolve": 50,
+            "family_id": 54,
             "img": "http://www.serebii.net/pokemongo/pokemon/054.png"
         },
-        {
+        "55": {
             "pokemon_id": 55,
             "times_encountered": 3,
             "times_captured": 3,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Golduck",
+            "evolution_stones": 0,
+            "name": "GOLDUCK",
+            "candyToEvolve": null,
+            "family_id": 54,
             "img": "http://www.serebii.net/pokemongo/pokemon/055.png"
         },
-        {
+        "60": {
             "pokemon_id": 60,
             "times_encountered": 6,
             "times_captured": 5,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Poliwag",
+            "evolution_stones": 0,
+            "name": "POLIWAG",
+            "candyToEvolve": 25,
+            "family_id": 60,
             "img": "http://www.serebii.net/pokemongo/pokemon/060.png"
         },
-        {
+        "61": {
             "pokemon_id": 61,
             "times_encountered": 2,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 100,
-            "name": "Poliwhirl",
+            "evolution_stones": 0,
+            "name": "POLIWHIRL",
+            "candyToEvolve": 100,
+            "family_id": 60,
             "img": "http://www.serebii.net/pokemongo/pokemon/061.png"
         },
-        {
+        "63": {
             "pokemon_id": 63,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Abra",
+            "evolution_stones": 0,
+            "name": "ABRA",
+            "candyToEvolve": 25,
+            "family_id": 63,
             "img": "http://www.serebii.net/pokemongo/pokemon/063.png"
         },
-        {
+        "66": {
             "pokemon_id": 66,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Machop",
+            "evolution_stones": 0,
+            "name": "MACHOP",
+            "candyToEvolve": 25,
+            "family_id": 66,
             "img": "http://www.serebii.net/pokemongo/pokemon/066.png"
         },
-        {
-            "pokemon_id": 136,
-            "times_encountered": 3,
-            "times_captured": 3,
-            "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Flareon",
-            "img": "http://www.serebii.net/pokemongo/pokemon/136.png"
-        },
-        {
+        "69": {
             "pokemon_id": 69,
             "times_encountered": 10,
             "times_captured": 9,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Bellsprout",
+            "evolution_stones": 0,
+            "name": "BELLSPROUT",
+            "candyToEvolve": 25,
+            "family_id": 69,
             "img": "http://www.serebii.net/pokemongo/pokemon/069.png"
         },
-        {
+        "70": {
             "pokemon_id": 70,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 100,
-            "name": "Weepinbell",
+            "evolution_stones": 0,
+            "name": "WEEPINBELL",
+            "candyToEvolve": 100,
+            "family_id": 69,
             "img": "http://www.serebii.net/pokemongo/pokemon/070.png"
         },
-        {
+        "72": {
             "pokemon_id": 72,
             "times_encountered": 6,
             "times_captured": 6,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Tentacool",
+            "evolution_stones": 0,
+            "name": "TENTACOOL",
+            "candyToEvolve": 50,
+            "family_id": 72,
             "img": "http://www.serebii.net/pokemongo/pokemon/072.png"
         },
-        {
+        "73": {
             "pokemon_id": 73,
             "times_encountered": 3,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Tentacruel",
+            "evolution_stones": 0,
+            "name": "TENTACRUEL",
+            "candyToEvolve": null,
+            "family_id": 72,
             "img": "http://www.serebii.net/pokemongo/pokemon/073.png"
         },
-        {
+        "74": {
             "pokemon_id": 74,
             "times_encountered": 2,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Geodude",
+            "evolution_stones": 0,
+            "name": "GEODUDE",
+            "candyToEvolve": 25,
+            "family_id": 74,
             "img": "http://www.serebii.net/pokemongo/pokemon/074.png"
         },
-        {
+        "79": {
             "pokemon_id": 79,
             "times_encountered": 29,
             "times_captured": 24,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Slowpoke",
+            "evolution_stones": 0,
+            "name": "SLOWPOKE",
+            "candyToEvolve": 50,
+            "family_id": 79,
             "img": "http://www.serebii.net/pokemongo/pokemon/079.png"
         },
-        {
+        "80": {
             "pokemon_id": 80,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Slowbro",
+            "evolution_stones": 0,
+            "name": "SLOWBRO",
+            "candyToEvolve": null,
+            "family_id": 79,
             "img": "http://www.serebii.net/pokemongo/pokemon/080.png"
         },
-        {
+        "81": {
             "pokemon_id": 81,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Magnemite",
+            "evolution_stones": 0,
+            "name": "MAGNEMITE",
+            "candyToEvolve": 50,
+            "family_id": 81,
             "img": "http://www.serebii.net/pokemongo/pokemon/081.png"
         },
-        {
+        "84": {
             "pokemon_id": 84,
             "times_encountered": 2,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Doduo",
+            "evolution_stones": 0,
+            "name": "DODUO",
+            "candyToEvolve": 50,
+            "family_id": 84,
             "img": "http://www.serebii.net/pokemongo/pokemon/084.png"
         },
-        {
+        "86": {
             "pokemon_id": 86,
             "times_encountered": 2,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Seel",
+            "evolution_stones": 0,
+            "name": "SEEL",
+            "candyToEvolve": 50,
+            "family_id": 86,
             "img": "http://www.serebii.net/pokemongo/pokemon/086.png"
         },
-        {
+        "88": {
             "pokemon_id": 88,
             "times_encountered": 2,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Grimer",
+            "evolution_stones": 0,
+            "name": "GRIMER",
+            "candyToEvolve": 50,
+            "family_id": 88,
             "img": "http://www.serebii.net/pokemongo/pokemon/088.png"
         },
-        {
+        "90": {
             "pokemon_id": 90,
             "times_encountered": 2,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Shellder",
+            "evolution_stones": 0,
+            "name": "SHELLDER",
+            "candyToEvolve": 50,
+            "family_id": 90,
             "img": "http://www.serebii.net/pokemongo/pokemon/090.png"
         },
-        {
+        "92": {
             "pokemon_id": 92,
             "times_encountered": 5,
             "times_captured": 4,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 25,
-            "name": "Gastly",
+            "evolution_stones": 0,
+            "name": "GASTLY",
+            "candyToEvolve": 25,
+            "family_id": 92,
             "img": "http://www.serebii.net/pokemongo/pokemon/092.png"
         },
-        {
+        "93": {
             "pokemon_id": 93,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 100,
-            "name": "Haunter",
+            "evolution_stones": 0,
+            "name": "HAUNTER",
+            "candyToEvolve": 100,
+            "family_id": 92,
             "img": "http://www.serebii.net/pokemongo/pokemon/093.png"
         },
-        {
+        "98": {
             "pokemon_id": 98,
             "times_encountered": 11,
             "times_captured": 11,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Krabby",
+            "evolution_stones": 0,
+            "name": "KRABBY",
+            "candyToEvolve": 50,
+            "family_id": 98,
             "img": "http://www.serebii.net/pokemongo/pokemon/098.png"
         },
-        {
+        "100": {
             "pokemon_id": 100,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Voltorb",
+            "evolution_stones": 0,
+            "name": "VOLTORB",
+            "candyToEvolve": 50,
+            "family_id": 100,
             "img": "http://www.serebii.net/pokemongo/pokemon/100.png"
         },
-        {
+        "102": {
             "pokemon_id": 102,
             "times_encountered": 8,
             "times_captured": 8,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Exeggcute",
+            "evolution_stones": 0,
+            "name": "EXEGGCUTE",
+            "candyToEvolve": 50,
+            "family_id": 102,
             "img": "http://www.serebii.net/pokemongo/pokemon/102.png"
         },
-        {
+        "103": {
             "pokemon_id": 103,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Exeggutor",
+            "evolution_stones": 0,
+            "name": "EXEGGUTOR",
+            "candyToEvolve": null,
+            "family_id": 102,
             "img": "http://www.serebii.net/pokemongo/pokemon/103.png"
         },
-        {
+        "109": {
             "pokemon_id": 109,
             "times_encountered": 6,
             "times_captured": 6,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Koffing",
+            "evolution_stones": 0,
+            "name": "KOFFING",
+            "candyToEvolve": 50,
+            "family_id": 109,
             "img": "http://www.serebii.net/pokemongo/pokemon/109.png"
         },
-        {
+        "111": {
             "pokemon_id": 111,
             "times_encountered": 2,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Rhyhorn",
+            "evolution_stones": 0,
+            "name": "RHYHORN",
+            "candyToEvolve": 50,
+            "family_id": 111,
             "img": "http://www.serebii.net/pokemongo/pokemon/111.png"
         },
-        {
+        "113": {
             "pokemon_id": 113,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Chansey",
+            "evolution_stones": 0,
+            "name": "CHANSEY",
+            "candyToEvolve": null,
+            "family_id": 113,
             "img": "http://www.serebii.net/pokemongo/pokemon/113.png"
         },
-        {
+        "114": {
             "pokemon_id": 114,
             "times_encountered": 4,
             "times_captured": 3,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Tangela",
+            "evolution_stones": 0,
+            "name": "TANGELA",
+            "candyToEvolve": null,
+            "family_id": 114,
             "img": "http://www.serebii.net/pokemongo/pokemon/114.png"
         },
-        {
+        "116": {
             "pokemon_id": 116,
             "times_encountered": 4,
             "times_captured": 3,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Horsea",
+            "evolution_stones": 0,
+            "name": "HORSEA",
+            "candyToEvolve": 50,
+            "family_id": 116,
             "img": "http://www.serebii.net/pokemongo/pokemon/116.png"
         },
-        {
+        "118": {
             "pokemon_id": 118,
             "times_encountered": 12,
             "times_captured": 9,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Goldeen",
+            "evolution_stones": 0,
+            "name": "GOLDEEN",
+            "candyToEvolve": 50,
+            "family_id": 118,
             "img": "http://www.serebii.net/pokemongo/pokemon/118.png"
         },
-        {
+        "120": {
             "pokemon_id": 120,
             "times_encountered": 10,
             "times_captured": 9,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 50,
-            "name": "Staryu",
+            "evolution_stones": 0,
+            "name": "STARYU",
+            "candyToEvolve": 50,
+            "family_id": 120,
             "img": "http://www.serebii.net/pokemongo/pokemon/120.png"
         },
-        {
+        "123": {
             "pokemon_id": 123,
             "times_encountered": 2,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Scyther",
+            "evolution_stones": 0,
+            "name": "SCYTHER",
+            "candyToEvolve": null,
+            "family_id": 123,
             "img": "http://www.serebii.net/pokemongo/pokemon/123.png"
         },
-        {
+        "124": {
             "pokemon_id": 124,
             "times_encountered": 10,
             "times_captured": 10,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Jynx",
+            "evolution_stones": 0,
+            "name": "JYNX",
+            "candyToEvolve": null,
+            "family_id": 124,
             "img": "http://www.serebii.net/pokemongo/pokemon/124.png"
         },
-        {
+        "125": {
             "pokemon_id": 125,
             "times_encountered": 2,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Electabuzz",
+            "evolution_stones": 0,
+            "name": "ELECTABUZZ",
+            "candyToEvolve": null,
+            "family_id": 125,
             "img": "http://www.serebii.net/pokemongo/pokemon/125.png"
         },
-        {
+        "126": {
             "pokemon_id": 126,
             "times_encountered": 2,
             "times_captured": 2,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Magmar",
+            "evolution_stones": 0,
+            "name": "MAGMAR",
+            "candyToEvolve": null,
+            "family_id": 126,
             "img": "http://www.serebii.net/pokemongo/pokemon/126.png"
         },
-        {
+        "127": {
             "pokemon_id": 127,
             "times_encountered": 3,
             "times_captured": 3,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Pinsir",
+            "evolution_stones": 0,
+            "name": "PINSIR",
+            "candyToEvolve": null,
+            "family_id": 127,
             "img": "http://www.serebii.net/pokemongo/pokemon/127.png"
         },
-        {
+        "128": {
             "pokemon_id": 128,
             "times_encountered": 1,
             "times_captured": 1,
             "evolution_stone_pieces": 0,
-            "evolution_stones": null,
-            "name": "Tauros",
+            "evolution_stones": 0,
+            "name": "TAUROS",
+            "candyToEvolve": null,
+            "family_id": 128,
             "img": "http://www.serebii.net/pokemongo/pokemon/128.png"
         },
-        {
+        "129": {
             "pokemon_id": 129,
             "times_encountered": 99,
             "times_captured": 96,
             "evolution_stone_pieces": 0,
-            "evolution_stones": 400,
-            "name": "Magikarp",
-            "img": "http://www.serebii.net/pokemongo/pokemon/129.png"
-        }
-    ],
-    "family": [
-        {
+            "evolution_stones": 0,
+            "name": "MAGIKARP",
+            "candyToEvolve": 400,
             "family_id": 129,
-            "candy": 385
+            "img": "http://www.serebii.net/pokemongo/pokemon/129.png"
         },
-        {
-            "family_id": 147,
-            "candy": 13
-        },
-        {
+        "133": {
+            "pokemon_id": 133,
+            "times_encountered": 67,
+            "times_captured": 60,
+            "evolution_stone_pieces": 0,
+            "evolution_stones": 0,
+            "name": "EEVEE",
+            "candyToEvolve": 25,
             "family_id": 133,
-            "candy": 40
+            "img": "http://www.serebii.net/pokemongo/pokemon/133.png"
         },
-        {
+        "134": {
+            "pokemon_id": 134,
+            "times_encountered": 3,
+            "times_captured": 3,
+            "evolution_stone_pieces": 0,
+            "evolution_stones": 0,
+            "name": "VAPOREON",
+            "candyToEvolve": null,
+            "family_id": 133,
+            "img": "http://www.serebii.net/pokemongo/pokemon/134.png"
+        },
+        "135": {
+            "pokemon_id": 135,
+            "times_encountered": 3,
+            "times_captured": 3,
+            "evolution_stone_pieces": 0,
+            "evolution_stones": 0,
+            "name": "JOLTEON",
+            "candyToEvolve": null,
+            "family_id": 133,
+            "img": "http://www.serebii.net/pokemongo/pokemon/135.png"
+        },
+        "136": {
+            "pokemon_id": 136,
+            "times_encountered": 3,
+            "times_captured": 3,
+            "evolution_stone_pieces": 0,
+            "evolution_stones": 0,
+            "name": "FLAREON",
+            "candyToEvolve": null,
+            "family_id": 133,
+            "img": "http://www.serebii.net/pokemongo/pokemon/136.png"
+        },
+        "147": {
+            "pokemon_id": 147,
+            "times_encountered": 6,
+            "times_captured": 6,
+            "evolution_stone_pieces": 0,
+            "evolution_stones": 0,
+            "name": "DRATINI",
+            "candyToEvolve": 25,
+            "family_id": 147,
+            "img": "http://www.serebii.net/pokemongo/pokemon/147.png"
+        },
+        "148": {
+            "pokemon_id": 148,
+            "times_encountered": 1,
+            "times_captured": 1,
+            "evolution_stone_pieces": 0,
+            "evolution_stones": 0,
+            "name": "DRAGONAIR",
+            "candyToEvolve": 100,
+            "family_id": 147,
+            "img": "http://www.serebii.net/pokemongo/pokemon/148.png"
+        }
+    },
+    "candy": {
+        "1": {
             "family_id": 1,
             "candy": 50
         },
-        {
+        "4": {
             "family_id": 4,
             "candy": 83
         },
-        {
+        "7": {
             "family_id": 7,
             "candy": 11
         },
-        {
+        "10": {
             "family_id": 10,
             "candy": 43
         },
-        {
+        "13": {
             "family_id": 13,
             "candy": 89
         },
-        {
+        "16": {
             "family_id": 16,
             "candy": 242
         },
-        {
+        "19": {
             "family_id": 19,
             "candy": 142
         },
-        {
+        "21": {
             "family_id": 21,
             "candy": 49
         },
-        {
+        "23": {
             "family_id": 23,
             "candy": 29
         },
-        {
+        "25": {
             "family_id": 25,
             "candy": 3
         },
-        {
+        "27": {
             "family_id": 27,
             "candy": 19
         },
-        {
+        "29": {
             "family_id": 29,
             "candy": 36
         },
-        {
+        "32": {
             "family_id": 32,
             "candy": 42
         },
-        {
+        "35": {
             "family_id": 35,
             "candy": 15
         },
-        {
+        "37": {
             "family_id": 37,
             "candy": 3
         },
-        {
+        "39": {
             "family_id": 39,
             "candy": 15
         },
-        {
+        "41": {
             "family_id": 41,
             "candy": 17
         },
-        {
+        "43": {
             "family_id": 43,
             "candy": 55
         },
-        {
+        "46": {
             "family_id": 46,
             "candy": 61
         },
-        {
+        "48": {
             "family_id": 48,
             "candy": 49
         },
-        {
+        "50": {
             "family_id": 50,
             "candy": 18
         },
-        {
+        "52": {
             "family_id": 52,
             "candy": 61
         },
-        {
+        "54": {
             "family_id": 54,
             "candy": 62
         },
-        {
+        "60": {
             "family_id": 60,
             "candy": 25
         },
-        {
+        "63": {
             "family_id": 63,
             "candy": 3
         },
-        {
+        "66": {
             "family_id": 66,
             "candy": 14
         },
-        {
+        "69": {
             "family_id": 69,
             "candy": 38
         },
-        {
+        "72": {
             "family_id": 72,
             "candy": 35
         },
-        {
+        "74": {
             "family_id": 74,
             "candy": 6
         },
-        {
+        "79": {
             "family_id": 79,
             "candy": 42
         },
-        {
+        "81": {
             "family_id": 81,
             "candy": 13
         },
-        {
+        "84": {
             "family_id": 84,
             "candy": 7
         },
-        {
+        "86": {
             "family_id": 86,
             "candy": 39
         },
-        {
+        "88": {
             "family_id": 88,
             "candy": 37
         },
-        {
+        "90": {
             "family_id": 90,
             "candy": 17
         },
-        {
+        "92": {
             "family_id": 92,
             "candy": 9
         },
-        {
+        "98": {
             "family_id": 98,
             "candy": 43
         },
-        {
+        "100": {
             "family_id": 100,
             "candy": 21
         },
-        {
+        "102": {
             "family_id": 102,
             "candy": 33
         },
-        {
+        "109": {
             "family_id": 109,
             "candy": 23
         },
-        {
+        "111": {
             "family_id": 111,
             "candy": 7
         },
-        {
+        "113": {
             "family_id": 113,
             "candy": 16
         },
-        {
+        "114": {
             "family_id": 114,
             "candy": 29
         },
-        {
+        "116": {
             "family_id": 116,
             "candy": 10
         },
-        {
+        "118": {
             "family_id": 118,
             "candy": 34
         },
-        {
+        "120": {
             "family_id": 120,
             "candy": 35
         },
-        {
+        "123": {
             "family_id": 123,
             "candy": 36
         },
-        {
+        "124": {
             "family_id": 124,
             "candy": 37
         },
-        {
+        "125": {
             "family_id": 125,
             "candy": 6
         },
-        {
+        "126": {
             "family_id": 126,
             "candy": 52
         },
-        {
+        "127": {
             "family_id": 127,
             "candy": 10
         },
-        {
+        "128": {
             "family_id": 128,
             "candy": 3
+        },
+        "129": {
+            "family_id": 129,
+            "candy": 385
+        },
+        "133": {
+            "family_id": 133,
+            "candy": 40
+        },
+        "147": {
+            "family_id": 147,
+            "candy": 13
         }
-    ],
+    },
     "proto": {
         "PokemonMove": {
             "0": "MOVE_UNSET",
