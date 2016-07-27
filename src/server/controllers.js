@@ -1,6 +1,8 @@
 'use strict';
 
 var pogobuf = require('pogobuf');
+var POGOProtos = require('node-pogo-protos').Enums;
+
 var pokedexPolyFill = require('./dummyData/pokedex.json'); //thanks https://github.com/Biuni/PokemonGOPokedex
 var dummyResponse = require('./dummyData/response.json'); 
 
@@ -9,8 +11,7 @@ module.exports = {
 	login: function(request, reply) {
 		
 		//debug
-		//reply(dummyResponse);
-		//return;
+		reply(dummyResponse);
 		
 		// get user info	
 		var username = request.payload.user;
@@ -58,7 +59,7 @@ module.exports = {
 }
 
 function normalize(response) {
-	// fail out	
+	// fail out
 	if(response.success !== true) {
 		return false;
 	}
@@ -68,7 +69,7 @@ function normalize(response) {
 
 	// get required sections
 	const pokemon = getInvData(rawInvArray,'pokemon_data').filter(obj => !obj.is_egg && obj.pokemon_id !== 0);
-        const eggs = getInvData(rawInvArray,'pokemon_data').filter(obj => obj.is_egg);	
+       	//const eggs = getInvData(rawInvArray,'pokemon_data').filter(obj => obj.is_egg);	
 	const pokedex = getInvData(rawInvArray,'pokedex_entry'); 
 	//const items = getInvData(rawInvArray,'item'); 
 	//const playerStats = getInvData(rawInvArray,'player_stats'); 
@@ -84,7 +85,7 @@ function normalize(response) {
 		pokemon: pokemon,
 		pokedex: polyFill(pokedex), // havn't figured out how to get all the required data yet 
 		family: family,
-		eggs: eggs
+		proto: getProto()
 	};
 	return data;
 	
@@ -111,4 +112,24 @@ function polyFill(pokedex) {
 		
 		return entry;
 	});
+}
+
+function getProto() {
+
+	// proto values to get
+	var neededValues = ['PokemonMove','PokemonId','PokemonFamilyId'];
+	
+	// return proto enum in json friendly format
+	return neededValues.reduce((map,value) => {
+		map[value] = keyValueSwap(POGOProtos[value]);  
+		return map;	
+	},{});
+
+	// helper function
+	function keyValueSwap(enumObj) {
+		return Object.keys(enumObj).reduce((map,key) => {
+			map[enumObj[key]] = key;
+			return map;	
+		},{});
+	}
 }
