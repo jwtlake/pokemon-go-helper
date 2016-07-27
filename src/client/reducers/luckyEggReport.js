@@ -7,7 +7,7 @@ const luckyEggDuration = 1800; //in seconds
 
 const initialState = {};
 
-function recommendation(state = initialState, action) {
+function luckyEggReport(state = initialState, action) {
 	switch (action.type) {
 		case types.LOAD:
 			const player = action.player;
@@ -134,4 +134,4 @@ function recommendation(state = initialState, action) {
 	}
 }
 
-export default recommendation;
+export default luckyEggReport;

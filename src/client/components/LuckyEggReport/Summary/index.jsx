@@ -3,7 +3,7 @@ import React from 'react';
 import LuckyEggSection from './LuckyEggSection';
 import ReportSection from './ReportSection';
 
-class RecommendationSummary extends React.Component {
+class Summary extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -25,4 +25,4 @@ class RecommendationSummary extends React.Component {
 	}
 }
 
-export default RecommendationSummary;
+export default Summary;

@@ -20,10 +20,10 @@ export default class App extends React.Component {
 							:	
 							<Link to={'/pokemon'} className="app-header-link">POKÉMON</Link>
 						}
-						{(currentPath === '/recommendation') ? 
-							<Link to={'/recommendation'} className="app-header-link-current">LUCKYEGG</Link>
+						{(currentPath === '/luckyegg') ? 
+							<Link to={'/luckyegg'} className="app-header-link-current">LUCKYEGG</Link>
 							:	
-							<Link to={'/recommendation'} className="app-header-link">LUCKYEGG</Link>
+							<Link to={'/luckyegg'} className="app-header-link">LUCKYEGG</Link>
 						}
 					</div>
 					: 

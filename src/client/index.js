@@ -8,7 +8,7 @@ import makeStore from './store';
 import App from './containers/App';
 import Login from './containers/Login';
 import Pokemon from './containers/Pokemon';
-import Recommendation from './containers/Recommendation';
+import LuckyEgg from './containers/LuckyEgg';
 
 // create store
 const store = makeStore();
@@ -17,7 +17,7 @@ const store = makeStore();
 const routes = <Route path="/" component={App}>
 	<IndexRedirect to="/login" />
 	<Route path="/login" component={Login} />
-	<Route path="/recommendation" component={Recommendation} />
+	<Route path="/luckyegg" component={LuckyEgg} />
 	<Route path="/pokemon" component={Pokemon} />
 </Route>
 

@@ -4,7 +4,7 @@ import Avatar from './Avatar';
 import Inventory from './Inventory';
 import Outcome from './Outcome';
 
-class RecommendationDetail extends React.Component {
+class Detail extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -47,11 +47,11 @@ class RecommendationDetail extends React.Component {
 	}
 }
 
-RecommendationDetail.Proptypes = {
+Detail.Proptypes = {
 	pokemon: React.PropTypes.object.isRequired,
 	proto: React.PropTypes.object.isRequired,
 	inventory: React.PropTypes.object.isRequired,
 	outcome: React.PropTypes.object.isRequired
 } 
 
-export default RecommendationDetail; 
+export default Detail; 

@@ -1,10 +1,10 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-import RecommendationSummary from './RecommendationSummary';
-import RecommendationDetail from './RecommendationDetail';
+import Summary from './Summary';
+import Detail from './Detail';
 
-class Recommendation extends React.Component {
+class LuckyEggReport extends React.Component {
 	constructor(props) {
 		super(props);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -36,7 +36,7 @@ class Recommendation extends React.Component {
 		return(
 			<div className="recommendation">
 			
-				<RecommendationSummary
+				<Summary
 					useLuckyEgg={summary.useLuckyEgg}
 					totalTime={summary.totalTime}
 					totalExp={summary.totalExp}
@@ -48,7 +48,7 @@ class Recommendation extends React.Component {
 				<div className="recommendation-detail">	
 					{sortedDetail.map(group => {
 						return(
-							<RecommendationDetail
+							<Detail
 								key={group.pokemon.pokemonId}
 								proto={proto}	
 								pokemon={group.pokemon}
@@ -63,14 +63,14 @@ class Recommendation extends React.Component {
 	}
 }
 
-Recommendation.defaultProps = {
+LuckyEggReport.defaultProps = {
 	summary: { useLuckyEgg: false, totalTime:0, totalExp:0, levelsGained:0 },
 	detail: []
 };
 
-Recommendation.Proptypes = {
+LuckyEggReport.Proptypes = {
 	summary: React.PropTypes.object.isRequired,
 	detail: React.PropTypes.array.isRequired
 }
 
-export default Recommendation;
+export default LuckyEggReport;

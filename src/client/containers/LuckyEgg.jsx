@@ -3,13 +3,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { filter } from '../action_creators.js';
-import Recommendation from '../components/Recommendation';
+import LuckyEggReport from '../components/LuckyEggReport';
 
 const mapStateToProps = (state) => {
 	return {
 		proto: state.proto,	
-		summary: state.recommendation.summary,
-		detail: state.recommendation.detail
+		summary: state.luckyEggReport.summary,
+		detail: state.luckyEggReport.detail
 	};
 };
 
@@ -22,4 +22,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(Recommendation);
+)(LuckyEggReport);

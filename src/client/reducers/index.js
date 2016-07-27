@@ -5,7 +5,7 @@ import pokedex from './pokedex';
 import pokemon from './pokemon';
 import candy from './candy';
 import proto from './proto';
-import recommendation from './recommendation';
+import luckyEggReport from './luckyEggReport';
 
 export const rootReducer = combineReducers({
 	app,
@@ -14,5 +14,5 @@ export const rootReducer = combineReducers({
 	pokemon,
 	candy,
 	proto,
-	recommendation
+	luckyEggReport
 });	
