@@ -40,6 +40,7 @@ class RecommendationDetail extends React.Component {
 					candieLeft={outcome.candieLeft} 
 					pokemonLeft={outcome.pokemonLeft} 
 					toCatch={outcome.toCatch} 
+					candyNeeded={outcome.candyNeeded} 
 				/>
 			</div>	
 		);			

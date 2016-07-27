@@ -52,6 +52,7 @@ function recommendation(state = initialState, action) {
 			        let evolutionCount = 0;
 				let transferCount = 0;
 				let numberToCatch = 0;	
+				let numberCandyNeeded = 0;
 
 				// start evolution calculations	
 				for(let i = numberOfPokemon; i > 0; i--) {
@@ -70,7 +71,12 @@ function recommendation(state = initialState, action) {
 				
 				// check for unused candy
 				if(pokemonLeft === 0 && candiesLeft >= candiesToEvolve) {
-					numberToCatch = Math.floor(candiesLeft / candiesToEvolve); // could also account for extra candie from catching...	
+					numberToCatch = Math.floor(candiesLeft / candiesToEvolve); 
+				}
+
+				// check for candy needed
+				if(pokemonLeft !== 0) {
+					numberCandyNeeded = (candiesToEvolve - (candiesLeft + (pokemonLeft - 1)));
 				}
 				
 				// create report for the pokemon group	
@@ -92,11 +98,10 @@ function recommendation(state = initialState, action) {
 						timeEvolving: (evolutionCount * avgEvolutionTime),  
 						candieLeft: candiesLeft, 
 						pokemonLeft: pokemonLeft,	
-						toCatch: numberToCatch
+						toCatch: numberToCatch,
+						candyNeeded: numberCandyNeeded
 					}
 				};
-			}).sort((a,b) => {
-				return b.outcome.numberOfEvolutions - a.outcome.numberOfEvolutions;
 			});
 
 			// calculate summary

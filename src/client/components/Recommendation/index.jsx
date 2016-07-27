@@ -17,6 +17,22 @@ class Recommendation extends React.Component {
 			props: { summary, detail } 
 		} = this;
 
+		const sortedDetail = detail.sort((a,b) => {
+			
+			// sort by evolution count first	
+			var evolutions = (b.outcome.numberOfEvolutions - a.outcome.numberOfEvolutions);
+			if(evolutions !== 0) { return evolutions; }	
+			
+			// sort by pokemon to catch second	
+			var toCatch = (b.outcome.toCatch - a.outcome.toCatch);
+			if(toCatch !== 0) { return toCatch; }	
+			
+
+			// sort by candy needed thrid 
+			var candyNeeded = (b.outcome.candyNeeded - a.outcome.candyNeeded);
+			if(candyNeeded !== 0) { return candyNeeded; }	
+		});
+
 		return(
 			<div className="recommendation">
 			
@@ -30,7 +46,7 @@ class Recommendation extends React.Component {
 				<hr className="recommendation-hr"/>	
 				
 				<div className="recommendation-detail">	
-					{detail.map(group => {
+					{sortedDetail.map(group => {
 						return(
 							<RecommendationDetail
 								key={group.pokemon.PokemonId}

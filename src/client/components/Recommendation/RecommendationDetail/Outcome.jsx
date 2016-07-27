@@ -9,15 +9,16 @@ class Outcome extends React.Component {
 
 	render() {
 		const {
-			props: { numberOfEvolutions, numberOfTransfers, experienceGained, timeEvolving, candieLeft, pokemonLeft, toCatch } 
+			props: { numberOfEvolutions, numberOfTransfers, experienceGained, timeEvolving, candieLeft, pokemonLeft, toCatch, candyNeeded } 
 		} = this;
 		
 		const expK = (experienceGained / 1000)	
 		const override = {
-			transfer: true,
-			evolutions: true,
-			exp: true,
-			catch: false	
+			transfer: false,
+			evolutions: false,
+			exp: false,
+			catch: false,
+			candy: false	
 		};
 
 		return(
@@ -29,7 +30,7 @@ class Outcome extends React.Component {
 						<span className="outcome-group-label">Transfer</span>
 					</span>
 					:
-					<span/>	
+					''	
 				}
 
 				{(numberOfEvolutions !== 0 || override.evolutions === true) ? 
@@ -38,7 +39,7 @@ class Outcome extends React.Component {
 						<span className="outcome-group-label">Evolve</span>
 					</span>
 					:
-					<span/> 	
+					''	
 				}	
 
 				{(expK !== 0 || override.exp === true) ? 
@@ -47,17 +48,25 @@ class Outcome extends React.Component {
 						<span className="outcome-group-label">EXP</span>
 					</span>	
 					:
-					<span/>
+					''	
 				}
 
 				{(toCatch !== 0 || override.catch === true) ? 
 					<span className="outcome-group">
-						<span className="outcome-group-text-catch">{toCatch}</span>
+						<span className="outcome-group-text-needed">{toCatch}</span>
 						<span className="outcome-group-label">Catch</span>
 					</span>
-					:	
-					<span/>	
-				}	
+					:
+					''	
+				}
+				{(candyNeeded !== 0 || override.candy === true) ? 
+					<span className="outcome-group">
+						<span className="outcome-group-text-needed">{candyNeeded}</span>
+						<span className="outcome-group-label">Candy</span>
+					</span>
+					:
+					''	
+				}
 			</div>	
 		);			
 	}
@@ -70,7 +79,8 @@ Outcome.Proptypes = {
 	timeEvolving: React.PropTypes.number.isRequired,
 	candieLeft: React.PropTypes.number.isRequired,
 	pokemonLeft: React.PropTypes.number.isRequired,
-	toCatch: React.PropTypes.number.isRequired
+	toCatch: React.PropTypes.number.isRequired,
+	candyNeeded: React.PropTypes.number.isRequired
 }
 
 export default Outcome;
