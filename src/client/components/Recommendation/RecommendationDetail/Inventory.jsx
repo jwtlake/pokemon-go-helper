@@ -17,7 +17,7 @@ class Inventory extends React.Component {
 				
 				<div className="inventory-group">
 					<span className="inventory-group-text">{numberOfPokemon}</span>
-					<span className="inventory-group-label">Pokemon</span>	
+					<span className="inventory-group-label">Pokémon</span>	
 				</div>	
 				
 				<div className="inventory-group">

@@ -13,13 +13,13 @@ class RecommendationDetail extends React.Component {
 
 	render() {
 		const {
-			props: { pokemon, inventory, outcome }
+			props: { pokemon, proto, inventory, outcome }
 		} = this;
-
+		
 		return(
 			<div className="recommendation-detail-group">
 				<Avatar
-					name={pokemon.name}
+					name={proto.PokemonId[pokemon.pokemonId]}
 					img={pokemon.img}
 				/>
 			
@@ -49,6 +49,7 @@ class RecommendationDetail extends React.Component {
 
 RecommendationDetail.Proptypes = {
 	pokemon: React.PropTypes.object.isRequired,
+	proto: React.PropTypes.object.isRequired,
 	inventory: React.PropTypes.object.isRequired,
 	outcome: React.PropTypes.object.isRequired
 } 

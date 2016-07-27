@@ -7,6 +7,7 @@ import Recommendation from '../components/Recommendation';
 
 const mapStateToProps = (state) => {
 	return {
+		proto: state.proto,	
 		summary: state.recommendation.summary,
 		detail: state.recommendation.detail
 	};

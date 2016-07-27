@@ -71,7 +71,14 @@ function recommendation(state = initialState, action) {
 				
 				// check for unused candy
 				if(pokemonLeft === 0 && candiesLeft >= candiesToEvolve) {
+					// figure out how many pokemon you need to use remaining candy
 					numberToCatch = Math.floor(candiesLeft / candiesToEvolve); 
+				} 
+				else if (pokemonLeft === 0 && candiesLeft > 0) {
+					
+					// every pokemon catch is 2 candy. (catch 1 + trade 1)
+					// add 1 because you need a pokemon to evolve
+					numberToCatch = (Math.floor((candiesToEvolve - candiesLeft) / 2) + 1); 
 				}
 
 				// check for candy needed
@@ -82,8 +89,7 @@ function recommendation(state = initialState, action) {
 				// create report for the pokemon group	
 				return {
 					pokemon: {
-						PokemonId: PokemonId,
-						name: pokedex[PokemonId].name,
+						pokemonId: PokemonId,
 						img: pokedex[PokemonId].img,
 						candiesToEvolve: candiesToEvolve,	
 					},

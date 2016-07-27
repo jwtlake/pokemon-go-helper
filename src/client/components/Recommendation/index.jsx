@@ -14,7 +14,7 @@ class Recommendation extends React.Component {
 
 	render() {
 		const {
-			props: { summary, detail } 
+			props: { proto, summary, detail } 
 		} = this;
 
 		const sortedDetail = detail.sort((a,b) => {
@@ -24,12 +24,12 @@ class Recommendation extends React.Component {
 			if(evolutions !== 0) { return evolutions; }	
 			
 			// sort by pokemon to catch second	
-			var toCatch = (b.outcome.toCatch - a.outcome.toCatch);
+			var toCatch = (a.outcome.toCatch - b.outcome.toCatch);
 			if(toCatch !== 0) { return toCatch; }	
 			
 
 			// sort by candy needed thrid 
-			var candyNeeded = (b.outcome.candyNeeded - a.outcome.candyNeeded);
+			var candyNeeded = (a.outcome.candyNeeded - b.outcome.candyNeeded);
 			if(candyNeeded !== 0) { return candyNeeded; }	
 		});
 
@@ -49,7 +49,8 @@ class Recommendation extends React.Component {
 					{sortedDetail.map(group => {
 						return(
 							<RecommendationDetail
-								key={group.pokemon.PokemonId}
+								key={group.pokemon.pokemonId}
+								proto={proto}	
 								pokemon={group.pokemon}
 								inventory={group.inventory}
 								outcome={group.outcome}	
