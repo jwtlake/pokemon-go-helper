@@ -62,6 +62,7 @@ function recommendation(state = initialState, action) {
 						candiesLeft -= candiesToEvolve;
 					} // check if evolution is possible through trading
 					else if((candiesLeft + (pokemonLeft - 1)) >= candiesToEvolve) { 
+						transferCount++;	
 						pokemonLeft--;
 						candiesLeft++;	
 					}
