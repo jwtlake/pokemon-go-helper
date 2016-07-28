@@ -2,9 +2,7 @@
 Nodejs webbased pokemon go helper aplication. WIP but functional!
 
 ## TODO
-Geo cords at login (hardcoded atm)  
 Modularize css to component level  
-Improve Login error handling  
 Clean up all the TODOs in code base  
 Create Tests  
 UI improvements  
