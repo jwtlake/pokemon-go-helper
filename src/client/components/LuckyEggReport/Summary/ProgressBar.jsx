@@ -13,8 +13,7 @@ class ProgressBar extends React.Component {
 		} = this;
 		
 		const completed = (((totalTime / 60) / 30) * 100).toFixed();
-		console.log(completed);	
-		var style = {
+		const style = {
 			width: completed + '%',
 		};      
 		
