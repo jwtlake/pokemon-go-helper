@@ -19,7 +19,7 @@ class Login extends React.Component {
 		return(
 			<div className="login">
 				<Logo />
-				<LoginForm login={login} />
+				<Form login={login} />
 				<Legal />
 			</div>
 		);
