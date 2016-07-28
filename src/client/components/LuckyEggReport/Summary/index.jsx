@@ -25,4 +25,11 @@ class Summary extends React.Component {
 	}
 }
 
+Summary.Proptypes = {
+	useLuckyEgg: React.PropTypes.bool.isRequired, 
+	totalTime: React.PropTypes.number.isRequired, 
+	totalExp: React.PropTypes.number.isRequired, 
+	levelsGained: React.PropTypes.number.isRequired
+}
+
 export default Summary;

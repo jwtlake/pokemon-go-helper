@@ -152,7 +152,6 @@ app-header-link-current:active {color: #466a6d;}
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-
 	font-family: 'Lato', sans-serif;
 }
 
@@ -166,19 +165,13 @@ app-header-link-current:active {color: #466a6d;}
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	width: 180px;
 }
 
 .recommendation-summary-report-section {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-}
-
-.recommendation-summary-report-section-hr {
-	background-color: #dedede;
-	width: 206px; /* figure out how to avoid hardcoding */
-	height: 1px;
-	border: none;
 }
 
 .recommendation-summary-report-text-red {
@@ -202,6 +195,22 @@ app-header-link-current:active {color: #466a6d;}
 		padding-top: 15px;
 	}
 }
+
+/** Progressbar **/
+.progress-bar {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  background-color: #dde1e8;
+  border-radius: 10px; /* (height of inner div) / 2 + padding */
+  width: 250px;
+}
+
+.progress-bar > div {
+   background-color: #52e816;
+   height: 4px;
+   border-radius: 10px;
+}
+
 
 /** Dividers **/
 .recommendation-hr {

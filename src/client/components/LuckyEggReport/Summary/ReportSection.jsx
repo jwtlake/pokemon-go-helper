@@ -15,7 +15,6 @@ class ReportSection extends React.Component {
 		
 		return(
 			<div className="recommendation-summary-report">
-				<hr className="recommendation-summary-report-section-hr" />	
 				<div className="recommendation-summary-report-section">
 					<span>Evolutions</span>
 					<span className="recommendation-summary-report-text-red">{totalExp} XP</span>	
@@ -27,6 +26,12 @@ class ReportSection extends React.Component {
 			</div>	
 		);			
 	}
+}
+
+ReportSection.Proptypes = {
+	totalTime: React.PropTypes.number.isRequired, 
+	totalExp: React.PropTypes.number.isRequired, 
+	levelsGained: React.PropTypes.number.isRequired
 }
 
 export default ReportSection;
