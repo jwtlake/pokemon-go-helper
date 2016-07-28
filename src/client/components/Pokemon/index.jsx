@@ -1,14 +1,20 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import { browserHistory } from 'react-router';
 
-import PokemonDetail from './PokemonDetail';
+import Detail from './Detail';
 
 class Pokemon extends React.Component {
 	constructor(props) {
 		super(props);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+	}
 
-		// binds
+	componentWillMount() {
+		// redirect to login if not logged in	
+		if(!this.props.app.loggedIn) {
+			browserHistory.push('/login');
+		}
 	}
 
 	render() {
@@ -36,7 +42,7 @@ class Pokemon extends React.Component {
 
 					// return	
 					return(
-						<PokemonDetail
+						<Detail
 							key={(aPokemon.id.low+aPokemon.id.low)}
 							pokemon={aPokemon}
 						/>

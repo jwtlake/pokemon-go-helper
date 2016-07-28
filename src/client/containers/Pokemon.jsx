@@ -7,6 +7,7 @@ import Pokemon from '../components/Pokemon';
 
 const mapStateToProps = (state) => {
 	return {
+		app: state.app,	
 		pokemon: state.pokemon,
 		pokedex: state.pokedex,
 		proto: state.proto

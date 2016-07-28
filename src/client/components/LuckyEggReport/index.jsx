@@ -1,5 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import { browserHistory } from 'react-router';
 
 import Summary from './Summary';
 import Detail from './Detail';
@@ -8,8 +9,15 @@ class LuckyEggReport extends React.Component {
 	constructor(props) {
 		super(props);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
-
+	
 		// binds
+	}
+	
+	componentWillMount() {
+		// redirect to login if not logged in	
+		if(!this.props.app.loggedIn) {
+			browserHistory.push('/login');
+		}
 	}
 
 	render() {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 
 import LoginButton from './LoginButton.jsx';
 
@@ -13,7 +14,7 @@ class LoginForm extends React.Component {
 			lnd: -122.676482,
 			alt: 0
 
-		}; //TODO Stop hard coding	
+		}; // TODO Stop hard coding	
 	
 		//binds
 		this.handleUserChange = this.handleChange.bind(this,'user');
@@ -39,8 +40,15 @@ class LoginForm extends React.Component {
 		const lat = this.state.lat; 
 		const lnd = this.state.lnd; 
 		const alt = this.state.alt;
-		
-		this.props.login(user,pass,type,lat,lnd,alt);
+
+		// login	
+		this.props.login(user,pass,type,lat,lnd,alt)
+		.then(() => { 
+			browserHistory.push('/pokemon'); 
+		})
+		.catch((e) => { 
+			alert('ERROR: ' + e); 
+		});
 	}
 
 	render() {

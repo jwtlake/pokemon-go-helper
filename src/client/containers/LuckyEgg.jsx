@@ -7,6 +7,7 @@ import LuckyEggReport from '../components/LuckyEggReport';
 
 const mapStateToProps = (state) => {
 	return {
+		app: state.app,	
 		proto: state.proto,	
 		summary: state.luckyEggReport.summary,
 		detail: state.luckyEggReport.detail

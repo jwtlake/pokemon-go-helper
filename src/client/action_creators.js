@@ -4,7 +4,6 @@ export const LOAD = 'LOAD';
 export const FILTER = 'FILTER '; 
 
 // login
-import { browserHistory } from 'react-router'
 export function login(user,pass,type,lat,lnd,alt) {
 	return function(dispatch) {
 
@@ -19,19 +18,20 @@ export function login(user,pass,type,lat,lnd,alt) {
 		}
 
 		// make request
-		return fetch('/api/login',
+		return fetch('/api/login', 
 			{ method: 'POST', body: JSON.stringify(payload) }
 		)
 		.then((response) => { 
-			if(response.ok) { return response.json(); } //TODO handle this better  
-			else { return null; } 
+			if(response.ok) { 
+				return response.json(); 
+			} 
+			else { throw 'Incorrect username or password.'; } // TODO improve error handing
 		})
 		.then((data) => { 	
-			if(data){
-				browserHistory.push('/pokemon'); //TODO dont think this should be done here
-				return dispatch(load(data)); 
-			}//TODO handle this better	
-			else { return null; }	
+			if(data){ 
+				return dispatch(load(data));
+			}
+			else { throw 'Error loading response data.'; }	
 		})
 	}
 }
