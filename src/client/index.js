@@ -24,7 +24,7 @@ const routes = <Route path="/" component={App}>
 // render
 ReactDOM.render(
 	<Provider store={store}>
-		<Router history={browserHistory}>
+		<Router onUpdate={() => window.scrollTo(0,0)} history={browserHistory}>
 			{routes}	
 		</Router>	
 	</Provider>,
