@@ -4,7 +4,7 @@ import Avatar from './Avatar';
 import Stats from './Stats';
 import Perfectness from './Perfectness';
 
-class PokemonDetail extends React.Component {
+class Detail extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -53,8 +53,8 @@ class PokemonDetail extends React.Component {
 	}
 }
 
-PokemonDetail.Proptypes = {
+Detail.Proptypes = {
 	pokemon: React.PropTypes.object.isRequired,
 } 
 
-export default PokemonDetail; 
+export default Detail; 
