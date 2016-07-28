@@ -2,7 +2,7 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 import Logo from './Logo.jsx';
-import LoginForm from './LoginForm';
+import Form from './Form';
 import Legal from './Legal';
 
 class Login extends React.Component {
