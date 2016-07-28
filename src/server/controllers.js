@@ -20,11 +20,13 @@ module.exports = {
 		// debug response
 		if(username.toLowerCase() === 'test' && password.toLowerCase() === 'test') {
 			var dummyResponse = require('./dummyData/response.json'); 
-			console.log(`login attempt -- user:${username} pass:**** type:${type} lat:${latitude} lnd:${longitude} alt:${altitude}`);	
+			console.log(`login attempt -- user:${username} pass:${password} type:${type} lat:${latitude} lnd:${longitude} alt:${altitude}`);	
 			reply(dummyResponse);
 			return;
+		} else {	
+			console.log(`login attempt -- user:${username} pass:**** type:${type} lat:${latitude} lnd:${longitude} alt:${altitude}`);	
 		}
-
+			
 		// create instance	
 		var login;
 		var provider;
@@ -32,7 +34,7 @@ module.exports = {
 			login = new pogobuf.GoogleLogin();
 			provider = 'google';
 		} else {
-			login = new pogbuf.PTCLogin();
+			login = new pogobuf.PTCLogin();
 			provider = 'ptc';	
 		}	
     		var client = new pogobuf.Client();
@@ -48,14 +50,17 @@ module.exports = {
 		}).then(inventory => {
 			// format inventory response
 			const response = normalize(inventory); 	
-			// check for errors	
+			
 			if(response) {
 				reply(response).code(200);	
 			} else {
 				reply().code(401);	
 			}
 
-		});		
+		}).catch(error => {
+			console.log(error);
+			reply().code(401);
+	       	});		
 	}
 }
 
