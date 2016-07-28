@@ -1,11 +1,9 @@
 # pokemon-go-helper
-Nodejs webbased pokemon go helper aplication. Still a work in progress but things are starting to work! 
+Nodejs webbased pokemon go helper aplication. WIP but functional!
 
 ## TODO
 Geo cords at login (hardcoded atm)  
-Fix Lucky Egg helper (need to tie in family obj to get candy count)  
 Modularize css to component level  
-Add dev/prod env switch for sending dummyData vs actual login  
 Improve Login error handling  
 Clean up all the TODOs in code base  
 Create Tests  
