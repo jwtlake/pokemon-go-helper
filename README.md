@@ -14,6 +14,7 @@ Modularize css to component level
 Clean up all the TODOs in code base  
 Create Tests  
 UI improvements for desktop experience
+Add sorting
 
 ## What this project isn't. 
 I don't want to build something that lets you cheat. So that means.. 
