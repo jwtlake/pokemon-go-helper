@@ -32,7 +32,7 @@ export function login(user,pass,type,lat,lnd,alt) {
 			if(response.ok) { 
 				return response.json(); 
 			} 
-			else { throw 'Incorrect username or password.'; } // TODO improve error handing
+			else { throw `${response.status} ${response.statusText}` } // TODO improve error handing  'Incorrect username or password.'
 		})
 		.then((data) => { 	
 			if(data){ 

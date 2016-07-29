@@ -90,6 +90,7 @@ class Form extends React.Component {
 			browserHistory.push('/pokemon'); 
 		})
 		.catch((e) => { 
+			console.dir(e);	
 			alert('ERROR: ' + e); 
 		});
 	}
