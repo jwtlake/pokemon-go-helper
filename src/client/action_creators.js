@@ -4,6 +4,7 @@ export const LOAD = 'LOAD';
 export const FILTER = 'FILTER '; 
 
 // login
+import 'whatwg-fetch'; //polyfill for safari
 export function login(user,pass,type,lat,lnd,alt) {
 	return function(dispatch) {
 
@@ -19,7 +20,13 @@ export function login(user,pass,type,lat,lnd,alt) {
 
 		// make request
 		return fetch('/api/login', 
-			{ method: 'POST', body: JSON.stringify(payload) }
+			{ 
+				method: 'POST',
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},	
+				body: JSON.stringify(payload) }
 		)
 		.then((response) => { 
 			if(response.ok) { 
