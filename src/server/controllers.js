@@ -19,14 +19,23 @@ module.exports = {
 
 		// debug response
 		if(username.toLowerCase() === 'test' && password.toLowerCase() === 'test') {
+			
+			// get pre-normalize response	
 			var dummyResponse = require('./dummyData/response.json'); 
-			console.log(`login attempt -- user:${username} pass:${password} type:${type} lat:${latitude} lnd:${longitude} alt:${altitude}`);	
+			console.log(`pre-normalized test`);	
 			reply(dummyResponse);
+			return;
+		} else if(username.toLowerCase() === 'testraw' && password.toLowerCase() === 'test') {
+			
+			// get dummy raw response and normalize	
+			var dummyRawResponse = require('./dummyData/raw_response.json'); 
+			console.log(`raw test`);	
+			reply(normalize(dummyRawResponse));
 			return;
 		} else {	
 			console.log(`login attempt -- user:${username} pass:**** type:${type} lat:${latitude} lnd:${longitude} alt:${altitude}`);	
 		}
-			
+
 		// create instance	
 		var login;
 		var provider;
@@ -79,18 +88,18 @@ function normalize(response) {
 	const pokedex = getInvData(rawInvArray,'pokedex_entry'); 
 	//const items = getInvData(rawInvArray,'item'); 
 	//const playerStats = getInvData(rawInvArray,'player_stats'); 
-	const family = getInvData(rawInvArray,'pokemon_family'); 
+	const candy = getInvData(rawInvArray,'candy'); 
 	// const player_currency = getInvData(rawInvArray,'player_currency');  
 	// const player_camera = getInvData(rawInvArray,'player_camera'); 
 	// const inventory_upgrades = getInvData(rawInvArray,'inventory_upgrades'); 
 	// const applied_items = getInvData(rawInvArray,'applied_items'); 
-	
+
 	// return	
 	const data = {
 		player: { name: "dummy", level: 10, exp: 10000 }, //TODO figure out how best to handle this 	
 		pokemon: pokemon,
 		pokedex: polyFill(pokedex), // havn't figured out how to get all the required data yet 
-		candy: family.reduce((map,candy) => { map[candy.family_id.toString()] = candy; return map; },{}), //convert to map with family_id keys
+		candy: candy.reduce((map,candy) => { map[candy.family_id.toString()] = candy; return map; },{}), //convert to map with family_id keys
 		proto: getProto()
 	};
 	return data;
