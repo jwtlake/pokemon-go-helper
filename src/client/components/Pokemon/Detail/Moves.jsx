@@ -17,13 +17,13 @@ class Moves extends React.Component {
 		const moveOneSimple = move_1.split('_FAST').join('+').split('_').join('');
 		const moveTwoSimple = move_2.split('_FAST').join('+').split('_').join('');
 
-		const moveOneFull = move_1.split('_').join(''); //TODO show this as an alt 
-		const moveTwoFull = move_2.split('_').join(''); //TODO show this as an alt 
+		const moveOneFull = move_1.split('_').join(' ');
+		const moveTwoFull = move_2.split('_').join(' ');
 
 		return(
 			<div className="moves">
-				<span className="moves-text">{moveOneSimple}</span>
-				<span className="moves-text">{moveTwoSimple}</span>
+				<span className="moves-text" title={moveOneFull}>{moveOneSimple}</span>
+				<span className="moves-text" title={moveTwoFull}>{moveTwoSimple}</span>
 			</div>	
 		);			
 	}
