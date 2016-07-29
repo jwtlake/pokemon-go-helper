@@ -2,10 +2,12 @@
 Nodejs webbased pokemon go helper aplication. WIP but functional!
 
 ## TODO
+Fix ios/safari login button issue  
+Figure out HTTPS so geolocation works outside local host  
 Modularize css to component level  
 Clean up all the TODOs in code base  
 Create Tests  
-UI improvements  
+UI improvements for desktop experience
 Not sure if this is possible but idealy the pokemon go api should be entirely client side. (pure javascript)  
 
 ## Features
