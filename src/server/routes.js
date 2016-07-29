@@ -12,7 +12,7 @@ var routes = [
 			validate: {
 				payload: {
 					user: Joi.string().alphanum().min(1).required(),
-					pass: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).min(1).required(),
+					pass: Joi.string().alphanum().min(1).required(),
 					type: Joi.any().valid('google','ptc').required(),	
 					lat: Joi.number().required(),
 					lnd: Joi.number().required(),
