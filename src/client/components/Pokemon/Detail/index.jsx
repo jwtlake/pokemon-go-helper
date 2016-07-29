@@ -2,6 +2,7 @@ import React from 'react';
 
 import Avatar from './Avatar';
 import Stats from './Stats';
+import Moves from './Moves';
 import Perfectness from './Perfectness';
 
 class Detail extends React.Component {
@@ -29,8 +30,6 @@ class Detail extends React.Component {
 				<Stats
 					cp={pokemon.cp}  
 					stamina_max={pokemon.stamina_max}  
-					move_1={pokemon.move_1_name}  
-					move_2={pokemon.move_2_name}  
 					height_m={pokemon.height_m}  
 					weight_kg={pokemon.weight_kg} 										 
 					individual_attack={pokemon.individual_attack}  
@@ -41,6 +40,13 @@ class Detail extends React.Component {
 					additional_cp_multiplier={pokemon.additional_cp_multiplier}  		
 				/> 
 			
+				<div className="divider" />
+				
+				<Moves
+					move_1={pokemon.move_1_name}  
+					move_2={pokemon.move_2_name}  
+				/>	
+
 				<div className="divider" />
 				
 				<Perfectness

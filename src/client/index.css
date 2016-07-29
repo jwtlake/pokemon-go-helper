@@ -235,6 +235,11 @@ app-header-link-current:active {color: #466a6d;}
 	justify-content: center;
 	flex: 0 0 80px;
 }
+@media (min-width: 640px) {
+	.avatar {
+		flex:1;
+	}
+}
 
 .avatar-text-name {
 	margin-top: -3px;	
@@ -356,6 +361,11 @@ app-header-link-current:active {color: #466a6d;}
 	flex-direction: row;
 	justify-content: space-around;
 }
+@media (min-width: 640px) {
+	.stats {
+		flex:2;
+	}
+}
 
 .stats-group {
 	display: flex;
@@ -379,6 +389,11 @@ app-header-link-current:active {color: #466a6d;}
 .perfectness {
 	flex: 0 0 50px;
 }
+@media (min-width: 640px) {
+	.perfectness {
+		flex:1;
+	}
+}
 
 .perfectness-group {
 	display: flex;
@@ -396,4 +411,29 @@ app-header-link-current:active {color: #466a6d;}
 .perfectness-group-text {
 	font-family: 'Lato', sans-serif;
 	color:#466a6d;
+}
+
+/** Moves **/
+.moves {
+	display: flex;
+	flex: 0 0 80px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+@media (min-width: 640px) {
+	.moves {
+		flex:1;
+	}
+}
+
+.moves-text {
+	font-family: 'Lato', sans-serif;
+	color:#6a6a6a;
+	font-size: 50%;
+}
+@media (min-width: 640px) {
+	.moves-text {
+		font-size: 70%;
+	}
 }
