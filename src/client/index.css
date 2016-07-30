@@ -32,6 +32,7 @@
 	font-size: 150%;
 	color: #bdc4c0;
 	text-decoration: none;
+	cursor: pointer;
 }
 app-header-link:visited {color: #bdc4c0;} /*Yuck gota be a better way*/
 app-header-link:hover {color: #bdc4c0;} 
@@ -110,7 +111,7 @@ app-header-link-current:active {color: #466a6d;}
 	font-weight: bold;
 	color: #597988;
 	margin: 5px;
-	cursor:pointer;
+	cursor: pointer;
 }
 
 .login-form-body-button-ptc {
@@ -124,7 +125,7 @@ app-header-link-current:active {color: #466a6d;}
 	font-weight: bold;
 	color: white;
 	margin: 5px;
-	cursor:pointer;
+	cursor: pointer;
 }
 
 .login-legal {
@@ -458,4 +459,9 @@ app-header-link-current:active {color: #466a6d;}
     background-color: #1c8796;
     border: 2px solid #9bf0aa;
     box-shadow: 0 0 0 6px #1c8796;
+    cursor: pointer;
+}
+.order-by-button:active {
+	background-color: #036E7D;
+	box-shadow: 0 0 0 6px #036E7D;
 }
