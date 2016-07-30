@@ -1,7 +1,7 @@
 // action constants
 export const LOGIN = 'LOGIN';
 export const LOAD = 'LOAD';
-export const FILTER = 'FILTER '; 
+export const ORDERBY = 'ORDERBY'; 
 
 // login
 import 'whatwg-fetch'; //polyfill for safari
@@ -55,10 +55,11 @@ export function load(data) {
 	};
 }
 
-// filter recommendations
-export function filter(by) {
+// sort list 
+export function orderBy(page,by) {
 	return {
-		type: FILTER,
-		by: by	
+		type: ORDERBY,
+		page: page,	
+		by: by 
 	};
 }

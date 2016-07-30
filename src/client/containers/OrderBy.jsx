@@ -1,17 +1,14 @@
 import React from 'react';
 import { bindActionCreators } from 'redux'; 
 import { connect } from 'react-redux';
-
 import { orderBy } from '../action_creators.js';
-import LuckyEgg from '../components/LuckyEgg';
 
-const mapStateToProps = (state) => {
+import OrderBy from '../components/shared/OrderBy';
+
+const mapStateToProps = (state, ownProps) => {
 	return {
-		app: state.app,
-		options: state.app.luckyegg,	
-		proto: state.proto,	
-		summary: state.luckyEggReport.summary,
-		detail: state.luckyEggReport.detail
+		options: state.app[ownProps.page],
+		page: ownProps.page 
 	};
 };
 
@@ -24,4 +21,5 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(LuckyEgg);
+)(OrderBy);
+

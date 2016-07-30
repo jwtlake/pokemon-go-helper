@@ -145,6 +145,7 @@ app-header-link-current:active {color: #466a6d;}
 	margin-right: 10px;
 	min-height: 100vh;
 	padding-top: 65px;
+	padding-bottom: 100px;
 }
 
 .recommendation-summary {
@@ -337,6 +338,7 @@ app-header-link-current:active {color: #466a6d;}
 	margin-right: 10px;
 	min-height: 100vh;
 	padding-top: 65px;
+	padding-bottom: 100px;
 }
 
 .pokemon-detail {
@@ -436,4 +438,24 @@ app-header-link-current:active {color: #466a6d;}
 	.moves-text {
 		font-size: 70%;
 	}
+}
+
+
+/** OrderBy **/
+.order-by-button {
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+
+	font-family: 'Lato', sans-serif;
+	color: #9bf0aa;
+    text-align: center;
+    line-height: 55px;
+    
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #1c8796;
+    border: 2px solid #9bf0aa;
+    box-shadow: 0 0 0 6px #1c8796;
 }
