@@ -45,12 +45,6 @@ Temporary Items
 # Dependency directory
 node_modules
 
-# WebPackBundles
-bundle.js
-
-# Generated resources
-src/client/public/index.css
-
 # Vim temp and swap files
 *~
 *.swp
