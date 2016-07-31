@@ -60,7 +60,7 @@ function luckyEggReport(state = initialState, action) {
 					if(candiesLeft >= candiesToEvolve) {
 						evolutionCount++;	
 						pokemonLeft--;
-						candiesLeft -= candiesToEvolve;
+						candiesLeft -= (candiesToEvolve - 1); // evolving gets you one candy	
 					} // check if evolution is possible through trading
 					else if((candiesLeft + (pokemonLeft - 1)) >= candiesToEvolve) { 
 						transferCount++;	
