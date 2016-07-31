@@ -19,6 +19,17 @@ Download the project
 ```
 git clone https://github.com/jwtlake/pokemon-go-helper.git
 ```
+
+Move into the project folder
+```
+cd pokemon-go-helper
+```
+
+Install dependencies
+```
+npm install
+```
+
 (Optional) Change the default hosting port from 3000 to whatever you want.
 [settings.js](/src/server/settings.js)
 
