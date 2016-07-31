@@ -11,7 +11,7 @@ var routes = [
 		config: {
 			validate: {
 				payload: {
-					user: Joi.string().alphanum().min(1).required(),
+					user: Joi.string().min(1).required(),
 					pass: Joi.string().min(1).required(),
 					type: Joi.any().valid('google','ptc').required(),	
 					lat: Joi.number().required(),
