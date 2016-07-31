@@ -1,5 +1,5 @@
 # pokemon-go-helper
-Nodejs webbased pokemon go helper aplication. WIP but functional!
+Nodejs webbased pokemon go helper application. WIP but functional!
 
 ## Features
 **Pokemon Stat Checker:** Evaluate player's pokemon to help identify strong pokemon.  
