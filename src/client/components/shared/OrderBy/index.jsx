@@ -16,12 +16,14 @@ class OrderBy extends React.Component {
 		
 		// switch options based on page #TODO make this less hacky	
 		if(name === 'pokemon') {
-			if(options === 'perfect')	
+			if(options === 'recent')	
+				this.props.setOrderBy('pokemon','perfect');
+			else if(options === 'perfect')	
 				this.props.setOrderBy('pokemon','number');
 			else if(options === 'number')	
 				this.props.setOrderBy('pokemon','cp');
 			else 
-				this.props.setOrderBy('pokemon','perfect');
+				this.props.setOrderBy('pokemon','recent');
 		} else {
 			// lucky egg page
 			if(options === 'evolutions')	
@@ -42,6 +44,9 @@ class OrderBy extends React.Component {
 		let orderByText; 
 		
 		switch(orderBy) {
+			case 'recent':
+				orderByText = 'RC';
+				break;
 			case 'perfect':
 				orderByText = '%';
 				break;

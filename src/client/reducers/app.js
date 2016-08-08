@@ -1,6 +1,6 @@
 import * as types from '../action_creators.js';
 
-const initialState = { loggedIn: false, pokemon: { orderBy: 'perfect' }, luckyegg: { orderBy: 'evolutions' } };
+const initialState = { loggedIn: false, pokemon: { orderBy: 'recent' }, luckyegg: { orderBy: 'evolutions' } };
 
 function app(state = initialState, action) {
 	switch (action.type) {

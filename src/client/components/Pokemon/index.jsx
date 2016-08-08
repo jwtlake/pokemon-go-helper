@@ -5,6 +5,7 @@ import { browserHistory } from 'react-router';
 import Detail from './Detail';
 import OrderBy from '../../containers/OrderBy';
 
+
 class Pokemon extends React.Component {
 	constructor(props) {
 		super(props);
@@ -64,9 +65,9 @@ class Pokemon extends React.Component {
 				
 				// sort by perfectness
 				return pokemon.sort((a,b) => {
-					const aPerf= (a.individual_attack + a.individual_defense + a.individual_stamina);
-					const bPerf= (b.individual_attack + b.individual_defense + b.individual_stamina);
-					return bPerf- aPerf;
+					const aPerf = (a.individual_attack + a.individual_defense + a.individual_stamina);
+					const bPerf = (b.individual_attack + b.individual_defense + b.individual_stamina);
+					return bPerf - aPerf;
 				});	
 				
 			// order by combat power	
@@ -86,9 +87,9 @@ class Pokemon extends React.Component {
 						return aPokedexId - bPokedexId;	
 						
 					// then sort by perfectness
-					const aPerf= (a.individual_attack + a.individual_defense + a.individual_stamina);
-					const bPerf= (b.individual_attack + b.individual_defense + b.individual_stamina);
-					return bPerf- aPerf;
+					const aPerf = (a.individual_attack + a.individual_defense + a.individual_stamina);
+					const bPerf = (b.individual_attack + b.individual_defense + b.individual_stamina);
+					return bPerf - aPerf;
 				});	
 			
 			// order by pokedex id 
@@ -104,9 +105,19 @@ class Pokemon extends React.Component {
 					// then sort by perfectness
 					const aPerf = (a.individual_attack + a.individual_defense + a.individual_stamina);
 					const bPerf= (b.individual_attack + b.individual_defense + b.individual_stamina);
-					return bPerf- aPerf;
+					return bPerf - aPerf;
 				});	
-			
+				
+			// order by recentness 
+			case 'recent':
+				return pokemon.sort((a,b) => {
+					
+					// sort by pokedex id first	
+					const aTime = a.creation_time_ms.low;
+					const bTime = b.creation_time_ms.low;	
+					return bTime - aTime;	
+				});
+				
 			// else return unsorted	
 			default:
 				return pokemon;	

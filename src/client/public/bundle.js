@@ -28679,7 +28679,7 @@
 
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-	var initialState = { loggedIn: false, pokemon: { orderBy: 'perfect' }, luckyegg: { orderBy: 'evolutions' } };
+	var initialState = { loggedIn: false, pokemon: { orderBy: 'recent' }, luckyegg: { orderBy: 'evolutions' } };
 
 	function app() {
 		var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
@@ -30415,6 +30415,16 @@
 							return bPerf - aPerf;
 						});
 
+					// order by recentness 
+					case 'recent':
+						return pokemon.sort(function (a, b) {
+
+							// sort by pokedex id first	
+							var aTime = a.creation_time_ms.low;
+							var bTime = b.creation_time_ms.low;
+							return bTime - aTime;
+						});
+
 					// else return unsorted	
 					default:
 						return pokemon;
@@ -30998,7 +31008,7 @@
 
 				// switch options based on page #TODO make this less hacky	
 				if (name === 'pokemon') {
-					if (options === 'perfect') this.props.setOrderBy('pokemon', 'number');else if (options === 'number') this.props.setOrderBy('pokemon', 'cp');else this.props.setOrderBy('pokemon', 'perfect');
+					if (options === 'recent') this.props.setOrderBy('pokemon', 'perfect');else if (options === 'perfect') this.props.setOrderBy('pokemon', 'number');else if (options === 'number') this.props.setOrderBy('pokemon', 'cp');else this.props.setOrderBy('pokemon', 'recent');
 				} else {
 					// lucky egg page
 					if (options === 'evolutions') this.props.setOrderBy('luckyegg', 'transfers');else if (options === 'transfers') this.props.setOrderBy('luckyegg', 'number');else this.props.setOrderBy('luckyegg', 'evolutions');
@@ -31016,6 +31026,9 @@
 				var orderByText = void 0;
 
 				switch (orderBy) {
+					case 'recent':
+						orderByText = 'RC';
+						break;
 					case 'perfect':
 						orderByText = '%';
 						break;
