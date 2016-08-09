@@ -2,7 +2,7 @@ import React from 'react';
 import { browserHistory } from 'react-router';
 
 import LoginButton from './LoginButton.jsx';
-
+const GOOGLE_AUTH_PATH =  "https://accounts.google.com/o/oauth2/auth?client_id=848232511240-73ri3t7plvk96pj4f85uj8otdat2alem.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=code&scope=openid%20email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email";
 class Form extends React.Component {
 	constructor(props) {
 		super(props);
@@ -14,7 +14,8 @@ class Form extends React.Component {
 			type: '',
 			lat: '',
 			lnd: '',
-			alt: 0 
+			alt: 0 ,
+			isGoogleLogin : false
 		}; 
 	
 		//binds
@@ -48,7 +49,22 @@ class Form extends React.Component {
 			this.setState({ geoAPI: false });
 		}		
 	}
-	
+
+
+	handleCheckboxChange(type , event){
+		switch (type) {
+			case "google":
+				this.setState({ isGoogleLogin: event.target.checked });
+					break;
+			case "ptc" :
+				this.setState({ isGoogleLogin: !event.target.checked });
+					break;
+			default:
+				break;
+		}
+	}
+
+
 	handleChange(type, event) {
 
 		// handle change	
@@ -71,6 +87,10 @@ class Form extends React.Component {
   			default:
 				break;
 		}
+	}
+
+	handleGoogleAuthButtonClicked(){
+		window.open(GOOGLE_AUTH_PATH);
 	}
 
 	onLoginClick(type){
@@ -110,20 +130,26 @@ class Form extends React.Component {
 
 	render() {
 		const {
-			props: { app }
+			props: { app },
+			state: { isGoogleLogin }
 		} = this;
 
 		return(
 			<div className="login-form">	
 				<span className="login-form-header">Sign in with</span>
 				<div className="login-form-body" >
-					<input className="login-form-body-input" type="text" placeholder="Username" value={this.state.user} onChange={this.handleUserChange} />
-					<input className="login-form-body-input" type="password" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange} />
-					<input className="login-form-body-input" type="token" placeholder="Google Token" value={this.state.token} onChange={this.handleTokenChange} />
+					<div>
+						<input type="checkbox" checked={isGoogleLogin} onChange={this.handleCheckboxChange.bind(this ,"google")} /><span>Google</span>
+						<input type="checkbox" checked={!isGoogleLogin} onChange={this.handleCheckboxChange.bind(this , "ptc")} /><span>PTC</span>
+					</div>
+					{isGoogleLogin? '' : <input className="login-form-body-input" type="text" placeholder="Username" value={this.state.user} onChange={this.handleUserChange} />}
+					{isGoogleLogin? '' : <input className="login-form-body-input" type="password" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange} />}
+					{isGoogleLogin? <input className="login-form-body-input" type="token" placeholder="Authorization code" value={this.state.token} onChange={this.handleTokenChange} /> : ''}
 					{(this.state.geoAPI) ? '' : <input className="login-form-body-input" type="text" placeholder="Latitude" value={this.state.lat} onChange={this.handleLatChange} />}	
 					{(this.state.geoAPI) ? '' : <input className="login-form-body-input" type="text" placeholder="Longitude" value={this.state.lnd} onChange={this.handleLndChange} />}
-					<LoginButton type={'google'} click={this.loginWithGoogle} />	
-					<LoginButton type={'ptc'} click={this.loginWithPTC} />
+					{isGoogleLogin ? <button className="login-form-body-button-ptc" onClick={this.handleGoogleAuthButtonClicked}>Google Authenticate</button> : ''}
+					{isGoogleLogin ? <LoginButton type={'google'} click={this.loginWithGoogle} /> : ''}
+					{isGoogleLogin ? '' : <LoginButton type={'ptc'} click={this.loginWithPTC} />}
 				</div>
 			</div>	
 		);			

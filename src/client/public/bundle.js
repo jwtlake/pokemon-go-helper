@@ -29995,6 +29995,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var GOOGLE_AUTH_PATH = "https://accounts.google.com/o/oauth2/auth?client_id=848232511240-73ri3t7plvk96pj4f85uj8otdat2alem.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=code&scope=openid%20email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email";
+
 	var Form = function (_React$Component) {
 		_inherits(Form, _React$Component);
 
@@ -30011,7 +30013,8 @@
 				type: '',
 				lat: '',
 				lnd: '',
-				alt: 0
+				alt: 0,
+				isGoogleLogin: false
 			};
 
 			//binds
@@ -30049,6 +30052,20 @@
 				}
 			}
 		}, {
+			key: 'handleCheckboxChange',
+			value: function handleCheckboxChange(type, event) {
+				switch (type) {
+					case "google":
+						this.setState({ isGoogleLogin: event.target.checked });
+						break;
+					case "ptc":
+						this.setState({ isGoogleLogin: !event.target.checked });
+						break;
+					default:
+						break;
+				}
+			}
+		}, {
 			key: 'handleChange',
 			value: function handleChange(type, event) {
 
@@ -30072,6 +30089,11 @@
 					default:
 						break;
 				}
+			}
+		}, {
+			key: 'handleGoogleAuthButtonClicked',
+			value: function handleGoogleAuthButtonClicked() {
+				window.open(GOOGLE_AUTH_PATH);
 			}
 		}, {
 			key: 'onLoginClick',
@@ -30112,6 +30134,7 @@
 			key: 'render',
 			value: function render() {
 				var app = this.props.app;
+				var isGoogleLogin = this.state.isGoogleLogin;
 
 
 				return _react2.default.createElement(
@@ -30125,13 +30148,34 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'login-form-body' },
-						_react2.default.createElement('input', { className: 'login-form-body-input', type: 'text', placeholder: 'Username', value: this.state.user, onChange: this.handleUserChange }),
-						_react2.default.createElement('input', { className: 'login-form-body-input', type: 'password', placeholder: 'Password', value: this.state.password, onChange: this.handlePasswordChange }),
-						_react2.default.createElement('input', { className: 'login-form-body-input', type: 'token', placeholder: 'Google Token', value: this.state.token, onChange: this.handleTokenChange }),
+						_react2.default.createElement(
+							'div',
+							null,
+							_react2.default.createElement('input', { type: 'checkbox', checked: isGoogleLogin, onChange: this.handleCheckboxChange.bind(this, "google") }),
+							_react2.default.createElement(
+								'span',
+								null,
+								'Google'
+							),
+							_react2.default.createElement('input', { type: 'checkbox', checked: !isGoogleLogin, onChange: this.handleCheckboxChange.bind(this, "ptc") }),
+							_react2.default.createElement(
+								'span',
+								null,
+								'PTC'
+							)
+						),
+						isGoogleLogin ? '' : _react2.default.createElement('input', { className: 'login-form-body-input', type: 'text', placeholder: 'Username', value: this.state.user, onChange: this.handleUserChange }),
+						isGoogleLogin ? '' : _react2.default.createElement('input', { className: 'login-form-body-input', type: 'password', placeholder: 'Password', value: this.state.password, onChange: this.handlePasswordChange }),
+						isGoogleLogin ? _react2.default.createElement('input', { className: 'login-form-body-input', type: 'token', placeholder: 'Authorization code', value: this.state.token, onChange: this.handleTokenChange }) : '',
 						this.state.geoAPI ? '' : _react2.default.createElement('input', { className: 'login-form-body-input', type: 'text', placeholder: 'Latitude', value: this.state.lat, onChange: this.handleLatChange }),
 						this.state.geoAPI ? '' : _react2.default.createElement('input', { className: 'login-form-body-input', type: 'text', placeholder: 'Longitude', value: this.state.lnd, onChange: this.handleLndChange }),
-						_react2.default.createElement(_LoginButton2.default, { type: 'google', click: this.loginWithGoogle }),
-						_react2.default.createElement(_LoginButton2.default, { type: 'ptc', click: this.loginWithPTC })
+						isGoogleLogin ? _react2.default.createElement(
+							'button',
+							{ className: 'login-form-body-button-ptc', onClick: this.handleGoogleAuthButtonClicked },
+							'Google Authenticate'
+						) : '',
+						isGoogleLogin ? _react2.default.createElement(_LoginButton2.default, { type: 'google', click: this.loginWithGoogle }) : '',
+						isGoogleLogin ? '' : _react2.default.createElement(_LoginButton2.default, { type: 'ptc', click: this.loginWithPTC })
 					)
 				);
 			}
