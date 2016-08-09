@@ -5,15 +5,13 @@ export const ORDERBY = 'ORDERBY';
 
 // login
 import 'whatwg-fetch'; //polyfill for safari
-export function login(user,pass,type,lat,lnd,alt) {
+export function login(auth,lat,lnd,alt) {
 	return function(dispatch) {
 
 		// create payload		
 		const payload = {
-			user:user,
-			pass:pass,
-			type:type,
-			lat,lat,
+			auth: auth,
+			lat:lat,
 			lnd:lnd,
 			alt:alt	
 		}

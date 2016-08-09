@@ -222,7 +222,6 @@
 /***/ function(module, exports) {
 
 	// shim for using process in browser
-
 	var process = module.exports = {};
 
 	// cached from whatever global is present so that test runners that stub it
@@ -234,21 +233,63 @@
 	var cachedClearTimeout;
 
 	(function () {
-	  try {
-	    cachedSetTimeout = setTimeout;
-	  } catch (e) {
-	    cachedSetTimeout = function () {
-	      throw new Error('setTimeout is not defined');
+	    try {
+	        cachedSetTimeout = setTimeout;
+	    } catch (e) {
+	        cachedSetTimeout = function () {
+	            throw new Error('setTimeout is not defined');
+	        }
 	    }
-	  }
-	  try {
-	    cachedClearTimeout = clearTimeout;
-	  } catch (e) {
-	    cachedClearTimeout = function () {
-	      throw new Error('clearTimeout is not defined');
+	    try {
+	        cachedClearTimeout = clearTimeout;
+	    } catch (e) {
+	        cachedClearTimeout = function () {
+	            throw new Error('clearTimeout is not defined');
+	        }
 	    }
-	  }
 	} ())
+	function runTimeout(fun) {
+	    if (cachedSetTimeout === setTimeout) {
+	        //normal enviroments in sane situations
+	        return setTimeout(fun, 0);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedSetTimeout(fun, 0);
+	    } catch(e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+	            return cachedSetTimeout.call(null, fun, 0);
+	        } catch(e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+	            return cachedSetTimeout.call(this, fun, 0);
+	        }
+	    }
+
+
+	}
+	function runClearTimeout(marker) {
+	    if (cachedClearTimeout === clearTimeout) {
+	        //normal enviroments in sane situations
+	        return clearTimeout(marker);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedClearTimeout(marker);
+	    } catch (e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+	            return cachedClearTimeout.call(null, marker);
+	        } catch (e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+	            return cachedClearTimeout.call(this, marker);
+	        }
+	    }
+
+
+
+	}
 	var queue = [];
 	var draining = false;
 	var currentQueue;
@@ -273,7 +314,7 @@
 	    if (draining) {
 	        return;
 	    }
-	    var timeout = cachedSetTimeout.call(null, cleanUpNextTick);
+	    var timeout = runTimeout(cleanUpNextTick);
 	    draining = true;
 
 	    var len = queue.length;
@@ -290,7 +331,7 @@
 	    }
 	    currentQueue = null;
 	    draining = false;
-	    cachedClearTimeout.call(null, timeout);
+	    runClearTimeout(timeout);
 	}
 
 	process.nextTick = function (fun) {
@@ -302,7 +343,7 @@
 	    }
 	    queue.push(new Item(fun, args));
 	    if (queue.length === 1 && !draining) {
-	        cachedSetTimeout.call(null, drainQueue, 0);
+	        runTimeout(drainQueue);
 	    }
 	};
 
@@ -28038,7 +28079,7 @@
 
 	/**
 	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
 	 * of values.
 	 */
 	var objectToString = objectProto.toString;
@@ -28052,8 +28093,7 @@
 	 * @since 0.8.0
 	 * @category Lang
 	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a plain object,
-	 *  else `false`.
+	 * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
 	 * @example
 	 *
 	 * function Foo() {
@@ -28095,17 +28135,8 @@
 
 	var overArg = __webpack_require__(249);
 
-	/* Built-in method references for those with the same name as other `lodash` methods. */
-	var nativeGetPrototype = Object.getPrototypeOf;
-
-	/**
-	 * Gets the `[[Prototype]]` of `value`.
-	 *
-	 * @private
-	 * @param {*} value The value to query.
-	 * @returns {null|Object} Returns the `[[Prototype]]`.
-	 */
-	var getPrototype = overArg(nativeGetPrototype, Object);
+	/** Built-in value references. */
+	var getPrototype = overArg(Object.getPrototypeOf, Object);
 
 	module.exports = getPrototype;
 
@@ -28115,7 +28146,7 @@
 /***/ function(module, exports) {
 
 	/**
-	 * Creates a function that invokes `func` with its first argument transformed.
+	 * Creates a unary function that invokes `func` with its argument transformed.
 	 *
 	 * @private
 	 * @param {Function} func The function to wrap.
@@ -28717,8 +28748,6 @@
 
 	__webpack_require__(264);
 
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 	// action constants
 	var LOGIN = exports.LOGIN = 'LOGIN';
 	var LOAD = exports.LOAD = 'LOAD';
@@ -28726,16 +28755,16 @@
 
 	// login
 	//polyfill for safari
-	function login(user, pass, type, lat, lnd, alt) {
+	function login(auth, lat, lnd, alt) {
 		return function (dispatch) {
-			var _payload;
 
 			// create payload		
-			var payload = (_payload = {
-				user: user,
-				pass: pass,
-				type: type,
-				lat: lat }, _defineProperty(_payload, 'lat', lat), _defineProperty(_payload, 'lnd', lnd), _defineProperty(_payload, 'alt', alt), _payload);
+			var payload = {
+				auth: auth,
+				lat: lat,
+				lnd: lnd,
+				alt: alt
+			};
 
 			// make request
 			return fetch('/api/login', {
@@ -29977,6 +30006,7 @@
 			_this.state = {
 				geoAPI: true,
 				user: '',
+				token: '',
 				password: '',
 				type: '',
 				lat: '',
@@ -29989,6 +30019,7 @@
 			_this.handlePasswordChange = _this.handleChange.bind(_this, 'password');
 			_this.handleLatChange = _this.handleChange.bind(_this, 'lat');
 			_this.handleLndChange = _this.handleChange.bind(_this, 'lnd');
+			_this.handleTokenChange = _this.handleChange.bind(_this, 'token');
 
 			_this.loginWithGoogle = _this.onLoginClick.bind(_this, 'google');
 			_this.loginWithPTC = _this.onLoginClick.bind(_this, 'ptc');
@@ -30035,6 +30066,9 @@
 					case 'lnd':
 						this.setState({ lnd: event.target.value });
 						break;
+					case 'token':
+						this.setState({ token: event.target.value });
+						break;
 					default:
 						break;
 				}
@@ -30045,7 +30079,8 @@
 
 				var user = this.state.user;
 				var pass = this.state.password;
-				//const type = this.state.type;  
+				var token = this.state.token;
+
 				var lat = this.state.lat;
 				var lnd = this.state.lnd;
 				var alt = this.state.alt;
@@ -30057,8 +30092,16 @@
 					return;
 				}
 
+				var auth = {
+					type: type
+				};
+
+				auth.user = user;
+				auth.pass = pass;
+				auth.token = token;
+
 				// login	
-				this.props.login(user, pass, type, lat, lnd, alt).then(function () {
+				this.props.login(auth, lat, lnd, alt).then(function () {
 					_reactRouter.browserHistory.push('/pokemon');
 				}).catch(function (e) {
 					console.dir(e);
@@ -30084,6 +30127,7 @@
 						{ className: 'login-form-body' },
 						_react2.default.createElement('input', { className: 'login-form-body-input', type: 'text', placeholder: 'Username', value: this.state.user, onChange: this.handleUserChange }),
 						_react2.default.createElement('input', { className: 'login-form-body-input', type: 'password', placeholder: 'Password', value: this.state.password, onChange: this.handlePasswordChange }),
+						_react2.default.createElement('input', { className: 'login-form-body-input', type: 'token', placeholder: 'Google Token', value: this.state.token, onChange: this.handleTokenChange }),
 						this.state.geoAPI ? '' : _react2.default.createElement('input', { className: 'login-form-body-input', type: 'text', placeholder: 'Latitude', value: this.state.lat, onChange: this.handleLatChange }),
 						this.state.geoAPI ? '' : _react2.default.createElement('input', { className: 'login-form-body-input', type: 'text', placeholder: 'Longitude', value: this.state.lnd, onChange: this.handleLndChange }),
 						_react2.default.createElement(_LoginButton2.default, { type: 'google', click: this.loginWithGoogle }),

@@ -9,6 +9,7 @@ class Form extends React.Component {
 		this.state = {
 			geoAPI: true,	
 			user: '',
+			token: '',
 			password: '',
 			type: '',
 			lat: '',
@@ -21,7 +22,8 @@ class Form extends React.Component {
 		this.handlePasswordChange = this.handleChange.bind(this,'password');
 		this.handleLatChange = this.handleChange.bind(this,'lat');
 		this.handleLndChange = this.handleChange.bind(this,'lnd');
-	
+		this.handleTokenChange = this.handleChange.bind(this , 'token');
+
 		this.loginWithGoogle = this.onLoginClick.bind(this,'google');
 		this.loginWithPTC = this.onLoginClick.bind(this,'ptc');
 	}
@@ -63,6 +65,9 @@ class Form extends React.Component {
 			case 'lnd':
 				this.setState({ lnd: event.target.value });
     				break;
+			case 'token':
+				this.setState({token : event.target.value});
+					break;
   			default:
 				break;
 		}
@@ -72,7 +77,7 @@ class Form extends React.Component {
 			
 		const user = this.state.user; 
 		const pass = this.state.password; 
-		//const type = this.state.type;  
+		const {token} = this.state;
 		const lat = this.state.lat; 
 		const lnd = this.state.lnd; 
 		const alt = this.state.alt;
@@ -84,8 +89,16 @@ class Form extends React.Component {
 			return;
 		} 
 
+		var auth = {
+			type : type
+		}
+
+		auth.user = user;
+		auth.pass = pass;
+		auth.token = token;
+
 		// login	
-		this.props.login(user,pass,type,lat,lnd,alt)
+		this.props.login(auth,lat,lnd,alt)
 		.then(() => { 
 			browserHistory.push('/pokemon'); 
 		})
@@ -106,6 +119,7 @@ class Form extends React.Component {
 				<div className="login-form-body" >
 					<input className="login-form-body-input" type="text" placeholder="Username" value={this.state.user} onChange={this.handleUserChange} />
 					<input className="login-form-body-input" type="password" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange} />
+					<input className="login-form-body-input" type="token" placeholder="Google Token" value={this.state.token} onChange={this.handleTokenChange} />
 					{(this.state.geoAPI) ? '' : <input className="login-form-body-input" type="text" placeholder="Latitude" value={this.state.lat} onChange={this.handleLatChange} />}	
 					{(this.state.geoAPI) ? '' : <input className="login-form-body-input" type="text" placeholder="Longitude" value={this.state.lnd} onChange={this.handleLndChange} />}
 					<LoginButton type={'google'} click={this.loginWithGoogle} />	
