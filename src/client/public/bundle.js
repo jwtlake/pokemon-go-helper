@@ -30014,7 +30014,7 @@
 				lat: '',
 				lnd: '',
 				alt: 0,
-				isGoogleLogin: false
+				isGoogleLogin: true
 			};
 
 			//binds
@@ -30231,7 +30231,8 @@
 
 
 				var isHover = this.state.hover;
-				var text = type === 'google' ? 'GOOGLE' : 'POKÉMON TRAINER CLUB';
+				//const text = (type === 'google') ? 'GOOGLE' : 'POKÉMON TRAINER CLUB';
+				var text = "LOGIN";
 				var style = type === 'google' ? 'login-form-body-button-google' : 'login-form-body-button-ptc';
 				return _react2.default.createElement(
 					'button',

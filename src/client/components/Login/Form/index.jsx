@@ -15,7 +15,7 @@ class Form extends React.Component {
 			lat: '',
 			lnd: '',
 			alt: 0 ,
-			isGoogleLogin : false
+			isGoogleLogin : true
 		}; 
 	
 		//binds
