@@ -11,9 +11,9 @@ export function login(auth,lat,lnd,alt) {
 		// create payload		
 		const payload = {
 			auth: auth,
-			lat:lat,
-			lnd:lnd,
-			alt:alt	
+			lat: lat,
+			lnd: lnd,
+			alt: alt	
 		}
 
 		// make request
