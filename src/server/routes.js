@@ -11,9 +11,12 @@ var routes = [
 		config: {
 			validate: {
 				payload: {
-					user: Joi.string().min(1).required(),
-					pass: Joi.string().min(1).required(),
-					type: Joi.any().valid('google','ptc').required(),	
+					auth: Joi.object().keys({
+						type: Joi.any().valid('google','ptc').required(),
+						user: Joi.string().allow(''),
+						pass: Joi.string().allow(''),
+						token: Joi.string().allow(''),
+					}),
 					lat: Joi.number().required(),
 					lnd: Joi.number().required(),
 					alt: Joi.number().required()

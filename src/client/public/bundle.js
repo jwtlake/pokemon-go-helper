@@ -70,11 +70,11 @@
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _Pokemon = __webpack_require__(282);
+	var _Pokemon = __webpack_require__(283);
 
 	var _Pokemon2 = _interopRequireDefault(_Pokemon);
 
-	var _LuckyEgg = __webpack_require__(291);
+	var _LuckyEgg = __webpack_require__(292);
 
 	var _LuckyEgg2 = _interopRequireDefault(_LuckyEgg);
 
@@ -28717,8 +28717,6 @@
 
 	__webpack_require__(264);
 
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 	// action constants
 	var LOGIN = exports.LOGIN = 'LOGIN';
 	var LOAD = exports.LOAD = 'LOAD';
@@ -28726,16 +28724,16 @@
 
 	// login
 	//polyfill for safari
-	function login(user, pass, type, lat, lnd, alt) {
+	function login(auth, lat, lnd, alt) {
 		return function (dispatch) {
-			var _payload;
 
 			// create payload		
-			var payload = (_payload = {
-				user: user,
-				pass: pass,
-				type: type,
-				lat: lat }, _defineProperty(_payload, 'lat', lat), _defineProperty(_payload, 'lnd', lnd), _defineProperty(_payload, 'alt', alt), _payload);
+			var payload = {
+				auth: auth,
+				lat: lat,
+				lnd: lnd,
+				alt: alt
+			};
 
 			// make request
 			return fetch('/api/login', {
@@ -29745,7 +29743,7 @@
 
 	var _Form2 = _interopRequireDefault(_Form);
 
-	var _Legal = __webpack_require__(281);
+	var _Legal = __webpack_require__(282);
 
 	var _Legal2 = _interopRequireDefault(_Legal);
 
@@ -29924,7 +29922,7 @@
 				return _react2.default.createElement(
 					"div",
 					{ className: "login-logo" },
-					"Pokemon Go Helper"
+					"Pokémon Go Helper"
 				);
 			}
 		}]);
@@ -29950,15 +29948,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(175);
+	var _Google = __webpack_require__(280);
 
-	var _LoginButton = __webpack_require__(280);
+	var _Google2 = _interopRequireDefault(_Google);
 
-	var _LoginButton2 = _interopRequireDefault(_LoginButton);
+	var _PTC = __webpack_require__(281);
+
+	var _PTC2 = _interopRequireDefault(_PTC);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -29975,120 +29973,53 @@
 			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Form).call(this, props));
 
 			_this.state = {
-				geoAPI: true,
-				user: '',
-				password: '',
-				type: '',
-				lat: '',
-				lnd: '',
-				alt: 0
+				type: ''
 			};
 
-			//binds
-			_this.handleUserChange = _this.handleChange.bind(_this, 'user');
-			_this.handlePasswordChange = _this.handleChange.bind(_this, 'password');
-			_this.handleLatChange = _this.handleChange.bind(_this, 'lat');
-			_this.handleLndChange = _this.handleChange.bind(_this, 'lnd');
-
-			_this.loginWithGoogle = _this.onLoginClick.bind(_this, 'google');
-			_this.loginWithPTC = _this.onLoginClick.bind(_this, 'ptc');
+			// binds
+			_this.loginWithGoogle = _this.onLoginWithClick.bind(_this, 'google');
+			_this.loginWithPTC = _this.onLoginWithClick.bind(_this, 'ptc');
 			return _this;
 		}
 
 		_createClass(Form, [{
-			key: 'componentWillMount',
-			value: function componentWillMount() {
-				var _this2 = this;
-
-				// check for geolocation api	
-				if ("geolocation" in navigator) {
-					// try to get geolocation	
-					navigator.geolocation.getCurrentPosition(function (position) {
-						var lat = position.coords.latitude;
-						var lnd = position.coords.longitude;
-
-						if (lat && lnd) {
-							_this2.setState(_defineProperty({ geoAPI: true, lat: lat, lnd: lnd }, 'lnd', lnd));
-						} else {
-							_this2.setState({ geoAPI: false });
-						}
-					});
-				} else {
-					this.setState({ geoAPI: false });
-				}
-			}
-		}, {
-			key: 'handleChange',
-			value: function handleChange(type, event) {
-
-				// handle change	
-				switch (type) {
-					case 'user':
-						this.setState({ user: event.target.value });
-						break;
-					case 'password':
-						this.setState({ password: event.target.value });
-						break;
-					case 'lat':
-						this.setState({ lat: event.target.value });
-						break;
-					case 'lnd':
-						this.setState({ lnd: event.target.value });
-						break;
-					default:
-						break;
-				}
-			}
-		}, {
-			key: 'onLoginClick',
-			value: function onLoginClick(type) {
-
-				var user = this.state.user;
-				var pass = this.state.password;
-				//const type = this.state.type;  
-				var lat = this.state.lat;
-				var lnd = this.state.lnd;
-				var alt = this.state.alt;
-
-				// try to get geolocation
-				if (lat === '' || lnd === '') {
-					this.setState({ geoAPI: false });
-					alert('Unable to get geolocation.');
-					return;
-				}
-
-				// login	
-				this.props.login(user, pass, type, lat, lnd, alt).then(function () {
-					_reactRouter.browserHistory.push('/pokemon');
-				}).catch(function (e) {
-					console.dir(e);
-					alert('ERROR: ' + e);
-				});
+			key: 'onLoginWithClick',
+			value: function onLoginWithClick(type) {
+				this.setState({ type: type });
 			}
 		}, {
 			key: 'render',
 			value: function render() {
-				var app = this.props.app;
+				var _props = this.props;
+				var app = _props.app;
+				var login = _props.login;
+				var type = this.state.type;
 
 
 				return _react2.default.createElement(
 					'div',
 					{ className: 'login-form' },
-					_react2.default.createElement(
-						'span',
-						{ className: 'login-form-header' },
-						'Sign in with'
-					),
-					_react2.default.createElement(
+					type === '' ? _react2.default.createElement(
 						'div',
 						{ className: 'login-form-body' },
-						_react2.default.createElement('input', { className: 'login-form-body-input', type: 'text', placeholder: 'Username', value: this.state.user, onChange: this.handleUserChange }),
-						_react2.default.createElement('input', { className: 'login-form-body-input', type: 'password', placeholder: 'Password', value: this.state.password, onChange: this.handlePasswordChange }),
-						this.state.geoAPI ? '' : _react2.default.createElement('input', { className: 'login-form-body-input', type: 'text', placeholder: 'Latitude', value: this.state.lat, onChange: this.handleLatChange }),
-						this.state.geoAPI ? '' : _react2.default.createElement('input', { className: 'login-form-body-input', type: 'text', placeholder: 'Longitude', value: this.state.lnd, onChange: this.handleLndChange }),
-						_react2.default.createElement(_LoginButton2.default, { type: 'google', click: this.loginWithGoogle }),
-						_react2.default.createElement(_LoginButton2.default, { type: 'ptc', click: this.loginWithPTC })
-					)
+						_react2.default.createElement(
+							'span',
+							{ className: 'login-form-header' },
+							'Sign in with'
+						),
+						_react2.default.createElement(
+							'button',
+							{ className: 'login-form-body-button-google', onClick: this.loginWithGoogle },
+							'GOOGLE'
+						),
+						_react2.default.createElement(
+							'button',
+							{ className: 'login-form-body-button-ptc', onClick: this.loginWithPTC },
+							'POKÉMON TRAINER CLUB'
+						)
+					) : '',
+					type === 'google' ? _react2.default.createElement(_Google2.default, { login: login }) : '',
+					type === 'ptc' ? _react2.default.createElement(_PTC2.default, { login: login }) : ''
 				);
 			}
 		}]);
@@ -30114,7 +30045,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(175);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -30122,44 +30057,365 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var LoginButton = function (_React$Component) {
-		_inherits(LoginButton, _React$Component);
+	var GOOGLE_AUTH_PATH = "https://accounts.google.com/o/oauth2/auth?client_id=848232511240-73ri3t7plvk96pj4f85uj8otdat2alem.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=code&scope=openid%20email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email";
 
-		function LoginButton(props) {
-			_classCallCheck(this, LoginButton);
+	var Google = function (_React$Component) {
+		_inherits(Google, _React$Component);
 
-			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(LoginButton).call(this, props));
+		function Google(props) {
+			_classCallCheck(this, Google);
 
-			_this.state = { hover: false };
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Google).call(this, props));
+
+			_this.state = {
+				geoAPI: true,
+				token: '',
+				lat: '',
+				lnd: '',
+				alt: 0
+			};
+
+			// binds
+			_this.handleLatChange = _this.onHandleChange.bind(_this, 'lat');
+			_this.handleLndChange = _this.onHandleChange.bind(_this, 'lnd');
+			_this.handleTokenChange = _this.onHandleChange.bind(_this, 'token');
+			_this.handleAuthClick = _this.onAuthClick.bind(_this);
+			_this.handleLoginClick = _this.onLoginClick.bind(_this);
 			return _this;
 		}
 
-		_createClass(LoginButton, [{
+		_createClass(Google, [{
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				var _this2 = this;
+
+				// check for geolocation api	
+				if ("geolocation" in navigator) {
+					// try to get geolocation	
+					navigator.geolocation.getCurrentPosition(function (position) {
+						var lat = position.coords.latitude;
+						var lnd = position.coords.longitude;
+
+						if (lat && lnd) {
+							_this2.setState(_defineProperty({ geoAPI: true, lat: lat, lnd: lnd }, 'lnd', lnd));
+						} else {
+							_this2.setState({ geoAPI: false });
+						}
+					});
+				} else {
+					this.setState({ geoAPI: false });
+				}
+			}
+		}, {
+			key: 'onHandleChange',
+			value: function onHandleChange(type, event) {
+
+				// handle change	
+				switch (type) {
+					case 'lat':
+						this.setState({ lat: event.target.value });
+						break;
+					case 'lnd':
+						this.setState({ lnd: event.target.value });
+						break;
+					case 'token':
+						this.setState({ token: event.target.value });
+						break;
+					default:
+						break;
+				}
+			}
+		}, {
+			key: 'onAuthClick',
+			value: function onAuthClick() {
+				window.open(GOOGLE_AUTH_PATH);
+			}
+		}, {
+			key: 'onLoginClick',
+			value: function onLoginClick(type) {
+				var token = this.state.token;
+				var lat = this.state.lat;
+				var lnd = this.state.lnd;
+				var alt = this.state.alt;
+
+				// try to get geolocation
+
+				if (lat === '' || lnd === '') {
+					this.setState({ geoAPI: false });
+					alert('Unable to get geolocation.');
+					return;
+				}
+
+				// create auth object
+				var auth = {
+					type: 'google'
+				};
+
+				auth.token = token;
+
+				// login	
+				this.props.login(auth, lat, lnd, alt).then(function () {
+					_reactRouter.browserHistory.push('/pokemon');
+				}).catch(function (e) {
+					console.dir(e);
+					alert('ERROR: ' + e);
+				});
+			}
+		}, {
 			key: 'render',
 			value: function render() {
-				var _props = this.props;
-				var type = _props.type;
-				var click = _props.click;
+				var app = this.props.app;
+				var _state = this.state;
+				var token = _state.token;
+				var lat = _state.lat;
+				var lnd = _state.lnd;
 
 
-				var isHover = this.state.hover;
-				var text = type === 'google' ? 'GOOGLE' : 'POKÉMON TRAINER CLUB';
-				var style = type === 'google' ? 'login-form-body-button-google' : 'login-form-body-button-ptc';
 				return _react2.default.createElement(
-					'button',
-					{ className: style, onClick: click },
-					text
+					'div',
+					{ className: 'login-form-body' },
+					_react2.default.createElement(
+						'span',
+						{ className: 'login-form-header' },
+						'Google'
+					),
+					_react2.default.createElement(
+						'button',
+						{ className: 'login-form-body-button-google', onClick: this.handleAuthClick },
+						'Get Auth Token'
+					),
+					_react2.default.createElement('input', {
+						name: 'token',
+						className: 'login-form-body-input',
+						type: 'token',
+						placeholder: 'Auth Token Code',
+						value: token,
+						onChange: this.handleTokenChange
+					}),
+					this.state.geoAPI ? '' : _react2.default.createElement('input', {
+						className: 'login-form-body-input',
+						type: 'text',
+						placeholder: 'Latitude',
+						value: lat,
+						onChange: this.handleLatChange
+					}),
+					this.state.geoAPI ? '' : _react2.default.createElement('input', {
+						className: 'login-form-body-input',
+						type: 'text',
+						placeholder: 'Longitude',
+						value: lnd,
+						onChange: this.handleLndChange
+					}),
+					_react2.default.createElement(
+						'button',
+						{ className: 'login-form-body-button-ptc', onClick: this.handleLoginClick },
+						'Login'
+					)
 				);
 			}
 		}]);
 
-		return LoginButton;
+		return Google;
 	}(_react2.default.Component);
 
-	exports.default = LoginButton;
+	exports.default = Google;
 
 /***/ },
 /* 281 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(175);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var PTC = function (_React$Component) {
+		_inherits(PTC, _React$Component);
+
+		function PTC(props) {
+			_classCallCheck(this, PTC);
+
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(PTC).call(this, props));
+
+			_this.state = {
+				geoAPI: true,
+				user: '',
+				password: '',
+				lat: '',
+				lnd: '',
+				alt: 0
+			};
+
+			// binds
+			_this.handleUserChange = _this.onHandleChange.bind(_this, 'user');
+			_this.handlePasswordChange = _this.onHandleChange.bind(_this, 'password');
+			_this.handleLatChange = _this.onHandleChange.bind(_this, 'lat');
+			_this.handleLndChange = _this.onHandleChange.bind(_this, 'lnd');
+			_this.handleLoginClick = _this.onLoginClick.bind(_this);
+			return _this;
+		}
+
+		_createClass(PTC, [{
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				var _this2 = this;
+
+				// check for geolocation api	
+				if ("geolocation" in navigator) {
+					// try to get geolocation	
+					navigator.geolocation.getCurrentPosition(function (position) {
+						var lat = position.coords.latitude;
+						var lnd = position.coords.longitude;
+
+						if (lat && lnd) {
+							_this2.setState(_defineProperty({ geoAPI: true, lat: lat, lnd: lnd }, 'lnd', lnd));
+						} else {
+							_this2.setState({ geoAPI: false });
+						}
+					});
+				} else {
+					this.setState({ geoAPI: false });
+				}
+			}
+		}, {
+			key: 'onHandleChange',
+			value: function onHandleChange(type, event) {
+
+				// handle change	
+				switch (type) {
+					case 'user':
+						this.setState({ user: event.target.value });
+						break;
+					case 'password':
+						this.setState({ password: event.target.value });
+						break;
+					case 'lat':
+						this.setState({ lat: event.target.value });
+						break;
+					case 'lnd':
+						this.setState({ lnd: event.target.value });
+						break;
+					default:
+						break;
+				}
+			}
+		}, {
+			key: 'onLoginClick',
+			value: function onLoginClick(type) {
+				var user = this.state.user;
+				var password = this.state.password;
+				var lat = this.state.lat;
+				var lnd = this.state.lnd;
+				var alt = this.state.alt;
+
+				// try to get geolocation
+
+				if (lat === '' || lnd === '') {
+					this.setState({ geoAPI: false });
+					alert('Unable to get geolocation.');
+					return;
+				}
+
+				// create auth object	
+				var auth = {
+					type: 'ptc'
+				};
+
+				auth.user = user;
+				auth.pass = password;
+
+				// login	
+				this.props.login(auth, lat, lnd, alt).then(function () {
+					_reactRouter.browserHistory.push('/pokemon');
+				}).catch(function (e) {
+					console.dir(e);
+					alert('ERROR: ' + e);
+				});
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var app = this.props.app;
+				var _state = this.state;
+				var user = _state.user;
+				var password = _state.password;
+				var lat = _state.lat;
+				var lnd = _state.lnd;
+
+
+				return _react2.default.createElement(
+					'div',
+					{ className: 'login-form-body' },
+					_react2.default.createElement(
+						'span',
+						{ className: 'login-form-header' },
+						'Pokémon Trainer Club'
+					),
+					_react2.default.createElement('input', {
+						name: 'user',
+						className: 'login-form-body-input',
+						type: 'text',
+						placeholder: 'Username',
+						value: user,
+						onChange: this.handleUserChange
+					}),
+					_react2.default.createElement('input', {
+						name: 'password',
+						className: 'login-form-body-input',
+						type: 'password',
+						placeholder: 'Password',
+						value: password,
+						onChange: this.handlePasswordChange
+					}),
+					this.state.geoAPI ? '' : _react2.default.createElement('input', {
+						className: 'login-form-body-input',
+						type: 'text',
+						placeholder: 'Latitude',
+						value: lat,
+						onChange: this.handleLatChange
+					}),
+					this.state.geoAPI ? '' : _react2.default.createElement('input', {
+						className: 'login-form-body-input',
+						type: 'text',
+						placeholder: 'Longitude',
+						value: lnd,
+						onChange: this.handleLndChange
+					}),
+					_react2.default.createElement(
+						'button',
+						{ className: 'login-form-body-button-ptc', onClick: this.handleLoginClick },
+						'Sign in'
+					)
+				);
+			}
+		}]);
+
+		return PTC;
+	}(_react2.default.Component);
+
+	exports.default = PTC;
+
+/***/ },
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30209,12 +30465,12 @@
 					_react2.default.createElement(
 						"div",
 						{ className: "login-legal-text" },
-						"This is a unofficial hobby project offered with no warranty of any kind."
+						"This is an unofficial hobby project offered with no warranty of any kind."
 					),
 					_react2.default.createElement(
 						"div",
 						{ className: "login-legal-text" },
-						"The unofficial API used to log into your account could result in a account ban."
+						"The unofficial API used to log into your account could result in an account ban."
 					)
 				);
 			}
@@ -30226,7 +30482,7 @@
 	exports.default = Legal;
 
 /***/ },
-/* 282 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30245,7 +30501,7 @@
 
 	var _action_creators = __webpack_require__(263);
 
-	var _Pokemon = __webpack_require__(283);
+	var _Pokemon = __webpack_require__(284);
 
 	var _Pokemon2 = _interopRequireDefault(_Pokemon);
 
@@ -30270,7 +30526,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Pokemon2.default);
 
 /***/ },
-/* 283 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30291,11 +30547,11 @@
 
 	var _reactRouter = __webpack_require__(175);
 
-	var _Detail = __webpack_require__(284);
+	var _Detail = __webpack_require__(285);
 
 	var _Detail2 = _interopRequireDefault(_Detail);
 
-	var _OrderBy = __webpack_require__(289);
+	var _OrderBy = __webpack_require__(290);
 
 	var _OrderBy2 = _interopRequireDefault(_OrderBy);
 
@@ -30445,7 +30701,7 @@
 	exports.default = Pokemon;
 
 /***/ },
-/* 284 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30460,19 +30716,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Avatar = __webpack_require__(285);
+	var _Avatar = __webpack_require__(286);
 
 	var _Avatar2 = _interopRequireDefault(_Avatar);
 
-	var _Stats = __webpack_require__(286);
+	var _Stats = __webpack_require__(287);
 
 	var _Stats2 = _interopRequireDefault(_Stats);
 
-	var _Moves = __webpack_require__(287);
+	var _Moves = __webpack_require__(288);
 
 	var _Moves2 = _interopRequireDefault(_Moves);
 
-	var _Perfectness = __webpack_require__(288);
+	var _Perfectness = __webpack_require__(289);
 
 	var _Perfectness2 = _interopRequireDefault(_Perfectness);
 
@@ -30547,7 +30803,7 @@
 	exports.default = Detail;
 
 /***/ },
-/* 285 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30625,7 +30881,7 @@
 	exports.default = Avatar;
 
 /***/ },
-/* 286 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30761,7 +31017,7 @@
 	exports.default = Summary;
 
 /***/ },
-/* 287 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30837,7 +31093,7 @@
 	exports.default = Moves;
 
 /***/ },
-/* 288 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30917,7 +31173,7 @@
 	exports.default = Perfectness;
 
 /***/ },
-/* 289 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30936,7 +31192,7 @@
 
 	var _action_creators = __webpack_require__(263);
 
-	var _OrderBy = __webpack_require__(290);
+	var _OrderBy = __webpack_require__(291);
 
 	var _OrderBy2 = _interopRequireDefault(_OrderBy);
 
@@ -30958,7 +31214,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_OrderBy2.default);
 
 /***/ },
-/* 290 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31067,7 +31323,7 @@
 	exports.default = OrderBy;
 
 /***/ },
-/* 291 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31086,7 +31342,7 @@
 
 	var _action_creators = __webpack_require__(263);
 
-	var _LuckyEgg = __webpack_require__(292);
+	var _LuckyEgg = __webpack_require__(293);
 
 	var _LuckyEgg2 = _interopRequireDefault(_LuckyEgg);
 
@@ -31111,7 +31367,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_LuckyEgg2.default);
 
 /***/ },
-/* 292 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31132,15 +31388,15 @@
 
 	var _reactRouter = __webpack_require__(175);
 
-	var _Summary = __webpack_require__(293);
+	var _Summary = __webpack_require__(294);
 
 	var _Summary2 = _interopRequireDefault(_Summary);
 
-	var _Detail = __webpack_require__(297);
+	var _Detail = __webpack_require__(298);
 
 	var _Detail2 = _interopRequireDefault(_Detail);
 
-	var _OrderBy = __webpack_require__(289);
+	var _OrderBy = __webpack_require__(290);
 
 	var _OrderBy2 = _interopRequireDefault(_OrderBy);
 
@@ -31293,7 +31549,7 @@
 	exports.default = LuckyEgg;
 
 /***/ },
-/* 293 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31308,11 +31564,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _LuckyEggSection = __webpack_require__(294);
+	var _LuckyEggSection = __webpack_require__(295);
 
 	var _LuckyEggSection2 = _interopRequireDefault(_LuckyEggSection);
 
-	var _ReportSection = __webpack_require__(296);
+	var _ReportSection = __webpack_require__(297);
 
 	var _ReportSection2 = _interopRequireDefault(_ReportSection);
 
@@ -31369,7 +31625,7 @@
 	exports.default = Summary;
 
 /***/ },
-/* 294 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31384,7 +31640,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ProgressBar = __webpack_require__(295);
+	var _ProgressBar = __webpack_require__(296);
 
 	var _ProgressBar2 = _interopRequireDefault(_ProgressBar);
 
@@ -31444,7 +31700,7 @@
 	exports.default = LuckyEggSection;
 
 /***/ },
-/* 295 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31507,7 +31763,7 @@
 	exports.default = ProgressBar;
 
 /***/ },
-/* 296 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31601,7 +31857,7 @@
 	exports.default = ReportSection;
 
 /***/ },
-/* 297 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31616,15 +31872,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Avatar = __webpack_require__(298);
+	var _Avatar = __webpack_require__(299);
 
 	var _Avatar2 = _interopRequireDefault(_Avatar);
 
-	var _Inventory = __webpack_require__(299);
+	var _Inventory = __webpack_require__(300);
 
 	var _Inventory2 = _interopRequireDefault(_Inventory);
 
-	var _Outcome = __webpack_require__(300);
+	var _Outcome = __webpack_require__(301);
 
 	var _Outcome2 = _interopRequireDefault(_Outcome);
 
@@ -31697,7 +31953,7 @@
 	exports.default = Detail;
 
 /***/ },
-/* 298 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31768,7 +32024,7 @@
 	exports.default = Avatar;
 
 /***/ },
-/* 299 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31856,7 +32112,7 @@
 	exports.default = Inventory;
 
 /***/ },
-/* 300 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
