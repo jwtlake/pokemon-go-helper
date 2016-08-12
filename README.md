@@ -36,7 +36,9 @@ npm install
 Start the webserver
 ```
 npm run start
-```
+```  
+
+Navigate to localhost:3000 in your web browser
 
 ## TODO
 Figure out HTTPS so geolocation works outside local host  
