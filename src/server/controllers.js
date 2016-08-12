@@ -20,34 +20,43 @@ module.exports = {
 		var altitude = request.payload.alt;		
 
 		// debug response
-		if(username.toLowerCase() === 'test' && password.toLowerCase() === 'test') {
+		if(type === 'google') {
+			// normal login
+			console.log(`login attempt -- type:${type} token:${token} lat:${latitude} lnd:${longitude} alt:${altitude}`);	
+		} else {
+			// check for special debug login (skips normal login and passes test data)
+			if(username.toLowerCase() === 'test' && password.toLowerCase() === 'test') {
 			
-			// get pre-normalize response	
-			var dummyResponse = require('./dummyData/response.json'); 
-			console.log(`pre-normalized test`);	
-			reply(dummyResponse);
-			return;
-		} else if(username.toLowerCase() === 'testraw' && password.toLowerCase() === 'test') {
+				// get pre-normalize response	
+				var dummyResponse = require('./dummyData/response.json'); 
+				console.log(`pre-normalized test`);	
+				reply(dummyResponse);
+				return;
+			} else if(username.toLowerCase() === 'testraw' && password.toLowerCase() === 'test') {
 			
-			// get dummy raw response and normalize	
-			var dummyRawResponse = require('./dummyData/raw_response.json'); 
-			console.log(`raw test`);	
-			reply(normalize(dummyRawResponse));
-			return;
-		} else {	
-			console.log(`login attempt -- user:${username} pass:**** type:${type} lat:${latitude} lnd:${longitude} alt:${altitude}`);	
+				// get dummy raw response and normalize	
+				var dummyRawResponse = require('./dummyData/raw_response.json'); 
+				console.log(`raw test`);	
+				reply(normalize(dummyRawResponse));
+				return;
+			} else {
+			
+				// else normal login
+				console.log(`login attempt -- type:${type} user:${username} pass:**** lat:${latitude} lnd:${longitude} alt:${altitude}`);	
+			}
 		}
 
 		// create instance	
 		var login;
 		var loginProcess;
-		var provider;
+		var provider;	
+		
 		if(type === 'google'){
-			// use authoriztion code instead of username/password
-			//loginProcess = new pogobuf.GoogleLogin().login(username , password);
+			// login with google auth token
 			loginProcess = new GoogleAPI().login(token);
 			provider = 'google';
 		} else {
+			// login with username and password	
 			loginProcess = new pogobuf.PTCLogin().login(username,password);
 			provider = 'ptc';	
 		}	

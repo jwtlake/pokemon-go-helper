@@ -12,7 +12,7 @@ class Logo extends React.Component {
 
 		return(
 			<div className="login-logo">
-			       Pokemon Go Helper	
+			       Pokémon Go Helper	
 			</div>	
 		);			
 	}
