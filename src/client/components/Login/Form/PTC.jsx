@@ -63,13 +63,15 @@ class PTC extends React.Component {
 		}
 	}
 
-	onLoginClick(type){
+	onLoginClick(event){
 
 		const {user} = this.state; 
 		const {password} = this.state; 
 		const {lat} = this.state; 
 		const {lnd} = this.state; 
 		const {alt} = this.state;
+
+                event.preventDefault();
 
 		// try to get geolocation
 		if(lat === '' || lnd === '') {
@@ -105,7 +107,7 @@ class PTC extends React.Component {
 		} = this;
 
 		return(
-			<div className="login-form-body">
+			<form className="login-form-body" method="post" onSubmit={this.handleLoginClick}>
 				<span className="login-form-header">
 					Pokémon Trainer Club
 				</span>	
@@ -143,10 +145,10 @@ class PTC extends React.Component {
 						onChange={this.handleLndChange} 
 					/> 
 				}
-				<button className="login-form-body-button-ptc" onClick={this.handleLoginClick}>
+				<button className="login-form-body-button-ptc" type="submit">
 					Sign in	
 				</button>	
-			</div>
+			</form>
 		);			
 	}
 }
