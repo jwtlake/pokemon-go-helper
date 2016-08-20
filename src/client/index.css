@@ -128,6 +128,10 @@ app-header-link-current:active {color: #466a6d;}
 	cursor: pointer;
 }
 
+.login-form-body-button-hidden {
+	display: none;
+}
+
 .login-legal {
 	padding-top: 40px;
 	text-align: center;

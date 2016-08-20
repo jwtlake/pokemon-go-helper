@@ -22,7 +22,7 @@ var routes = [
 					alt: Joi.number().required()
 				}	
 			}	
-	}
+		}
 	},
 	{
 		method: 'GET',

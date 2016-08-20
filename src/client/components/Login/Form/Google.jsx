@@ -61,12 +61,19 @@ class Google extends React.Component {
 		}
 	}
 
-	onAuthClick(){
+	onAuthClick(event) {
+
+		// disable default form submit	
+		event.preventDefault();
+			
 		window.open(GOOGLE_AUTH_PATH);
 	}
 
-	onLoginClick(type){
+	onLoginClick(event) {
 			
+		// disable default form submit	
+		event.preventDefault();
+		
 		const {token} = this.state;
 		const {lat} = this.state; 
 		const {lnd} = this.state; 
@@ -104,10 +111,11 @@ class Google extends React.Component {
 		} = this;
 
 		return(
-			<div className="login-form-body" >
+			<form className="login-form-body" method="post" onSubmit={this.handleLoginClick}>
 				<span className="login-form-header">
 					Google
 				</span>
+				<button className="login-form-body-button-hidden" type="submit">Login With Enter Key Support</button>
 				<button className="login-form-body-button-google" onClick={this.handleAuthClick}>
 					Get Auth Token
 				</button>
@@ -138,10 +146,10 @@ class Google extends React.Component {
 					/>
 				}
 				
-				<button className="login-form-body-button-ptc" onClick={this.handleLoginClick}>
+				<button className="login-form-body-button-ptc" type="submit">
 					Login	
 				</button>
-			</div>
+			</form>
 		);			
 	}
 }

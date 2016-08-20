@@ -30127,12 +30127,20 @@
 			}
 		}, {
 			key: 'onAuthClick',
-			value: function onAuthClick() {
+			value: function onAuthClick(event) {
+
+				// disable default form submit	
+				event.preventDefault();
+
 				window.open(GOOGLE_AUTH_PATH);
 			}
 		}, {
 			key: 'onLoginClick',
-			value: function onLoginClick(type) {
+			value: function onLoginClick(event) {
+
+				// disable default form submit	
+				event.preventDefault();
+
 				var token = this.state.token;
 				var lat = this.state.lat;
 				var lnd = this.state.lnd;
@@ -30172,12 +30180,17 @@
 
 
 				return _react2.default.createElement(
-					'div',
-					{ className: 'login-form-body' },
+					'form',
+					{ className: 'login-form-body', method: 'post', onSubmit: this.handleLoginClick },
 					_react2.default.createElement(
 						'span',
 						{ className: 'login-form-header' },
 						'Google'
+					),
+					_react2.default.createElement(
+						'button',
+						{ className: 'login-form-body-button-hidden', type: 'submit' },
+						'Login With Enter Key Support'
 					),
 					_react2.default.createElement(
 						'button',
@@ -30208,7 +30221,7 @@
 					}),
 					_react2.default.createElement(
 						'button',
-						{ className: 'login-form-body-button-ptc', onClick: this.handleLoginClick },
+						{ className: 'login-form-body-button-ptc', type: 'submit' },
 						'Login'
 					)
 				);
@@ -30320,7 +30333,11 @@
 			}
 		}, {
 			key: 'onLoginClick',
-			value: function onLoginClick(type) {
+			value: function onLoginClick(event) {
+
+				// disable default form submit
+				event.preventDefault();
+
 				var user = this.state.user;
 				var password = this.state.password;
 				var lat = this.state.lat;
@@ -30363,8 +30380,8 @@
 
 
 				return _react2.default.createElement(
-					'div',
-					{ className: 'login-form-body' },
+					'form',
+					{ className: 'login-form-body', method: 'post', onSubmit: this.handleLoginClick },
 					_react2.default.createElement(
 						'span',
 						{ className: 'login-form-header' },
@@ -30402,7 +30419,7 @@
 					}),
 					_react2.default.createElement(
 						'button',
-						{ className: 'login-form-body-button-ptc', onClick: this.handleLoginClick },
+						{ className: 'login-form-body-button-ptc', type: 'submit' },
 						'Sign in'
 					)
 				);
