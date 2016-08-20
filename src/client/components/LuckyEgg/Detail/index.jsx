@@ -1,4 +1,5 @@
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 import Avatar from './Avatar';
 import Inventory from './Inventory';
@@ -7,7 +8,8 @@ import Outcome from './Outcome';
 class Detail extends React.Component {
 	constructor(props) {
 		super(props);
-
+		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+		
 		// binds
 	}
 

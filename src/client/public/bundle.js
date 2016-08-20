@@ -30716,6 +30716,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactAddonsPureRenderMixin = __webpack_require__(275);
+
+	var _reactAddonsPureRenderMixin2 = _interopRequireDefault(_reactAddonsPureRenderMixin);
+
 	var _Avatar = __webpack_require__(286);
 
 	var _Avatar2 = _interopRequireDefault(_Avatar);
@@ -30746,9 +30750,12 @@
 		function Detail(props) {
 			_classCallCheck(this, Detail);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Detail).call(this, props));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Detail).call(this, props));
+
+			_this.shouldComponentUpdate = _reactAddonsPureRenderMixin2.default.shouldComponentUpdate.bind(_this);
 
 			// binds
+			return _this;
 		}
 
 		_createClass(Detail, [{
@@ -31872,6 +31879,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactAddonsPureRenderMixin = __webpack_require__(275);
+
+	var _reactAddonsPureRenderMixin2 = _interopRequireDefault(_reactAddonsPureRenderMixin);
+
 	var _Avatar = __webpack_require__(299);
 
 	var _Avatar2 = _interopRequireDefault(_Avatar);
@@ -31898,9 +31909,12 @@
 		function Detail(props) {
 			_classCallCheck(this, Detail);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Detail).call(this, props));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Detail).call(this, props));
+
+			_this.shouldComponentUpdate = _reactAddonsPureRenderMixin2.default.shouldComponentUpdate.bind(_this);
 
 			// binds
+			return _this;
 		}
 
 		_createClass(Detail, [{
