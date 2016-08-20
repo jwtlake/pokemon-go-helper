@@ -63,7 +63,10 @@ class PTC extends React.Component {
 		}
 	}
 
-	onLoginClick(type){
+	onLoginClick(event){
+
+		// disable default form submit
+		event.preventDefault();
 
 		const {user} = this.state; 
 		const {password} = this.state; 
@@ -105,7 +108,7 @@ class PTC extends React.Component {
 		} = this;
 
 		return(
-			<div className="login-form-body">
+			<form className="login-form-body" method="post" onSubmit={this.handleLoginClick}>
 				<span className="login-form-header">
 					Pokémon Trainer Club
 				</span>	
@@ -143,10 +146,10 @@ class PTC extends React.Component {
 						onChange={this.handleLndChange} 
 					/> 
 				}
-				<button className="login-form-body-button-ptc" onClick={this.handleLoginClick}>
+				<button className="login-form-body-button-ptc" type="submit">
 					Sign in	
 				</button>	
-			</div>
+			</form>
 		);			
 	}
 }
