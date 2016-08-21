@@ -9,7 +9,6 @@ const mapStateToProps = (state) => {
 	return {
 		app: state.app,
 		options: state.app.luckyegg,	
-		proto: state.proto,	
 		summary: state.luckyEggReport.summary,
 		detail: state.luckyEggReport.detail
 	};

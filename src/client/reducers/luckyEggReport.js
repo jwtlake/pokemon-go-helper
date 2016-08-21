@@ -14,7 +14,6 @@ function luckyEggReport(state = initialState, action) {
 			const pokemon = action.pokemon;
 			const pokedex = action.pokedex;	
 			const candy = action.candy;
-			const moves = action.proto.pokemonMove;
 				
 			// group by pokemon
 			const pokemonGroups = pokemon.reduce((map,aPokemon) => {
@@ -90,6 +89,7 @@ function luckyEggReport(state = initialState, action) {
 				return {
 					pokemon: {
 						pokemonId: PokemonId,
+						name: pokedex[PokemonId].name,
 						img: pokedex[PokemonId].img,
 						candiesToEvolve: candiesToEvolve,	
 					},

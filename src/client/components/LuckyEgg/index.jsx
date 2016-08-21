@@ -24,7 +24,7 @@ class LuckyEgg extends React.Component {
 
 	render() {
 		const {
-			props: { options, proto, summary, detail } 
+			props: { options, summary, detail } 
 		} = this;
 
 		// sort
@@ -47,7 +47,6 @@ class LuckyEgg extends React.Component {
 						return(
 							<Detail
 								key={group.pokemon.pokemonId}
-								proto={proto}	
 								pokemon={group.pokemon}
 								inventory={group.inventory}
 								outcome={group.outcome}	

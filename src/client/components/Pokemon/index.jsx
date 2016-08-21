@@ -5,7 +5,6 @@ import { browserHistory } from 'react-router';
 import Detail from './Detail';
 import OrderBy from '../../containers/OrderBy';
 
-
 class Pokemon extends React.Component {
 	constructor(props) {
 		super(props);
@@ -33,18 +32,17 @@ class Pokemon extends React.Component {
 		return(
 			<div className="pokemon">
 				{sortedPokemon.map(aPokemon => {
-
 					// get missing pokemon details	
 					const PokemonId = aPokemon.pokemon_id.toString();
-					aPokemon.name = proto.PokemonId[PokemonId];
+					aPokemon.name = pokedex[PokemonId].name;
+					aPokemon.img = pokedex[PokemonId].img;
 					aPokemon.move_1_name = proto.PokemonMove[aPokemon.move_1.toString()];
 					aPokemon.move_2_name = proto.PokemonMove[aPokemon.move_2.toString()];
-					aPokemon.img = pokedex[PokemonId].img;
 
 					// return	
 					return(
 						<Detail
-							key={(aPokemon.id.low+aPokemon.id.low)}
+							key={aPokemon.id}
 							pokemon={aPokemon}
 						/>
 					);			
@@ -113,8 +111,8 @@ class Pokemon extends React.Component {
 				return pokemon.sort((a,b) => {
 					
 					// sort by pokedex id first	
-					const aTime = a.creation_time_ms.low;
-					const bTime = b.creation_time_ms.low;	
+					const aTime = a.creation_time_ms;
+					const bTime = b.creation_time_ms;	
 					return bTime - aTime;	
 				});
 				

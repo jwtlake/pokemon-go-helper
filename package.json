@@ -28,7 +28,7 @@
     "json-loader": "^0.5.4",
     "nconf": "^0.8.4",
     "node-pogo-protos": "^1.0.3",
-    "pogobuf": "^1.5.0",
+    "pogobuf": "^1.5.3",
     "react": "^15.2.1",
     "react-addons-pure-render-mixin": "^15.2.1",
     "react-dom": "^15.2.1",
